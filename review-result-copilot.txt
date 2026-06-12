@@ -1,0 +1,5126 @@
+# 🤖 Copilot CLI Session
+
+> [!NOTE]
+> - **Session ID:** `91424836-0cdf-4284-8f4c-b8faa6ac34d6`  
+> - **Started:** 2026/6/6 22:17:27  
+> - **Duration:** 10m 44s  
+> - **Exported:** 2026/6/6 22:28:12  
+
+---
+
+<sub>⏱️ 1s</sub>
+
+### ℹ️ Info
+
+Tip: /share
+
+---
+
+<sub>⏱️ 1s</sub>
+
+### ℹ️ Info
+
+No copilot-instructions.md found. Run /init to generate.
+
+---
+
+<sub>⏱️ 5s</sub>
+
+### ℹ️ Info
+
+Folder D:\PROJECT2026\nailX\nailX has been added to trusted folders.
+
+---
+
+<sub>⏱️ 29s</sub>
+
+### 👤 User
+
+I have the following feedback on the changes you made:
+
+**CLAUDE.md**:
+- On added line: `# CLAUDE.md`
+  → ls
+
+Please address these comments and make the necessary changes.
+
+---
+
+<sub>⏱️ 33s</sub>
+
+### 💭 Reasoning
+
+*The user wants me to address feedback on CLAUDE.md. The comment says on the line `# CLAUDE.md`, the feedback is `ls`. This seems like the user wants me to remove or change the `# CLAUDE.md` heading line, or perhaps they want to see what's in the file. Let me look at the CLAUDE.md file first.
+
+Actually, looking at this more carefully - the feedback "ls" on the `# CLAUDE.md` line likely means the user wants to remove that line (it's a common convention that CLAUDE.md files don't need to have a `# CLAUDE.md` title header since the filename itself serves that purpose). Or perhaps "ls" is a typo or shorthand for something.
+*
+
+---
+
+<sub>⏱️ 37s</sub>
+
+### ℹ️ Info
+
+Operation cancelled by user
+
+---
+
+<sub>⏱️ 5m 18s</sub>
+
+### 👤 User
+
+Review: claude-contextとdocsを参照し、レビューを行ってください。Reviewの結果はClaude Codeへ渡すのを意識してください。
+
+---
+
+<sub>⏱️ 5m 22s</sub>
+
+### 💭 Reasoning
+
+*The user wants a code review of the changes made, with the instruction to reference claude_context and docs directories. Let me launch a code review agent.*
+
+---
+
+<sub>⏱️ 5m 34s</sub>
+
+### 📦 task (Completed)
+
+### ✅ `powershell`
+
+**Check git status and recent commits**
+
+<details>
+<summary>Arguments</summary>
+
+```json
+{
+  "command": "cd \"D:\\PROJECT2026\\nailX\\nailX\"; git --no-pager status; git --no-pager log --oneline -20",
+  "description": "Check git status and recent commits"
+}
+```
+
+</details>
+
+```
+On branch mainNo commits yetUntracked files:
+  (use "git add <file>..." to include in what will be committed)CLAUDE.mdMakefilebackend/claude_context/docker-compose.ymldocs/frontend/nothing added to commit but untracked files present (use "git add" to track)
+fatal: your current branch 'main' does not have any commits yet
+<exited with exit code 128>
+```
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX.**
+
+D:\PROJECT2026\nailX\nailX
+
+<details>
+<summary>9 lines</summary>
+
+```
+.git
+CLAUDE.md
+Makefile
+backend
+claude_context
+docker-compose.yml
+docs
+frontend
+infra
+```
+
+</details>
+
+
+### ✅ `powershell`
+
+**List all files in repo**
+
+<details>
+<summary>Arguments</summary>
+
+```json
+{
+  "command": "cd \"D:\\PROJECT2026\\nailX\\nailX\"; git --no-pager diff; Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch '\\.git' } | Select-Object -ExpandProperty FullName | Sort-Object",
+  "description": "List all files in repo"
+}
+```
+
+</details>
+
+<details>
+<summary>66 lines</summary>
+
+```
+D:\PROJECT2026\nailX\nailX\backend\.env.example
+D:\PROJECT2026\nailX\nailX\backend\cmd\server\main.go
+D:\PROJECT2026\nailX\nailX\backend\go.mod
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\auction.go
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\design.go
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\errors.go
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\payment.go
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\user.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\admin.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\ar.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\auction.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\auth.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\booking.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\design.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\media.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\notification.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\response.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\review.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\salon.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\sse_hub.go
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\user.go
+D:\PROJECT2026\nailX\nailX\backend\internal\middleware\auth.go
+D:\PROJECT2026\nailX\nailX\backend\internal\middleware\logger.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\interfaces.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\auction_repository.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\booking_repository.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\design_repository.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\helpers.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\notification_repository.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\payment_repository.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\review_repository.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\salon_repository.go
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\user_repository.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\auction_service.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\auth_service.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\design_service.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\media_service.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\notification_service.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\review_service.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\salon_service.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\user_service.go
+D:\PROJECT2026\nailX\nailX\backend\internal\service\interfaces.go
+D:\PROJECT2026\nailX\nailX\backend\internal\worker\royalty_worker.go
+D:\PROJECT2026\nailX\nailX\backend\internal\worker\similarity_worker.go
+D:\PROJECT2026\nailX\nailX\backend\migrations\000001_init.down.sql
+D:\PROJECT2026\nailX\nailX\backend\migrations\000001_init.up.sql
+D:\PROJECT2026\nailX\nailX\backend\sqlc.yaml
+D:\PROJECT2026\nailX\nailX\CLAUDE.md
+D:\PROJECT2026\nailX\nailX\claude_context\api_spec.md
+D:\PROJECT2026\nailX\nailX\claude_context\architecture.md
+D:\PROJECT2026\nailX\nailX\claude_context\db_schema.md
+D:\PROJECT2026\nailX\nailX\claude_context\functional_requirements.md
+D:\PROJECT2026\nailX\nailX\claude_context\implementation_tasks.md
+D:\PROJECT2026\nailX\nailX\claude_context\open_questions.md
+D:\PROJECT2026\nailX\nailX\claude_context\screen_list.md
+D:\PROJECT2026\nailX\nailX\docker-compose.yml
+D:\PROJECT2026\nailX\nailX\docs\1.ストーリー.txt
+D:\PROJECT2026\nailX\nailX\docs\2.戦略要件(要件定義前工程).txt
+D:\PROJECT2026\nailX\nailX\docs\3.技術スタック選定.md
+D:\PROJECT2026\nailX\nailX\frontend\lib\core\api\client.dart
+D:\PROJECT2026\nailX\nailX\frontend\lib\core\router\router.dart
+D:\PROJECT2026\nailX\nailX\frontend\lib\core\theme\theme.dart
+D:\PROJECT2026\nailX\nailX\frontend\lib\main.dart
+D:\PROJECT2026\nailX\nailX\frontend\pubspec.yaml
+D:\PROJECT2026\nailX\nailX\Makefile
+<exited with exit code 0>
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\CLAUDE.md.**
+
+D:\PROJECT2026\nailX\nailX\CLAUDE.md
+
+<details>
+<summary>162 lines</summary>
+
+````
+1. # CLAUDE.md
+2. 
+3. This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+4. 
+5. ## Project Overview
+6. 
+7. **nailX** は次世代UGC型ネイルプラットフォーム。3つのMoatを中心に設計されている:
+8. 1. **デザインIP経済圏** — フォーク&ライセンス構造 + ロイヤリティ自動分配
+9. 2. **ユーザー爪質カルテデータ** — AR計測による個人の爪メトリクス蓄積
+10. 3. **ネイリスト再現度スコア** — AI解析 + レビュー連動バッジ
+11. 
+12. 3者（デザイナー/消費者/サロン）のエコシステムを逆オークション型マッチングで結ぶ。
+13. 
+14. ---
+15. 
+16. ## 技術スタック
+17. 
+18. | レイヤー | 技術 |
+19. |---------|------|
+20. | フロントエンド | Flutter 3.x / Dart（iOS 14+ / Android 10+）|
+21. | 状態管理 | Riverpod 2.x |
+22. | HTTP通信 | Dio + SSE（EventSource：入札リアルタイム通知）|
+23. | AR/3D | DeepAR SDK（手トラッキング + 爪セグメンテーション）+ Three.js（WebView経由）|
+24. | バックエンド | Go 1.22+ / Echo v4 |
+25. | 認証 | Firebase Auth（Google / Apple / LINE）+ JWT検証（Go側）|
+26. | DB | PostgreSQL 16 + pgvector（512次元）|
+27. | ORM/クエリ | pgx/v5 + sqlc（型安全クエリ生成）|
+28. | バリデーション | go-playground/validator |
+29. | 非同期処理 | AWS SQS + Worker パターン |
+30. | インフラ | AWS EKS / RDS（Multi-AZ）/ S3 / CloudFront / SageMaker / ECR |
+31. | Analytics DWH | Snowflake（CDC via Debezium → Snowpipe）|
+32. | 決済 | Stripe |
+33. | テスト | testify + gomock |
+34. 
+35. ---
+36. 
+37. ## プロジェクト構造（実装予定）
+38. 
+39. ```
+40. nailX/
+41. ├── backend/
+42. │   ├── cmd/server/          # エントリーポイント
+43. │   ├── internal/
+44. │   │   ├── domain/          # ドメインモデル・インターフェース定義
+45. │   │   ├── handler/         # Echoハンドラー（APIルーティング）
+46. │   │   ├── service/         # ビジネスロジック
+47. │   │   ├── repository/      # DB操作（sqlc生成コード利用）
+48. │   │   └── middleware/      # JWT検証・ロギング等
+49. │   ├── migrations/          # golang-migrate SQLファイル
+50. │   └── sqlc.yaml
+51. ├── frontend/
+52. │   ├── lib/
+53. │   │   ├── features/        # 機能別ディレクトリ（designs/, auction/, booking/, ar/...）
+54. │   │   ├── core/            # HTTPクライアント・ルーティング・共通ユーティリティ
+55. │   │   └── shared/          # UIコンポーネント・デザインシステム
+56. │   └── pubspec.yaml
+57. ├── infra/
+58. │   ├── terraform/
+59. │   └── k8s/
+60. └── claude_context/          # 仕様書群（変更しない）
+61. ```
+62. 
+63. **現状**: ソースコードはまだ存在しない。`claude_context/` と `docs/` に仕様書のみある状態。実装はPhase 0から開始。
+64. 
+65. ---
+66. 
+67. ## よく使うコマンド（実装後）
+68. 
+69. ### バックエンド（Go）
+70. ```bash
+71. # ローカルDB起動（PostgreSQL + pgvector）
+72. docker compose up -d db
+73. 
+74. # DBマイグレーション
+75. migrate -path backend/migrations -database $DATABASE_URL up
+76. 
+77. # sqlcコード生成
+78. cd backend && sqlc generate
+79. 
+80. # テスト実行（全体）
+81. cd backend && go test ./...
+82. 
+83. # 単一パッケージのテスト
+84. cd backend && go test ./internal/service/... -v
+85. 
+86. # サーバー起動
+87. cd backend && go run cmd/server/main.go
+88. ```
+89. 
+90. ### フロントエンド（Flutter）
+91. ```bash
+92. # 依存パッケージ取得
+93. cd frontend && flutter pub get
+94. 
+95. # コード生成（Riverpod / Freezed / json_serializable）
+96. cd frontend && dart run build_runner build --delete-conflicting-outputs
+97. 
+98. # テスト実行
+99. cd frontend && flutter test
+100. 
+101. # 単一テストファイル
+102. cd frontend && flutter test test/features/auction/auction_service_test.dart
+103. 
+104. # iOS シミュレーターで実行
+105. cd frontend && flutter run -d ios
+106. 
+107. # Android エミュレーターで実行
+108. cd frontend && flutter run -d android
+109. ```
+110. 
+111. ---
+112. 
+113. ## アーキテクチャの重要概念
+114. 
+115. ### デザインIPとフォーク・ロイヤリティ
+116. - `design_ips`テーブルに`parent_design_id`（フォーク元）と`similarity_vector`（pgvector 512次元）を持つ
+117. - 類似度検索: コサイン類似度 ≥ 0.90 → 拒否、0.75〜0.90 → フォーク強制、< 0.75 → 独立IP（Admin可変）
+118. - ロイヤリティ分配は**3段打ち切り**: 直接70% / 親21% / 祖父9%（`design_royalty_nodes`で管理）
+119. - IP利用料は施術代の**5%**、プラットフォーム手数料は**15%**
+120. 
+121. ### 逆オークション（予約リクエスト → 入札）
+122. - ユーザーが`booking_requests`を出品 → サロンが`bids`を一発提示（チャットなし）
+123. - リアルタイム通知はSSE（`/auctions/:id/stream`）で配信
+124. - 類似度計算・ロイヤリティ集計はSQS Workerで非同期処理
+125. - 同時オープンリクエスト上限: 3件/ユーザー
+126. 
+127. ### 決済フロー
+128. - 予約確定時にStripe Authorization（オーソリ）
+129. - **施術完了確認後**にキャプチャ → IP利用料分配（`royalty_distributions`生成）
+130. - ポイント残高は初期フェーズではアプリ内クーポンのみ（現金化は法務確認待ち）
+131. 
+132. ### AR爪データ
+133. - DeepAR SDKで21関節 + 爪10枚を検出し`ar_sessions`に保存
+134. - `hand_snapshot_url`（S3写真）は90日で自動削除、メタデータ（爪長さ・形状）は永続保持
+135. - `nail_profiles`に集約したカルテデータが逆オークション時にサロンへ自動添付
+136. 
+137. ---
+138. 
+139. ## 仕様書の場所
+140. 
+141. 全ての設計情報は `claude_context/` に格納されている。実装前に必ず参照すること。
+142. 
+143. | ファイル | 内容 |
+144. |---------|------|
+145. | `architecture.md` | システム全体構成・サービス分割・データフロー |
+146. | `api_spec.md` | REST APIエンドポイント仕様（70+件）|
+147. | `db_schema.md` | テーブルDDL・インデックス設計 |
+148. | `functional_requirements.md` | 機能要件一覧（Moat貢献度評価付き）|
+149. | `implementation_tasks.md` | 8フェーズの実装ロードマップ（Phase 0〜7）|
+150. | `screen_list.md` | 画面一覧・遷移図 |
+151. | `open_questions.md` | 決定済み事項・保留事項 |
+152. 
+153. ---
+154. 
+155. ## 実装ルール
+156. 
+157. - **実装はユーザーの明示的な承認後にのみ開始**（`implementation_tasks.md`の原則）
+158. - 各Phaseの完了後にレビューを挟む
+159. - `open_questions.md`の🔴ブロッカー事項はPhase 0完了前に全確定（現時点では全て確定済み）
+160. - sqlcを使用するため、生のクエリ文字列をGoコードに直書きしない
+161. - SSEエンドポイントはgoroutineリークに注意（context cancellationを必ず処理）
+162.
+````
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\claude_context\api_spec.md.**
+
+D:\PROJECT2026\nailX\nailX\claude_context\api_spec.md
+
+<details>
+<summary>429 lines</summary>
+
+````
+1. # API仕様書（REST API エンドポイント一覧）
+2. 
+3. ## 共通ルール
+4. 
+5. | 項目 | 内容 |
+6. |------|------|
+7. | Base URL | `/api/v1` |
+8. | 認証ヘッダー | `Authorization: Bearer <Firebase ID Token>` |
+9. | Content-Type | `application/json` |
+10. | エラー形式 | `{"error": {"code": "ERROR_CODE", "message": "..."}}` |
+11. | ページネーション | `?limit=20&cursor=<opaque_cursor>` （カーソルベース）。カーソル形式: `base64url(created_at_unix_ms + ":" + id)`|
+12. | 日時形式 | RFC3339 (例: `2026-06-03T10:00:00+09:00`) |
+13. 
+14. ### 認可ルール
+15. - `[Public]`: 認証不要
+16. - `[Consumer]`: consumerロール以上
+17. - `[Salon]`: salon_ownerロール
+18. - `[Admin]`: adminロール
+19. 
+20. ---
+21. 
+22. ## 1. 認証・ユーザー
+23. 
+24. ### `POST /auth/register`
+25. Firebase ID Tokenを検証し、DBにユーザーレコードを作成。
+26. ```json
+27. Request: { "firebase_token": "...", "display_name": "田中 美優", "gender": "female" }
+28. Response 201: { "user": { "id": "uuid", "display_name": "...", "role": "consumer" } }
+29. ```
+30. 
+31. ### `GET /users/me` [Consumer]
+32. 自分のプロフィール取得。
+33. ```json
+34. Response 200: {
+35.   "user": { "id": "uuid", "display_name": "...", "gender": "...", "point_balance": 1200 },
+36.   "nail_profile": { "avg_nail_length_mm": 8.5, "nail_shape": "oval", ... }
+37. }
+38. ```
+39. 
+40. ### `PATCH /users/me` [Consumer]
+41. プロフィール更新（display_name / avatar_url / lifestyle_tags等）。
+42. 
+43. ### `GET /users/:id` [Public]
+44. 他ユーザーの公開プロフィール・作成IPデザイン一覧取得。
+45. 
+46. ---
+47. 
+48. ## 2. 爪カルテ
+49. 
+50. ### `PUT /users/me/nail-profile` [Consumer]
+51. 爪カルテの作成または更新（UPSERT）。
+52. ```json
+53. Request: {
+54.   "avg_nail_length_mm": 8.5,
+55.   "nail_shape": "oval",
+56.   "gel_lift_tendency": "medium",
+57.   "allergy_notes": "ハードジェルアレルギーあり"
+58. }
+59. Response 200: { "nail_profile": { ... } }
+60. ```
+61. 
+62. ---
+63. 
+64. ## 3. AR試着
+65. 
+66. ### `POST /ar/sessions` [Consumer]
+67. AR試着セッションの保存。Flutter(DeepAR)側で計測した爪データを送信。
+68. 
+69. > **S3アップロードフロー**: クライアントは先に `POST /media/presigned-url` (`purpose: "ar_snapshot"`) で署名付きURLを取得し、S3に直接アップロードする。その際レスポンスで返却された `file_url` を本エンドポイントに渡す。クライアントが任意の `s3://` URIを直接送信することは禁止（サーバー側でバケット・プレフィックスのバリデーションを実施）。
+70. 
+71. ```json
+72. Request: {
+73.   "design_ip_id": "uuid",
+74.   "detected_nail_length_mm": 8.2,
+75.   "has_existing_gel": true,
+76.   "detected_nail_shape": "oval",
+77.   "hand_snapshot_url": "https://cdn.nailx.jp/ar-snapshots/uuid.jpg"
+78.   // ← POST /media/presigned-url のレスポンス file_url（CDN経由URL）を使用
+79. }
+80. Response 201: {
+81.   "ar_session": {
+82.     "id": "uuid",
+83.     "estimated_treatment_min": 90,
+84.     "estimated_gel_amount_ml": 2.3
+85.   }
+86. }
+87. ```
+88. 
+89. ### `GET /ar/sessions/:id` [Consumer]
+90. AR試着セッション詳細取得（自分のセッションのみ）。
+91. 
+92. ---
+93. 
+94. ## 4. 素材マスタ
+95. 
+96. ### `GET /materials` [Public]
+97. 素材一覧取得。カテゴリフィルター可。
+98. ```
+99. Query: ?category=part&texture_type=3d_puffy&limit=50
+100. Response 200: { "materials": [...], "next_cursor": "..." }
+101. ```
+102. 
+103. ### `POST /materials` [Admin]
+104. 新規素材追加。
+105. 
+106. ### `PATCH /materials/:id` [Admin]
+107. 素材の有効/無効切替・情報更新。
+108. 
+109. ---
+110. 
+111. ## 5. デザインIP
+112. 
+113. ### `POST /designs` [Consumer]
+114. デザインIP登録リクエスト（非同期処理）。
+115. 
+116. > `preview_image_url` は `POST /media/presigned-url` (`purpose: "design_preview"`) で取得した `file_url` を使用。`s3://` URIの直接送信は禁止。
+117. 
+118. ```json
+119. Request: {
+120.   "title": "シンプルミラーメンズネイル",
+121.   "description": "...",
+122.   "preview_image_url": "https://cdn.nailx.jp/designs/preview/uuid.jpg",
+123.   "design_data": {
+124.     "fingers": {
+125.       "thumb":  [{"material_id": "uuid", "position": {"x": 0, "y": 0}, "rotation": 0, "texture_overrides": {}}],
+126.       "index":  [...],
+127.       "middle": [...],
+128.       "ring":   [...],
+129.       "pinky":  [...]
+130.     }
+131.   },
+132.   "parent_ip_id": null,
+133.   "gender_tag": "masculine",
+134.   "style_tags": ["mirror", "simple", "mens"],
+135.   "is_public": true
+136. }
+137. Response 202: { "design_ip_id": "uuid", "status": "pending", "job_id": "..." }
+138. ```
+139. 
+140. ### `GET /designs` [Public]
+141. デザインフィード一覧。
+142. ```
+143. Query: ?gender_tag=neutral&style_tags=mirror,3d&status=active&sort=usage_count&limit=20&cursor=...
+144. Response 200: { "designs": [...], "next_cursor": "..." }
+145. ```
+146. 
+147. ### `GET /designs/:id` [Public]
+148. デザインIP詳細。フォーク系譜・ロイヤリティノード情報含む。
+149. ```json
+150. Response 200: {
+151.   "design": { "id": "uuid", "title": "...", "usage_count": 342, ... },
+152.   "creator": { "id": "uuid", "display_name": "..." },
+153.   "parent_ip": { "id": "uuid", "title": "..." },
+154.   "royalty_nodes": [
+155.     { "user_id": "uuid", "share_percent": 70, "depth_level": 0 },
+156.     { "user_id": "uuid", "share_percent": 30, "depth_level": 1 }
+157.   ]
+158. }
+159. ```
+160. 
+161. ### `GET /designs/similarity-check` [Consumer]
+162. デザイン登録前の類似度プレチェック（エディター内でのリアルタイム確認用）。
+163. ```
+164. Query: ?job_id=... （POST /designs の job_id）
+165. Response 200: { "status": "completed", "result": "fork", "similar_ip_id": "uuid", "score": 0.82 }
+166. ```
+167. 
+168. ### `GET /users/:id/designs` [Public]
+169. 特定ユーザーが作成したデザイン一覧。
+170. 
+171. ### `PATCH /designs/:id` [Consumer]
+172. タイトル・説明・公開設定の更新（design_dataは変更不可。変更する場合は新規フォーク）。
+173. 
+174. ---
+175. 
+176. ## 6. サロン
+177. 
+178. ### `POST /salons` [Consumer]
+179. サロン登録申請（Consumer → salon_ownerへのロール変更は審査後）。
+180. ```json
+181. Request: {
+182.   "name": "Nail Atelier KIRA",
+183.   "address": "東京都渋谷区...",
+184.   "prefecture": "東京",
+185.   "city": "渋谷区",
+186.   "lat": 35.6580,
+187.   "lng": 139.7016,
+188.   "phone": "03-xxxx-xxxx",
+189.   "business_hours": { "mon": {"open": "10:00", "close": "20:00", "closed": false}, ... }
+190. }
+191. Response 202: { "salon_id": "uuid", "verification_status": "pending" }
+192. ```
+193. 
+194. ### `GET /salons` [Public]
+195. サロン一覧。エリア・バッジタグフィルター可。
+196. ```
+197. Query: ?prefecture=東京&skill_badge_tags=mens_nail,3d_parts&sort=avg_reproduction_score
+198. ```
+199. 
+200. ### `GET /salons/:id` [Public]
+201. サロン詳細（ポートフォリオ・バッジ・スコア含む）。
+202. 
+203. ### `PATCH /salons/:id` [Salon]
+204. サロン情報更新（自サロンのみ）。
+205. 
+206. ### `POST /salons/:id/portfolio` [Salon]
+207. 施術写真の追加（S3アップロード済みURLを登録）。
+208. 
+209. ---
+210. 
+211. ## 7. 逆オークション（予約リクエスト）
+212. 
+213. ### `POST /auctions/requests` [Consumer]
+214. 予約リクエスト（逆オークション出品）作成。
+215. ```json
+216. Request: {
+217.   "design_ip_id": "uuid",
+218.   "ar_session_id": "uuid",
+219.   "nail_data_snapshot": {
+220.     "length_mm": 8.2,
+221.     "has_existing_gel": true,
+222.     "shape": "oval",
+223.     "estimated_treatment_min": 90,
+224.     "estimated_gel_amount_ml": 2.3
+225.   },
+226.   "budget_max_yen": 8000,
+227.   "desired_date_from": "2026-06-10T10:00:00+09:00",
+228.   "desired_date_to": "2026-06-12T20:00:00+09:00",
+229.   "area_prefecture": "東京",
+230.   "area_city": "渋谷区"
+231. }
+232. Response 201: { "booking_request": { "id": "uuid", "status": "open", "expires_at": "..." } }
+233. ```
+234. 
+235. ### `GET /auctions/requests/:id` [Consumer]
+236. 自分の予約リクエスト詳細 + 入札一覧取得。
+237. 
+238. ### `DELETE /auctions/requests/:id` [Consumer]
+239. 予約リクエストのキャンセル（status=open/biddingのみ可）。
+240. 
+241. ### `GET /auctions/requests` [Salon]
+242. サロン向け: 自サロンのエリア・スキルにマッチしたオープンリクエスト一覧。
+243. ```
+244. Query: ?sort=expires_at&limit=20&cursor=...
+245. ```
+246. 
+247. ---
+248. 
+249. ## 8. 入札
+250. 
+251. ### `POST /auctions/requests/:request_id/bids` [Salon]
+252. 入札（一発提示）。
+253. ```json
+254. Request: {
+255.   "price_yen": 6500,
+256.   "includes_removal": true,
+257.   "removal_fee_yen": 0,
+258.   "available_slot_at": "2026-06-10T14:00:00+09:00",
+259.   "dynamic_discount_reason": "直前空き枠割引",
+260.   "message": "3Dパーツの再現度には自信があります"
+261. }
+262. Response 201: { "bid": { "id": "uuid", "status": "pending", "expires_at": "..." } }
+263. ```
+264. - 同一サロンの再入札: 同エンドポイントへPATCHで価格引き下げのみ可
+265. 
+266. ### `PATCH /auctions/requests/:request_id/bids/:bid_id` [Salon]
+267. 入札価格の修正（引き下げのみ。1回まで）。
+268. 
+269. ### `GET /auctions/requests/:request_id/bids` [Consumer]
+270. 自分のリクエストへの入札一覧取得。
+271. ```
+272. Query: ?sort=price_asc|score_desc|distance
+273. ```
+274. 
+275. ### `GET /auctions/requests/:request_id/bids/stream` [Consumer]
+276. SSEエンドポイント。入札リクエストへの新着入札をリアルタイム受信。
+277. ```
+278. Response: text/event-stream
+279. event: new_bid
+280. data: { "bid": { "id": "uuid", "price_yen": 6500, "salon": {...} } }
+281. ```
+282. 
+283. ---
+284. 
+285. ## 9. 予約確定・決済
+286. 
+287. ### `POST /bookings` [Consumer]
+288. 入札選択 → 予約確定。Stripe Payment Intent作成。
+289. ```json
+290. Request: {
+291.   "bid_id": "uuid",
+292.   "payment_method_id": "pm_stripe_..."
+293. }
+294. Response 201: {
+295.   "booking": { "id": "uuid", "scheduled_at": "...", "status": "confirmed" },
+296.   "payment": { "id": "uuid", "total_amount_yen": 6500, "status": "authorized" },
+297.   "stripe_client_secret": "pi_..._secret_..."
+298. }
+299. ```
+300. 
+301. ### `GET /bookings` [Consumer]
+302. 自分の予約一覧。
+303. ```
+304. Query: ?status=confirmed|completed|cancelled
+305. ```
+306. 
+307. ### `GET /bookings/:id` [Consumer/Salon]
+308. 予約詳細。
+309. 
+310. ### `POST /bookings/:id/complete` [Salon]
+311. 施術完了報告（→ 決済キャプチャ → ロイヤリティ分配 → レビュー依頼通知）。
+312. 
+313. ### `POST /bookings/:id/cancel` [Consumer/Salon]
+314. 予約キャンセル申請。
+315. ```json
+316. Request: { "reason": "体調不良のため" }
+317. ```
+318. 
+319. ---
+320. 
+321. ## 10. レビュー
+322. 
+323. ### `POST /reviews` [Consumer]
+324. レビュー投稿（施術完了から7日以内）。
+325. 
+326. > **S3アップロードフロー**: `before_photo_url` / `after_photo_url` は `POST /media/presigned-url` (`purpose: "review_photo"`) で取得した `file_url` を使用。`s3://` URIの直接送信は禁止。
+327. 
+328. ```json
+329. Request: {
+330.   "booking_id": "uuid",
+331.   "reproduction_score": 5,
+332.   "overall_score": 5,
+333.   "comment": "デザイン通りに再現してくれました！",
+334.   "before_photo_url": "https://cdn.nailx.jp/reviews/before/uuid.jpg",
+335.   "after_photo_url": "https://cdn.nailx.jp/reviews/after/uuid.jpg"
+336. }
+337. Response 201: { "review": { "id": "uuid" } }
+338. ```
+339. 
+340. ### `GET /salons/:id/reviews` [Public]
+341. サロンのレビュー一覧。
+342. 
+343. ---
+344. 
+345. ## 11. 通知
+346. 
+347. ### `GET /notifications` [Consumer/Salon]
+348. 通知一覧。
+349. ```
+350. Query: ?is_read=false&limit=20&cursor=...
+351. ```
+352. 
+353. ### `PATCH /notifications/:id/read` [Consumer/Salon]
+354. 通知を既読に。
+355. 
+356. ### `POST /notifications/fcm-token` [Consumer/Salon]
+357. FCMトークン登録・更新。
+358. ```json
+359. Request: { "fcm_token": "...", "device_platform": "ios" }
+360. ```
+361. 
+362. ---
+363. 
+364. ## 12. Admin
+365. 
+366. ### `GET /admin/salons` [Admin]
+367. 審査待ちサロン一覧。
+368. 
+369. ### `PATCH /admin/salons/:id/verify` [Admin]
+370. サロン審査承認/却下。
+371. ```json
+372. Request: { "action": "approve" | "reject", "reason": "..." }
+373. ```
+374. 
+375. ### `GET /admin/designs/flagged` [Admin]
+376. 盗作フラグが立ったデザイン一覧。
+377. 
+378. ### `PATCH /admin/designs/:id/moderate` [Admin]
+379. IP審査の手動上書き。
+380. ```json
+381. Request: { "action": "approve" | "reject", "reason": "..." }
+382. ```
+383. 
+384. ### `GET /admin/settings/similarity-threshold` [Admin]
+385. 類似度閾値の確認・更新。
+386. ```json
+387. Response: { "fork_threshold": 0.75, "reject_threshold": 0.92 }
+388. PATCH: { "fork_threshold": 0.78 }
+389. ```
+390. 
+391. ---
+392. 
+393. ## S3署名付きURL発行
+394. 
+395. ### `POST /media/presigned-url` [Consumer/Salon]
+396. クライアントが直接S3にアップロードするための署名付きURLを発行。
+397. `purpose` ごとに書き込みバケット・プレフィックスが固定される（任意パスへの書き込みを防ぐ）。
+398. 
+399. ```json
+400. Request: {
+401.   "file_type": "image/jpeg",
+402.   "purpose": "ar_snapshot" | "portfolio" | "review_photo" | "design_preview"
+403. }
+404. Response 200: {
+405.   "upload_url": "https://nailx-media.s3.ap-northeast-1.amazonaws.com/ar-snapshots/uuid?X-Amz-...",
+406.   "file_url": "https://cdn.nailx.jp/ar-snapshots/uuid.jpg"
+407.   // file_url は CDN 経由 URL。各エンドポイントの *_url フィールドにこちらを渡す
+408. }
+409. ```
+410. 
+411. > **セキュリティ注記**: サーバーは `file_url` 受信時にバケット名・プレフィックスが期待パターンと一致するかを検証し、他バケットや任意パスへの参照を拒否する。
+412. 
+413. ---
+414. 
+415. ## エラーコード一覧
+416. 
+417. | HTTP | Error Code | 意味 |
+418. |------|-----------|------|
+419. | 400 | INVALID_REQUEST | リクエストパラメータ不正 |
+420. | 401 | UNAUTHORIZED | 認証トークン無効 |
+421. | 403 | FORBIDDEN | 権限不足 |
+422. | 404 | NOT_FOUND | リソースが存在しない |
+423. | 409 | ALREADY_BID | 既に入札済み |
+424. | 409 | IP_REJECTED | 盗作判定でIP登録拒否 |
+425. | 409 | REQUEST_EXPIRED | リクエスト有効期限切れ |
+426. | 422 | BUDGET_EXCEEDED | 入札価格が予算上限超過 |
+427. | 429 | RATE_LIMITED | レートリミット超過 |
+428. | 500 | INTERNAL_ERROR | サーバーエラー |
+429.
+````
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\claude_context\db_schema.md.**
+
+D:\PROJECT2026\nailX\nailX\claude_context\db_schema.md
+
+```
+File too large to read at once (20.0 KB). Consider using the grep tool to search within the file, or view with view_range to read specific sections.
+```
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\claude_context\architecture.md.**
+
+D:\PROJECT2026\nailX\nailX\claude_context\architecture.md
+
+<details>
+<summary>251 lines</summary>
+
+````
+1. # システムアーキテクチャ設計書
+2. 
+3. ## サービス概要
+4. 次世代UGC型ネイルプラットフォーム。デザインIP経済圏・ユーザー爪質カルテデータ・ネイリスト再現度スコアの3つをMoatとする。
+5. 
+6. ---
+7. 
+8. ## システム全体構成図
+9. 
+10. ```
+11. ┌───────────────────────────────────────────────────────────────────────┐
+12. │                    Flutter App (iOS 14+ / Android 10+)                │
+13. │                                                                       │
+14. │  ┌────────────────┐  ┌──────────────────┐  ┌──────────────────────┐   │
+15. │  │  DeepAR SDK    │  │  Three.js (WebGL)│  │   REST API Client    │   │
+16. │  │  Hand Tracking │  │  3D Design Editor│  │   (Dio + SSE)        │   │
+17. │  │  Nail Segment. │  │  Texture Params  │  │                      │   │
+18. │  └────────────────┘  └──────────────────┘  └──────────────────────┘   │
+19. └───────────────────────────────────────────────────────────────────────┘
+20.                                 │ HTTPS / REST / SSE
+21. ┌───────────────────────────────▼──────────────────────────────────────┐
+22. │                    Go Backend (API Gateway + Services)               │
+23. │                                                                      │
+24. │  ┌──────────┐  ┌────────────┐  ┌────────────┐  ┌──────────────────┐  │
+25. │  │  Auth    │  │ Design IP  │  │  Auction   │  │ Payment & Royalty│  │
+26. │  │ Service  │  │  Service   │  │  Service   │  │     Service      │  │
+27. │  └──────────┘  └────────────┘  └────────────┘  └──────────────────┘  │
+28. │  ┌──────────┐  ┌────────────┐  ┌────────────┐  ┌──────────────────┐  │
+29. │  │ Booking  │  │   Salon    │  │   Notif    │  │   AR / Nail      │  │
+30. │  │ Service  │  │  Service   │  │  Service   │  │  Analysis Svc    │  │
+31. │  └──────────┘  └────────────┘  └────────────┘  └──────────────────┘  │
+32. └──────────────────────────────────────────────────────────────────────┘
+33.          │ pgx/v5             │ SQS/events          │ HTTP
+34. ┌────────▼─────────┐  ┌───────▼──────────┐  ┌──────▼──────────────────┐
+35. │   PostgreSQL 16  │  │    Snowflake     │  │        AWS              │
+36. │   + pgvector     │  │  Analytics DWH   │  │  ┌──────────────────┐   │
+37. │   Primary DB     │  │  ML Training Data│  │  │ S3 (media store) │   │
+38. │                  │  │  B2B Data Export │  │  │ CloudFront (CDN) │   │
+39. │  CDC (Debezium)  │──▶│  via Snowpipe  │  │  │ SageMaker (AI)   │   │
+40. └──────────────────┘  └──────────────────┘  │  │ EKS (container)  │   │
+41.                                             │  │ SQS (async)      │   │
+42.                                             │  └──────────────────┘   │
+43.                                             └─────────────────────────┘
+44. ```
+45. 
+46. ---
+47. 
+48. ## レイヤー別技術詳細
+49. 
+50. ### 1. フロントエンド（Flutter / Dart）
+51. 
+52. | 項目 | 内容 |
+53. |------|------|
+54. | フレームワーク | Flutter 3.x (Dart) |
+55. | 対象OS | iOS 14+ / Android 10+ |
+56. | AR/3D | DeepAR SDK（Hand Tracking + Nail Segmentation）|
+57. | 3Dエディター | Three.js（Flutter WebView経由 or flutter_gl） |
+58. | 状態管理 | Riverpod 2.x |
+59. | HTTP通信 | Dio（REST）+ EventSource（SSE: 入札リアルタイム通知）|
+60. | ローカルDB | Hive（オフラインキャッシュ）|
+61. | プッシュ通知 | Firebase Cloud Messaging (FCM) |
+62. | 認証 | Firebase Auth（Google / Apple / LINE ログイン対応）|
+63. 
+64. **3Dエディターの動作方式:**
+65. - Flutter WebView内でThree.jsを動かし、パーツ配置データをJSON形式でFlutter側と双方向通信
+66. - デザイン確定時にパーツ配置JSON（`design_data`）をバックエンドへ送信
+67. 
+68. **AR試着の動作方式:**
+69. - DeepAR SDKでカメラ映像をリアルタイム処理
+70. - 手の21関節 + 爪10枚のセグメンテーションを検出
+71. - 選択デザインの3DオブジェクトをAR合成してレンダリング
+72. - 撮影完了時に爪データ（長さ・形状・既存ジェル有無）をバックエンドへ送信
+73. 
+74. ---
+75. 
+76. ### 2. バックエンド（Go）
+77. 
+78. | 項目 | 内容 |
+79. |------|------|
+80. | 言語 | Go 1.22+ |
+81. | HTTPフレームワーク | Echo v4 |
+82. | 認証 | JWT（Firebase Auth ID Token検証）|
+83. | DBドライバー | pgx/v5 + sqlc（型安全クエリ生成）|
+84. | バリデーション | go-playground/validator |
+85. | リアルタイム | SSE（Server-Sent Events）：入札通知。EKS複数Pod間は **Redis Pub/Sub（ElastiCache）** でブロードキャスト |
+86. | 非同期処理 | AWS SQS + Workerパターン（類似度計算・ロイヤリティ集計）|
+87. | テスト | testify + gomock |
+88. 
+89. **サービス分割（論理）:**
+90. 
+91. ```
+92. api/
+93. ├── auth/          # JWT検証ミドルウェア、Firebase連携
+94. ├── users/         # ユーザーCRUD、爪カルテ管理
+95. ├── designs/       # デザインIP登録・フォーク・フィード
+96. ├── ar/            # AR試着セッション保存・爪データ解析
+97. ├── salons/        # サロンCRUD、ポートフォリオ
+98. ├── auctions/      # 予約リクエスト・入札・SSEハブ
+99. ├── bookings/      # 予約確定・キャンセル
+100. ├── payments/      # Stripe連携・ロイヤリティ分配
+101. ├── reviews/       # レビュー投稿・バッジ更新
+102. └── notifications/ # プッシュ通知・通知履歴
+103. ```
+104. 
+105. ---
+106. 
+107. ### 3. データベース（PostgreSQL 16 + pgvector）
+108. 
+109. | 項目 | 内容 |
+110. |------|------|
+111. | バージョン | PostgreSQL 16 |
+112. | 拡張 | pgvector（512次元ベクトル：デザイン類似度検索）|
+113. | マイグレーション | golang-migrate |
+114. | 接続プール | pgxpool（最大接続数: 環境変数で制御）|
+115. 
+116. **pgvectorの用途:**
+117. - デザインIP登録時にSageMakerでembedding（512次元）を生成
+118. - `<=>` 演算子（コサイン距離）で類似デザインを検索。インデックスは `HNSW + vector_cosine_ops`
+119. - コサイン類似度スコア（0〜1）で閾値判定 → 「盗作」として弾く / 「派生（フォーク）」として登録許可
+120. 
+121. ---
+122. 
+123. ### 4. データ分析基盤（Snowflake）
+124. 
+125. | 項目 | 内容 |
+126. |------|------|
+127. | 連携方式 | CDC: PostgreSQL → Debezium → Kafka → **Snowflake Kafka Connector** → Snowflake |
+128. | 用途① | マッチングAI学習データ（ユーザー × デザイン × サロン × 結果）|
+129. | 用途② | ネイルメーカー向けB2Bデータ外販（匿名化済み）|
+130. | 用途③ | エリア別・性別別トレンド分析 |
+131. 
+132. ---
+133. 
+134. ### 5. インフラ（AWS）
+135. 
+136. | リソース | 用途 |
+137. |----------|------|
+138. | EKS | Goバックエンドコンテナのオーケストレーション |
+139. | RDS (PostgreSQL) | 本番DB（Multi-AZ）|
+140. | S3 | 3D素材・AR試着写真・施術before/after画像 |
+141. | CloudFront | S3メディアのCDN配信 |
+142. | SageMaker | デザイン類似度embeddingモデルのホスティング |
+143. | SQS | 非同期処理キュー（類似度計算・ロイヤリティ分配）|
+144. | ElastiCache (Redis) | SSE マルチPodブロードキャスト用 Pub/Sub |
+145. | ECR | Dockerイメージレジストリ |
+146. | Secrets Manager | DB接続情報・APIキー管理 |
+147. 
+148. ---
+149. 
+150. ## 主要データフロー
+151. 
+152. ### フロー①: デザイン作成 → IP登録
+153. 
+154. ```
+155. [Flutter 3Dエディター]
+156.   └─ パーツ配置JSON送信
+157.        ↓
+158. [Go: /api/designs (POST)]
+159.   ├─ design_dataをDBに仮保存 (status: 'pending')
+160.   ├─ SQSへ類似度計算ジョブをエンキュー
+161.   └─ ジョブID返却
+162.        ↓
+163. [Go Worker: 類似度計算]
+164.   ├─ SageMaker呼び出し → embedding(512次元) 生成
+165.   ├─ PostgreSQL(pgvector): 類似デザイン検索
+166.   │     ├─ 類似度スコア < 閾値A → 独立IPとして承認 (status: 'active')
+167.   │     ├─ 閾値A ≤ スコア < 閾値B → フォークIPとして承認
+168.   │     │      └─ design_royalty_nodes に分配ツリー生成
+169.   │     └─ スコア ≥ 閾値B → 盗作として拒否 (status: 'rejected')
+170.   └─ SSE/Push通知でユーザーへ結果通知
+171.        ↓
+172. [Snowflake CDC連携]
+173.   └─ design_ipsテーブル変更をSnowpipeで取り込み
+174. ```
+175. 
+176. ### フロー②: 逆オークション（AR試着〜予約確定）
+177. 
+178. ```
+179. [Flutter AR試着]
+180.   ├─ DeepAR: 爪長さ・形状・既存ジェル有無を自動検出
+181.   └─ AR session + 爪データ → Go: /api/ar/sessions (POST)
+182.        ↓
+183. [Flutter 予約リクエスト作成]
+184.   └─ design_ip_id / 予算 / 希望日時 / エリア → Go: /api/auctions/requests (POST)
+185.        ↓
+186. [Go: 対象サロンへSSE/Push通知]
+187.   └─ エリア・スキルタグ・爪データでフィルタリングされたサロンへ通知
+188.        ↓
+189. [サロン: 入札]
+190.   └─ price / slot / includes_removal → Go: /api/auctions/bids (POST)
+191.        ↓
+192. [ユーザー: 入札一覧閲覧 → 選択]
+193.   └─ bid_id → Go: /api/bookings (POST) → booking確定
+194.        ↓
+195. [Stripe決済]
+196.   └─ 決済完了 → payments, royalty_distributions レコード生成
+197.               → サロン送金 / IP利用料分配（非同期）
+198. ```
+199. 
+200. ### フロー③: レビュー → バッジ更新
+201. 
+202. ```
+203. [施術完了後: Flutter]
+204.   └─ 再現度スコア + after画像 → Go: /api/reviews (POST)
+205.        ↓
+206. [Go Worker]
+207.   ├─ SageMaker: before/after画像の類似度スコア算出（AI再現度）
+208.   ├─ サロンのavg_reproduction_scoreを再計算
+209.   └─ skill_badge_tagsを更新（閾値超え時にバッジ付与）
+210.        ↓
+211. [Snowflake]
+212.   └─ ネイリストスキルデータをDWHに連携
+213. ```
+214. 
+215. ---
+216. 
+217. ## SSE マルチPod ブロードキャスト設計
+218. 
+219. EKS 上で複数 Pod が動作する場合、入札書き込み Pod と SSE 接続 Pod が異なることがある。  
+220. 同一 Pod 内にしかブロードキャストしないと、別 Pod のクライアントへ通知が届かない。
+221. 
+222. ```
+223. [入札 POST /bids]
+224.   └─ Go Pod A: DB に bid 書き込み
+225.        ↓
+226.      Redis Publish → channel: "auction:{request_id}"
+227.        ↓
+228.   ┌───────────────┬───────────────┐
+229. Go Pod A        Go Pod B        Go Pod C
+230. (SSE Subscribe) (SSE Subscribe) (SSE Subscribe)
+231.   ↓               ↓               ↓
+232. 接続クライアントへ転送（各Podが担当する接続のみ）
+233. ```
+234. 
+235. - **実装**: 各 Pod 起動時に当該チャンネルを `SUBSCRIBE`。入札書き込み側は `PUBLISH` のみ
+236. - **ElastiCache**: Redis クラスター（Cluster Mode Disabled、Single AZ でもPub/Subは機能する）
+237. - **goroutine リーク対策**: SSE ハンドラーは `context.Done()` を確認して Redis Subscriber と goroutine を確実にクリーンアップ
+238. 
+239. ---
+240. 
+241. ## セキュリティ設計
+242. 
+243. | 項目 | 方針 |
+244. |------|------|
+245. | 認証 | Firebase Auth ID Token（Bearerトークン）|
+246. | 認可 | ロールベース（consumer / salon_owner / admin）|
+247. | AR画像 | S3保存・署名付きURL（有効期限付き）・暗号化 |
+248. | 決済 | カード情報はStripeが保持（PCI DSS準拠）|
+249. | 個人情報 | 爪データは匿名化してSnowflakeへ連携 |
+250. | APIレート制限 | IP単位 + ユーザー単位（Echoミドルウェア）|
+251.
+````
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\claude_context\db_schema.md.**
+
+D:\PROJECT2026\nailX\nailX\claude_context\db_schema.md (lines 1-100)
+
+<details>
+<summary>100 lines</summary>
+
+````
+1. # データベーススキーマ設計書（PostgreSQL 16）
+2. 
+3. ## 拡張機能
+4. ```sql
+5. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+6. CREATE EXTENSION IF NOT EXISTS vector; -- pgvector (512次元ベクトル)
+7. ```
+8. 
+9. ---
+10. 
+11. ## テーブル一覧
+12. 
+13. | テーブル名 | 概要 |
+14. |-----------|------|
+15. | users | ユーザー情報（consumer / salon_owner / admin）|
+16. | nail_profiles | 爪カルテ（ユーザーごとの爪質データ）|
+17. | ar_sessions | AR試着セッション（爪データ自動計測結果）|
+18. | materials | 3D素材マスタ（パーツ・ベース・アート柄）|
+19. | design_ips | デザインIP本体 |
+20. | design_royalty_nodes | IPロイヤリティ分配ツリー |
+21. | salons | サロン情報 |
+22. | booking_requests | 予約リクエスト（逆オークション出品）|
+23. | bids | 入札（サロンからの一発提示）|
+24. | bookings | 確定予約 |
+25. | payments | 決済記録 |
+26. | royalty_distributions | IP利用料分配記録 |
+27. | reviews | レビュー・再現度評価 |
+28. | notifications | 通知履歴 |
+29. 
+30. ---
+31. 
+32. ## DDL
+33. 
+34. ### users
+35. ```sql
+36. CREATE TABLE users (
+37.     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+38.     firebase_uid    VARCHAR(128) UNIQUE NOT NULL,
+39.     email           VARCHAR(255) UNIQUE NOT NULL,
+40.     display_name    VARCHAR(100) NOT NULL,
+41.     gender          VARCHAR(30),      -- 'male', 'female', 'nonbinary', 'prefer_not_to_say', or free text
+42.     role            VARCHAR(20) NOT NULL DEFAULT 'consumer', -- 'consumer', 'salon_owner', 'admin'
+43.     avatar_url      TEXT,
+44.     bio             TEXT,
+45.     lifestyle_tags  TEXT[] DEFAULT '{}', -- ['water_work', 'sports', 'keyboard_heavy', 'outdoor']
+46.     point_balance   INTEGER NOT NULL DEFAULT 0, -- IPロイヤリティ獲得ポイント残高
+47.     is_active       BOOLEAN NOT NULL DEFAULT true,
+48.     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+49.     updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+50. );
+51. 
+52. CREATE INDEX idx_users_firebase_uid ON users(firebase_uid);
+53. CREATE INDEX idx_users_role ON users(role);
+54. ```
+55. 
+56. ### nail_profiles
+57. ```sql
+58. CREATE TABLE nail_profiles (
+59.     id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+60.     user_id             UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+61.     avg_nail_length_mm  NUMERIC(4,1),
+62.     nail_shape          VARCHAR(30), -- 'round','square','oval','almond','stiletto','coffin'
+63.     gel_lift_tendency   VARCHAR(20), -- 'low','medium','high'
+64.     allergy_notes       TEXT,
+65.     updated_at          TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+66.     UNIQUE(user_id)
+67. );
+68. ```
+69. 
+70. ### ar_sessions
+71. ```sql
+72. -- AR試着時に自動計測された爪データのスナップショット
+73. -- このデータが予約リクエストに自動添付され、サロンの入札精度を上げるMoatの核心
+74. CREATE TABLE ar_sessions (
+75.     id                          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+76.     user_id                     UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+77.     design_ip_id                UUID,     -- 試着したデザイン（NULL=デザイン未選択）
+78.     detected_nail_length_mm     NUMERIC(4,1),
+79.     has_existing_gel            BOOLEAN,
+80.     detected_nail_shape         VARCHAR(30),
+81.     estimated_treatment_min     INTEGER,  -- バックエンド算出の推定施術時間
+82.     estimated_gel_amount_ml     NUMERIC(5,3), -- バックエンド算出の推定ジェル量
+83.     hand_snapshot_url           TEXT,     -- S3 URL（署名付きURL発行。90日保持）
+84.     created_at                  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+85. );
+86. 
+87. CREATE INDEX idx_ar_sessions_user_id ON ar_sessions(user_id);
+88. CREATE INDEX idx_ar_sessions_created_at ON ar_sessions(created_at DESC);
+89. ```
+90. 
+91. ### materials
+92. ```sql
+93. CREATE TABLE materials (
+94.     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+95.     name            VARCHAR(100) NOT NULL,
+96.     category        VARCHAR(50) NOT NULL,  -- 'base', 'part', 'art', 'glitter', 'foil'
+97.     texture_type    VARCHAR(50),           -- 'matte', 'mirror', 'magnet', '3d_puffy', 'normal'
+98.     thumbnail_url   TEXT NOT NULL,
+99.     model_3d_url    TEXT,                  -- Three.js用GLTFモデルのS3 URL
+100.     texture_params  JSONB NOT NULL DEFAULT '{}',
+````
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\sse_hub.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\sse_hub.go
+
+<details>
+<summary>141 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"context"
+5. 	"encoding/json"
+6. 	"fmt"
+7. 	"log/slog"
+8. 	"net/http"
+9. 	"sync"
+10. 
+11. 	"github.com/labstack/echo/v4"
+12. 	"github.com/nailx/backend/internal/domain"
+13. 	"github.com/redis/go-redis/v9"
+14. )
+15. 
+16. // SSEHub は入札リアルタイム通知のハブ。
+17. // EKS マルチPod 環境では Redis Pub/Sub を使ってブロードキャストする。
+18. // 各 Pod が auction:{request_id} チャンネルを Subscribe し、
+19. // 入札書き込み時に Publish することで全 Pod のクライアントへ届く。
+20. type SSEHub struct {
+21. 	rdb    *redis.Client
+22. 	logger *slog.Logger
+23. 	mu     sync.RWMutex
+24. 	// ローカル接続マップ: requestID → クライアントチャンネル群
+25. 	clients map[string]map[chan *domain.BidEvent]struct{}
+26. }
+27. 
+28. func NewSSEHub(rdb *redis.Client, logger *slog.Logger) *SSEHub {
+29. 	return &SSEHub{
+30. 		rdb:     rdb,
+31. 		logger:  logger,
+32. 		clients: make(map[string]map[chan *domain.BidEvent]struct{}),
+33. 	}
+34. }
+35. 
+36. // Start はアプリ起動時に呼ぶ。Redis の psubscribe で全 auction:* チャンネルを受信する。
+37. func (h *SSEHub) Start(ctx context.Context) {
+38. 	pubsub := h.rdb.PSubscribe(ctx, "auction:*")
+39. 	go func() {
+40. 		defer pubsub.Close()
+41. 		ch := pubsub.Channel()
+42. 		for {
+43. 			select {
+44. 			case <-ctx.Done():
+45. 				return
+46. 			case msg, ok := <-ch:
+47. 				if !ok {
+48. 					return
+49. 				}
+50. 				// チャンネル名から requestID を取り出す
+51. 				requestID := msg.Channel[len("auction:"):]
+52. 				var event domain.BidEvent
+53. 				if err := json.Unmarshal([]byte(msg.Payload), &event); err != nil {
+54. 					h.logger.Error("sse hub: unmarshal error", slog.String("err", err.Error()))
+55. 					continue
+56. 				}
+57. 				h.broadcast(requestID, &event)
+58. 			}
+59. 		}
+60. 	}()
+61. }
+62. 
+63. // Publish は入札作成時に Redis へイベントを発行する
+64. func (h *SSEHub) Publish(ctx context.Context, requestID string, event *domain.BidEvent) error {
+65. 	payload, err := json.Marshal(event)
+66. 	if err != nil {
+67. 		return err
+68. 	}
+69. 	return h.rdb.Publish(ctx, "auction:"+requestID, payload).Err()
+70. }
+71. 
+72. func (h *SSEHub) broadcast(requestID string, event *domain.BidEvent) {
+73. 	h.mu.RLock()
+74. 	defer h.mu.RUnlock()
+75. 	for ch := range h.clients[requestID] {
+76. 		select {
+77. 		case ch <- event:
+78. 		default:
+79. 			// クライアントのバッファが詰まっている場合は捨てる（切断検知は StreamBids 側）
+80. 		}
+81. 	}
+82. }
+83. 
+84. func (h *SSEHub) subscribe(requestID string) chan *domain.BidEvent {
+85. 	ch := make(chan *domain.BidEvent, 16)
+86. 	h.mu.Lock()
+87. 	if _, ok := h.clients[requestID]; !ok {
+88. 		h.clients[requestID] = make(map[chan *domain.BidEvent]struct{})
+89. 	}
+90. 	h.clients[requestID][ch] = struct{}{}
+91. 	h.mu.Unlock()
+92. 	return ch
+93. }
+94. 
+95. func (h *SSEHub) unsubscribe(requestID string, ch chan *domain.BidEvent) {
+96. 	h.mu.Lock()
+97. 	delete(h.clients[requestID], ch)
+98. 	if len(h.clients[requestID]) == 0 {
+99. 		delete(h.clients, requestID)
+100. 	}
+101. 	h.mu.Unlock()
+102. 	close(ch)
+103. }
+104. 
+105. // StreamBids は SSE エンドポイントのハンドラー
+106. // GET /api/v1/auctions/requests/:request_id/bids/stream
+107. func (h *SSEHub) StreamBids(c echo.Context) error {
+108. 	requestID := c.Param("request_id")
+109. 	if requestID == "" {
+110. 		return echo.NewHTTPError(http.StatusBadRequest, "missing request_id")
+111. 	}
+112. 
+113. 	c.Response().Header().Set("Content-Type", "text/event-stream")
+114. 	c.Response().Header().Set("Cache-Control", "no-cache")
+115. 	c.Response().Header().Set("Connection", "keep-alive")
+116. 	c.Response().WriteHeader(http.StatusOK)
+117. 	c.Response().Flush()
+118. 
+119. 	ch := h.subscribe(requestID)
+120. 	defer h.unsubscribe(requestID, ch)
+121. 
+122. 	ctx := c.Request().Context()
+123. 	for {
+124. 		select {
+125. 		case <-ctx.Done():
+126. 			// クライアント切断 or サーバーシャットダウン → goroutine をクリーンアップ
+127. 			return nil
+128. 		case event, ok := <-ch:
+129. 			if !ok {
+130. 				return nil
+131. 			}
+132. 			payload, err := json.Marshal(event)
+133. 			if err != nil {
+134. 				continue
+135. 			}
+136. 			fmt.Fprintf(c.Response(), "event: new_bid\ndata: %s\n\n", payload)
+137. 			c.Response().Flush()
+138. 		}
+139. 	}
+140. }
+141.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\middleware\auth.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\middleware\auth.go
+
+<details>
+<summary>112 lines</summary>
+
+```
+1. package middleware
+2. 
+3. import (
+4. 	"context"
+5. 	"net/http"
+6. 	"strings"
+7. 
+8. 	firebase "firebase.google.com/go/v4"
+9. 	"firebase.google.com/go/v4/auth"
+10. 	"github.com/labstack/echo/v4"
+11. 	"github.com/nailx/backend/internal/domain"
+12. )
+13. 
+14. type contextKey string
+15. 
+16. const (
+17. 	contextKeyFirebaseUID contextKey = "firebase_uid"
+18. 	contextKeyUserID      contextKey = "user_id"
+19. 	contextKeyUserRole    contextKey = "user_role"
+20. )
+21. 
+22. type AuthMiddleware struct {
+23. 	firebaseAuth *auth.Client
+24. 	userRepo     UserRepository
+25. }
+26. 
+27. // UserRepository は認証ミドルウェアが必要とする最小限のリポジトリインターフェース
+28. type UserRepository interface {
+29. 	FindByFirebaseUID(ctx context.Context, uid string) (*domain.User, error)
+30. }
+31. 
+32. func NewAuthMiddleware(app *firebase.App, userRepo UserRepository) (*AuthMiddleware, error) {
+33. 	client, err := app.Auth(context.Background())
+34. 	if err != nil {
+35. 		return nil, err
+36. 	}
+37. 	return &AuthMiddleware{firebaseAuth: client, userRepo: userRepo}, nil
+38. }
+39. 
+40. // RequireAuth は Firebase ID Token を検証し、DBユーザー情報をコンテキストに注入する
+41. func (m *AuthMiddleware) RequireAuth(next echo.HandlerFunc) echo.HandlerFunc {
+42. 	return func(c echo.Context) error {
+43. 		token, err := extractBearerToken(c.Request())
+44. 		if err != nil {
+45. 			return echo.NewHTTPError(http.StatusUnauthorized, map[string]any{
+46. 				"error": map[string]string{"code": "UNAUTHORIZED", "message": "missing or invalid authorization header"},
+47. 			})
+48. 		}
+49. 
+50. 		firebaseToken, err := m.firebaseAuth.VerifyIDToken(c.Request().Context(), token)
+51. 		if err != nil {
+52. 			return echo.NewHTTPError(http.StatusUnauthorized, map[string]any{
+53. 				"error": map[string]string{"code": "UNAUTHORIZED", "message": "invalid firebase token"},
+54. 			})
+55. 		}
+56. 
+57. 		user, err := m.userRepo.FindByFirebaseUID(c.Request().Context(), firebaseToken.UID)
+58. 		if err != nil {
+59. 			return echo.NewHTTPError(http.StatusUnauthorized, map[string]any{
+60. 				"error": map[string]string{"code": "UNAUTHORIZED", "message": "user not found"},
+61. 			})
+62. 		}
+63. 
+64. 		c.Set(string(contextKeyFirebaseUID), firebaseToken.UID)
+65. 		c.Set(string(contextKeyUserID), user.ID)
+66. 		c.Set(string(contextKeyUserRole), string(user.Role))
+67. 		return next(c)
+68. 	}
+69. }
+70. 
+71. // RequireRole は指定ロール以上の権限を要求する
+72. func RequireRole(role domain.UserRole) echo.MiddlewareFunc {
+73. 	return func(next echo.HandlerFunc) echo.HandlerFunc {
+74. 		return func(c echo.Context) error {
+75. 			userRole := domain.UserRole(c.Get(string(contextKeyUserRole)).(string))
+76. 			if !hasRole(userRole, role) {
+77. 				return echo.NewHTTPError(http.StatusForbidden, map[string]any{
+78. 					"error": map[string]string{"code": "FORBIDDEN", "message": "insufficient permissions"},
+79. 				})
+80. 			}
+81. 			return next(c)
+82. 		}
+83. 	}
+84. }
+85. 
+86. func GetUserID(c echo.Context) string {
+87. 	v, _ := c.Get(string(contextKeyUserID)).(string)
+88. 	return v
+89. }
+90. 
+91. func GetUserRole(c echo.Context) domain.UserRole {
+92. 	v, _ := c.Get(string(contextKeyUserRole)).(string)
+93. 	return domain.UserRole(v)
+94. }
+95. 
+96. func extractBearerToken(r *http.Request) (string, error) {
+97. 	h := r.Header.Get("Authorization")
+98. 	if !strings.HasPrefix(h, "Bearer ") {
+99. 		return "", domain.ErrUnauthorized
+100. 	}
+101. 	return strings.TrimPrefix(h, "Bearer "), nil
+102. }
+103. 
+104. func hasRole(userRole, required domain.UserRole) bool {
+105. 	order := map[domain.UserRole]int{
+106. 		domain.RoleConsumer:   1,
+107. 		domain.RoleSalonOwner: 2,
+108. 		domain.RoleAdmin:      3,
+109. 	}
+110. 	return order[userRole] >= order[required]
+111. }
+112.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\auth_service.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\auth_service.go
+
+<details>
+<summary>59 lines</summary>
+
+```
+1. package impl
+2. 
+3. import (
+4. 	"context"
+5. 	"time"
+6. 
+7. 	firebase "firebase.google.com/go/v4"
+8. 	"github.com/google/uuid"
+9. 	"github.com/nailx/backend/internal/domain"
+10. 	"github.com/nailx/backend/internal/repository"
+11. 	"github.com/nailx/backend/internal/service"
+12. )
+13. 
+14. type authService struct {
+15. 	fbApp    *firebase.App
+16. 	userRepo repository.UserRepository
+17. }
+18. 
+19. func NewAuthService(fbApp *firebase.App, userRepo repository.UserRepository) service.AuthService {
+20. 	return &authService{fbApp: fbApp, userRepo: userRepo}
+21. }
+22. 
+23. func (s *authService) Register(ctx context.Context, firebaseToken, displayName string, gender *string) (*domain.User, error) {
+24. 	client, err := s.fbApp.Auth(ctx)
+25. 	if err != nil {
+26. 		return nil, err
+27. 	}
+28. 	token, err := client.VerifyIDToken(ctx, firebaseToken)
+29. 	if err != nil {
+30. 		return nil, domain.ErrUnauthorized
+31. 	}
+32. 
+33. 	// 既存ユーザーチェック
+34. 	existing, err := s.userRepo.FindByFirebaseUID(ctx, token.UID)
+35. 	if err == nil {
+36. 		return existing, nil // 既に登録済み
+37. 	}
+38. 	if err != domain.ErrNotFound {
+39. 		return nil, err
+40. 	}
+41. 
+42. 	email, _ := token.Claims["email"].(string)
+43. 	user := &domain.User{
+44. 		ID:          uuid.NewString(),
+45. 		FirebaseUID: token.UID,
+46. 		Email:       email,
+47. 		DisplayName: displayName,
+48. 		Gender:      gender,
+49. 		Role:        domain.RoleConsumer,
+50. 		IsActive:    true,
+51. 		CreatedAt:   time.Now(),
+52. 		UpdatedAt:   time.Now(),
+53. 	}
+54. 	if err := s.userRepo.Create(ctx, user); err != nil {
+55. 		return nil, err
+56. 	}
+57. 	return user, nil
+58. }
+59.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\auction.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\auction.go
+
+<details>
+<summary>145 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"encoding/json"
+5. 	"net/http"
+6. 	"strconv"
+7. 
+8. 	"github.com/labstack/echo/v4"
+9. 	"github.com/nailx/backend/internal/middleware"
+10. 	"github.com/nailx/backend/internal/service"
+11. )
+12. 
+13. type AuctionHandler struct {
+14. 	svc    service.AuctionService
+15. 	sseHub *SSEHub
+16. }
+17. 
+18. func NewAuctionHandler(svc service.AuctionService, hub *SSEHub) *AuctionHandler {
+19. 	return &AuctionHandler{svc: svc, sseHub: hub}
+20. }
+21. 
+22. // POST /api/v1/auctions/requests
+23. func (h *AuctionHandler) CreateRequest(c echo.Context) error {
+24. 	var req struct {
+25. 		DesignIPID       string         `json:"design_ip_id" validate:"required"`
+26. 		ARSessionID      *string        `json:"ar_session_id"`
+27. 		NailDataSnapshot map[string]any `json:"nail_data_snapshot" validate:"required"`
+28. 		BudgetMaxYen     int            `json:"budget_max_yen" validate:"required,min=1"`
+29. 		DesiredDateFrom  string         `json:"desired_date_from" validate:"required"`
+30. 		DesiredDateTo    string         `json:"desired_date_to" validate:"required"`
+31. 		AreaPrefecture   string         `json:"area_prefecture" validate:"required"`
+32. 		AreaCity         *string        `json:"area_city"`
+33. 	}
+34. 	if err := c.Bind(&req); err != nil {
+35. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+36. 	}
+37. 	if err := c.Validate(&req); err != nil {
+38. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+39. 	}
+40. 	snapshotBytes, _ := json.Marshal(req.NailDataSnapshot)
+41. 	bookingReq, err := h.svc.CreateBookingRequest(c.Request().Context(), middleware.GetUserID(c), service.CreateBookingRequestInput{
+42. 		DesignIPID:       req.DesignIPID,
+43. 		ARSessionID:      req.ARSessionID,
+44. 		NailDataSnapshot: snapshotBytes,
+45. 		BudgetMaxYen:     req.BudgetMaxYen,
+46. 		DesiredDateFrom:  req.DesiredDateFrom,
+47. 		DesiredDateTo:    req.DesiredDateTo,
+48. 		AreaPrefecture:   req.AreaPrefecture,
+49. 		AreaCity:         req.AreaCity,
+50. 	})
+51. 	if err != nil {
+52. 		return domainErrToHTTP(c, err)
+53. 	}
+54. 	return c.JSON(http.StatusCreated, map[string]any{"booking_request": bookingReq})
+55. }
+56. 
+57. // GET /api/v1/auctions/requests/:id
+58. func (h *AuctionHandler) GetRequest(c echo.Context) error {
+59. 	req, bids, err := h.svc.GetBookingRequest(c.Request().Context(), middleware.GetUserID(c), c.Param("id"))
+60. 	if err != nil {
+61. 		return domainErrToHTTP(c, err)
+62. 	}
+63. 	return c.JSON(http.StatusOK, map[string]any{"booking_request": req, "bids": bids})
+64. }
+65. 
+66. // DELETE /api/v1/auctions/requests/:id
+67. func (h *AuctionHandler) CancelRequest(c echo.Context) error {
+68. 	if err := h.svc.CancelBookingRequest(c.Request().Context(), middleware.GetUserID(c), c.Param("id")); err != nil {
+69. 		return domainErrToHTTP(c, err)
+70. 	}
+71. 	return c.NoContent(http.StatusNoContent)
+72. }
+73. 
+74. // GET /api/v1/auctions/requests (Salon)
+75. func (h *AuctionHandler) ListMatchingRequests(c echo.Context) error {
+76. 	limit, _ := strconv.Atoi(c.QueryParam("limit"))
+77. 	if limit == 0 {
+78. 		limit = 20
+79. 	}
+80. 	reqs, nextCur, err := h.svc.ListMatchingRequests(c.Request().Context(), middleware.GetUserID(c), c.QueryParam("cursor"), limit)
+81. 	if err != nil {
+82. 		return domainErrToHTTP(c, err)
+83. 	}
+84. 	return c.JSON(http.StatusOK, map[string]any{"booking_requests": reqs, "next_cursor": nextCur})
+85. }
+86. 
+87. // POST /api/v1/auctions/requests/:request_id/bids
+88. func (h *AuctionHandler) PlaceBid(c echo.Context) error {
+89. 	var req struct {
+90. 		PriceYen             int     `json:"price_yen" validate:"required,min=1"`
+91. 		IncludesRemoval      bool    `json:"includes_removal"`
+92. 		RemovalFeeYen        int     `json:"removal_fee_yen"`
+93. 		AvailableSlotAt      string  `json:"available_slot_at" validate:"required"`
+94. 		DynamicDiscountReason *string `json:"dynamic_discount_reason"`
+95. 		Message              *string `json:"message"`
+96. 	}
+97. 	if err := c.Bind(&req); err != nil {
+98. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+99. 	}
+100. 	if err := c.Validate(&req); err != nil {
+101. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+102. 	}
+103. 	bid, err := h.svc.PlaceBid(c.Request().Context(), middleware.GetUserID(c), c.Param("request_id"), service.PlaceBidInput{
+104. 		PriceYen:             req.PriceYen,
+105. 		IncludesRemoval:      req.IncludesRemoval,
+106. 		RemovalFeeYen:        req.RemovalFeeYen,
+107. 		AvailableSlotAt:      req.AvailableSlotAt,
+108. 		DynamicDiscountReason: req.DynamicDiscountReason,
+109. 		Message:              req.Message,
+110. 	})
+111. 	if err != nil {
+112. 		return domainErrToHTTP(c, err)
+113. 	}
+114. 	// 入札成功時に SSE ブロードキャスト
+115. 	_ = h.sseHub.Publish(c.Request().Context(), c.Param("request_id"), &struct {
+116. 		Type string `json:"type"`
+117. 		Bid  any    `json:"bid"`
+118. 	}{"new_bid", bid})
+119. 	return c.JSON(http.StatusCreated, map[string]any{"bid": bid})
+120. }
+121. 
+122. // PATCH /api/v1/auctions/requests/:request_id/bids/:bid_id
+123. func (h *AuctionHandler) UpdateBid(c echo.Context) error {
+124. 	var req struct {
+125. 		PriceYen int `json:"price_yen" validate:"required,min=1"`
+126. 	}
+127. 	if err := c.Bind(&req); err != nil {
+128. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+129. 	}
+130. 	bid, err := h.svc.UpdateBid(c.Request().Context(), middleware.GetUserID(c), c.Param("request_id"), c.Param("bid_id"), req.PriceYen)
+131. 	if err != nil {
+132. 		return domainErrToHTTP(c, err)
+133. 	}
+134. 	return c.JSON(http.StatusOK, map[string]any{"bid": bid})
+135. }
+136. 
+137. // GET /api/v1/auctions/requests/:request_id/bids
+138. func (h *AuctionHandler) ListBids(c echo.Context) error {
+139. 	bids, err := h.svc.ListBids(c.Request().Context(), middleware.GetUserID(c), c.Param("request_id"), c.QueryParam("sort"))
+140. 	if err != nil {
+141. 		return domainErrToHTTP(c, err)
+142. 	}
+143. 	return c.JSON(http.StatusOK, map[string]any{"bids": bids})
+144. }
+145.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\auction_service.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\auction_service.go
+
+<details>
+<summary>178 lines</summary>
+
+```
+1. package impl
+2. 
+3. import (
+4. 	"context"
+5. 	"time"
+6. 
+7. 	"github.com/aws/aws-sdk-go-v2/service/sqs"
+8. 	"github.com/google/uuid"
+9. 	"github.com/nailx/backend/internal/domain"
+10. 	"github.com/nailx/backend/internal/repository"
+11. 	"github.com/nailx/backend/internal/service"
+12. )
+13. 
+14. type auctionService struct {
+15. 	auctionRepo repository.AuctionRepository
+16. 	salonRepo   repository.SalonRepository
+17. 	sqsClient   *sqs.Client
+18. 	sqsQueueURL string
+19. }
+20. 
+21. func NewAuctionService(
+22. 	auctionRepo repository.AuctionRepository,
+23. 	salonRepo repository.SalonRepository,
+24. 	sqsClient *sqs.Client,
+25. 	sqsQueueURL string,
+26. ) service.AuctionService {
+27. 	return &auctionService{
+28. 		auctionRepo: auctionRepo,
+29. 		salonRepo:   salonRepo,
+30. 		sqsClient:   sqsClient,
+31. 		sqsQueueURL: sqsQueueURL,
+32. 	}
+33. }
+34. 
+35. func (s *auctionService) CreateBookingRequest(ctx context.Context, userID string, req service.CreateBookingRequestInput) (*domain.BookingRequest, error) {
+36. 	// 同時オープンリクエストは3件まで
+37. 	count, err := s.auctionRepo.CountOpenRequestsByUser(ctx, userID)
+38. 	if err != nil {
+39. 		return nil, err
+40. 	}
+41. 	if count >= 3 {
+42. 		return nil, domain.ErrRequestExpired // 上限超過
+43. 	}
+44. 
+45. 	from, err := time.Parse(time.RFC3339, req.DesiredDateFrom)
+46. 	if err != nil {
+47. 		return nil, domain.ErrInvalidRequest
+48. 	}
+49. 	to, err := time.Parse(time.RFC3339, req.DesiredDateTo)
+50. 	if err != nil {
+51. 		return nil, domain.ErrInvalidRequest
+52. 	}
+53. 
+54. 	br := &domain.BookingRequest{
+55. 		ID:               uuid.NewString(),
+56. 		UserID:           userID,
+57. 		DesignIPID:       req.DesignIPID,
+58. 		ARSessionID:      req.ARSessionID,
+59. 		NailDataSnapshot: req.NailDataSnapshot,
+60. 		BudgetMaxYen:     req.BudgetMaxYen,
+61. 		DesiredDateFrom:  from,
+62. 		DesiredDateTo:    to,
+63. 		AreaPrefecture:   req.AreaPrefecture,
+64. 		AreaCity:         req.AreaCity,
+65. 		Status:           domain.BookingRequestOpen,
+66. 		ExpiresAt:        time.Now().Add(24 * time.Hour),
+67. 		CreatedAt:        time.Now(),
+68. 	}
+69. 	if err := s.auctionRepo.CreateBookingRequest(ctx, br); err != nil {
+70. 		return nil, err
+71. 	}
+72. 	return br, nil
+73. }
+74. 
+75. func (s *auctionService) GetBookingRequest(ctx context.Context, userID, requestID string) (*domain.BookingRequest, []*domain.Bid, error) {
+76. 	req, err := s.auctionRepo.FindBookingRequestByID(ctx, requestID)
+77. 	if err != nil {
+78. 		return nil, nil, err
+79. 	}
+80. 	// 本人か管理者のみ全入札を閲覧可（サロンは自分の入札のみ）
+81. 	bids, err := s.auctionRepo.ListBidsByRequestID(ctx, requestID)
+82. 	if err != nil {
+83. 		return nil, nil, err
+84. 	}
+85. 	return req, bids, nil
+86. }
+87. 
+88. func (s *auctionService) CancelBookingRequest(ctx context.Context, userID, requestID string) error {
+89. 	req, err := s.auctionRepo.FindBookingRequestByID(ctx, requestID)
+90. 	if err != nil {
+91. 		return err
+92. 	}
+93. 	if req.UserID != userID {
+94. 		return domain.ErrForbidden
+95. 	}
+96. 	if req.Status != domain.BookingRequestOpen {
+97. 		return domain.ErrInvalidRequest
+98. 	}
+99. 	return s.auctionRepo.UpdateBookingRequestStatus(ctx, requestID, domain.BookingRequestCancelled)
+100. }
+101. 
+102. func (s *auctionService) ListMatchingRequests(ctx context.Context, salonID string, cursor string, limit int) ([]*domain.BookingRequest, string, error) {
+103. 	salon, err := s.salonRepo.FindByOwnerID(ctx, salonID)
+104. 	if err != nil {
+105. 		return nil, "", err
+106. 	}
+107. 	return s.auctionRepo.ListOpenRequestsForSalon(ctx, salon.Prefecture, cursor, limit)
+108. }
+109. 
+110. func (s *auctionService) PlaceBid(ctx context.Context, salonID, requestID string, req service.PlaceBidInput) (*domain.Bid, error) {
+111. 	bookingReq, err := s.auctionRepo.FindBookingRequestByID(ctx, requestID)
+112. 	if err != nil {
+113. 		return nil, err
+114. 	}
+115. 	if bookingReq.Status != domain.BookingRequestOpen {
+116. 		return nil, domain.ErrRequestExpired
+117. 	}
+118. 	if req.PriceYen > bookingReq.BudgetMaxYen {
+119. 		return nil, domain.ErrBudgetExceeded
+120. 	}
+121. 
+122. 	// 重複入札チェック
+123. 	if _, err := s.auctionRepo.FindBidBySalonAndRequest(ctx, salonID, requestID); err == nil {
+124. 		return nil, domain.ErrAlreadyBid
+125. 	}
+126. 
+127. 	slotAt, err := time.Parse(time.RFC3339, req.AvailableSlotAt)
+128. 	if err != nil {
+129. 		return nil, domain.ErrInvalidRequest
+130. 	}
+131. 
+132. 	bid := &domain.Bid{
+133. 		ID:                    uuid.NewString(),
+134. 		BookingRequestID:      requestID,
+135. 		SalonID:               salonID,
+136. 		PriceYen:              req.PriceYen,
+137. 		IncludesRemoval:       req.IncludesRemoval,
+138. 		RemovalFeeYen:         req.RemovalFeeYen,
+139. 		AvailableSlotAt:       slotAt,
+140. 		DynamicDiscountReason: req.DynamicDiscountReason,
+141. 		Message:               req.Message,
+142. 		Status:                domain.BidPending,
+143. 		ExpiresAt:             bookingReq.ExpiresAt,
+144. 		CreatedAt:             time.Now(),
+145. 		UpdatedAt:             time.Now(),
+146. 	}
+147. 	if err := s.auctionRepo.CreateBid(ctx, bid); err != nil {
+148. 		return nil, err
+149. 	}
+150. 	return bid, nil
+151. }
+152. 
+153. func (s *auctionService) UpdateBid(ctx context.Context, salonID, requestID, bidID string, newPriceYen int) (*domain.Bid, error) {
+154. 	bid, err := s.auctionRepo.FindBidByID(ctx, bidID)
+155. 	if err != nil {
+156. 		return nil, err
+157. 	}
+158. 	if bid.SalonID != salonID || bid.BookingRequestID != requestID {
+159. 		return nil, domain.ErrForbidden
+160. 	}
+161. 	if bid.RebidCount >= 1 {
+162. 		return nil, domain.ErrRebidLimitReached
+163. 	}
+164. 	if newPriceYen >= bid.PriceYen {
+165. 		return nil, domain.ErrInvalidRequest // 再入札は値下げのみ
+166. 	}
+167. 	bid.PriceYen = newPriceYen
+168. 	bid.UpdatedAt = time.Now()
+169. 	if err := s.auctionRepo.UpdateBid(ctx, bid); err != nil {
+170. 		return nil, err
+171. 	}
+172. 	return bid, nil
+173. }
+174. 
+175. func (s *auctionService) ListBids(ctx context.Context, userID, requestID, sort string) ([]*domain.Bid, error) {
+176. 	return s.auctionRepo.ListBidsByRequestID(ctx, requestID)
+177. }
+178.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\media.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\media.go
+
+<details>
+<summary>41 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"net/http"
+5. 
+6. 	"github.com/labstack/echo/v4"
+7. 	"github.com/nailx/backend/internal/middleware"
+8. 	"github.com/nailx/backend/internal/service"
+9. )
+10. 
+11. type MediaHandler struct {
+12. 	svc service.MediaService
+13. }
+14. 
+15. func NewMediaHandler(svc service.MediaService) *MediaHandler {
+16. 	return &MediaHandler{svc: svc}
+17. }
+18. 
+19. // POST /api/v1/media/presigned-url
+20. // purpose: "ar_snapshot" | "portfolio" | "review_photo" | "design_preview"
+21. func (h *MediaHandler) GeneratePresignedURL(c echo.Context) error {
+22. 	var req struct {
+23. 		FileType string `json:"file_type" validate:"required"`
+24. 		Purpose  string `json:"purpose" validate:"required,oneof=ar_snapshot portfolio review_photo design_preview"`
+25. 	}
+26. 	if err := c.Bind(&req); err != nil {
+27. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+28. 	}
+29. 	if err := c.Validate(&req); err != nil {
+30. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+31. 	}
+32. 	uploadURL, fileURL, err := h.svc.GeneratePresignedURL(c.Request().Context(), middleware.GetUserID(c), req.FileType, req.Purpose)
+33. 	if err != nil {
+34. 		return domainErrToHTTP(c, err)
+35. 	}
+36. 	return c.JSON(http.StatusOK, map[string]any{
+37. 		"upload_url": uploadURL,
+38. 		"file_url":   fileURL,
+39. 	})
+40. }
+41.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\booking.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\booking.go
+
+<details>
+<summary>81 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"net/http"
+5. 
+6. 	"github.com/labstack/echo/v4"
+7. 	"github.com/nailx/backend/internal/middleware"
+8. 	"github.com/nailx/backend/internal/service"
+9. )
+10. 
+11. type BookingHandler struct {
+12. 	svc service.BookingService
+13. }
+14. 
+15. func NewBookingHandler(svc service.BookingService) *BookingHandler {
+16. 	return &BookingHandler{svc: svc}
+17. }
+18. 
+19. // POST /api/v1/bookings
+20. func (h *BookingHandler) Confirm(c echo.Context) error {
+21. 	var req struct {
+22. 		BidID           string `json:"bid_id" validate:"required"`
+23. 		PaymentMethodID string `json:"payment_method_id" validate:"required"`
+24. 	}
+25. 	if err := c.Bind(&req); err != nil {
+26. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+27. 	}
+28. 	if err := c.Validate(&req); err != nil {
+29. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+30. 	}
+31. 	booking, payment, clientSecret, err := h.svc.ConfirmBooking(c.Request().Context(), middleware.GetUserID(c), req.BidID, req.PaymentMethodID)
+32. 	if err != nil {
+33. 		return domainErrToHTTP(c, err)
+34. 	}
+35. 	return c.JSON(http.StatusCreated, map[string]any{
+36. 		"booking":              booking,
+37. 		"payment":              payment,
+38. 		"stripe_client_secret": clientSecret,
+39. 	})
+40. }
+41. 
+42. // GET /api/v1/bookings
+43. func (h *BookingHandler) List(c echo.Context) error {
+44. 	bookings, err := h.svc.ListBookings(c.Request().Context(), middleware.GetUserID(c), c.QueryParam("status"))
+45. 	if err != nil {
+46. 		return domainErrToHTTP(c, err)
+47. 	}
+48. 	return c.JSON(http.StatusOK, map[string]any{"bookings": bookings})
+49. }
+50. 
+51. // GET /api/v1/bookings/:id
+52. func (h *BookingHandler) Get(c echo.Context) error {
+53. 	booking, err := h.svc.GetBooking(c.Request().Context(), middleware.GetUserID(c), c.Param("id"))
+54. 	if err != nil {
+55. 		return domainErrToHTTP(c, err)
+56. 	}
+57. 	return c.JSON(http.StatusOK, map[string]any{"booking": booking})
+58. }
+59. 
+60. // POST /api/v1/bookings/:id/complete [Salon]
+61. func (h *BookingHandler) Complete(c echo.Context) error {
+62. 	if err := h.svc.CompleteBooking(c.Request().Context(), middleware.GetUserID(c), c.Param("id")); err != nil {
+63. 		return domainErrToHTTP(c, err)
+64. 	}
+65. 	return c.JSON(http.StatusOK, map[string]any{"message": "booking completed"})
+66. }
+67. 
+68. // POST /api/v1/bookings/:id/cancel
+69. func (h *BookingHandler) Cancel(c echo.Context) error {
+70. 	var req struct {
+71. 		Reason string `json:"reason"`
+72. 	}
+73. 	if err := c.Bind(&req); err != nil {
+74. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+75. 	}
+76. 	if err := h.svc.CancelBooking(c.Request().Context(), middleware.GetUserID(c), c.Param("id"), req.Reason); err != nil {
+77. 		return domainErrToHTTP(c, err)
+78. 	}
+79. 	return c.JSON(http.StatusOK, map[string]any{"message": "booking cancelled"})
+80. }
+81.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\media_service.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\media_service.go
+
+<details>
+<summary>73 lines</summary>
+
+```
+1. package impl
+2. 
+3. import (
+4. 	"context"
+5. 	"fmt"
+6. 	"time"
+7. 
+8. 	"github.com/aws/aws-sdk-go-v2/aws"
+9. 	awsconfig "github.com/aws/aws-sdk-go-v2/config"
+10. 	"github.com/aws/aws-sdk-go-v2/service/s3"
+11. 	"github.com/google/uuid"
+12. 	"github.com/nailx/backend/internal/service"
+13. )
+14. 
+15. type mediaService struct {
+16. 	s3Client   *s3.Client
+17. 	bucketName string
+18. 	cdnBase    string
+19. }
+20. 
+21. func NewMediaService(bucketName, cdnBase string) (service.MediaService, error) {
+22. 	cfg, err := awsconfig.LoadDefaultConfig(context.Background())
+23. 	if err != nil {
+24. 		return nil, err
+25. 	}
+26. 	return &mediaService{
+27. 		s3Client:   s3.NewFromConfig(cfg),
+28. 		bucketName: bucketName,
+29. 		cdnBase:    cdnBase,
+30. 	}, nil
+31. }
+32. 
+33. var purposePrefix = map[string]string{
+34. 	"ar_snapshot":    "ar/",
+35. 	"portfolio":      "portfolio/",
+36. 	"review_photo":   "reviews/",
+37. 	"design_preview": "designs/",
+38. }
+39. 
+40. func (s *mediaService) GeneratePresignedURL(ctx context.Context, userID, fileType, purpose string) (uploadURL, fileURL string, err error) {
+41. 	prefix, ok := purposePrefix[purpose]
+42. 	if !ok {
+43. 		return "", "", fmt.Errorf("unknown purpose: %s", purpose)
+44. 	}
+45. 	key := prefix + userID + "/" + uuid.NewString() + "." + fileType
+46. 
+47. 	presignClient := s3.NewPresignClient(s.s3Client)
+48. 	presignReq, err := presignClient.PresignPutObject(ctx, &s3.PutObjectInput{
+49. 		Bucket:      aws.String(s.bucketName),
+50. 		Key:         aws.String(key),
+51. 		ContentType: aws.String(mimeType(fileType)),
+52. 	}, s3.WithPresignExpires(15*time.Minute))
+53. 	if err != nil {
+54. 		return "", "", err
+55. 	}
+56. 
+57. 	fileURL = s.cdnBase + "/" + key
+58. 	return presignReq.URL, fileURL, nil
+59. }
+60. 
+61. func mimeType(ext string) string {
+62. 	switch ext {
+63. 	case "jpg", "jpeg":
+64. 		return "image/jpeg"
+65. 	case "png":
+66. 		return "image/png"
+67. 	case "webp":
+68. 		return "image/webp"
+69. 	default:
+70. 		return "application/octet-stream"
+71. 	}
+72. }
+73.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\auth.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\auth.go
+
+<details>
+<summary>38 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"net/http"
+5. 
+6. 	"github.com/labstack/echo/v4"
+7. 	"github.com/nailx/backend/internal/service"
+8. )
+9. 
+10. type AuthHandler struct {
+11. 	svc service.AuthService
+12. }
+13. 
+14. func NewAuthHandler(svc service.AuthService) *AuthHandler {
+15. 	return &AuthHandler{svc: svc}
+16. }
+17. 
+18. // POST /api/v1/auth/register
+19. func (h *AuthHandler) Register(c echo.Context) error {
+20. 	var req struct {
+21. 		FirebaseToken string  `json:"firebase_token" validate:"required"`
+22. 		DisplayName   string  `json:"display_name" validate:"required,max=100"`
+23. 		Gender        *string `json:"gender"`
+24. 	}
+25. 	if err := c.Bind(&req); err != nil {
+26. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+27. 	}
+28. 	if err := c.Validate(&req); err != nil {
+29. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+30. 	}
+31. 
+32. 	user, err := h.svc.Register(c.Request().Context(), req.FirebaseToken, req.DisplayName, req.Gender)
+33. 	if err != nil {
+34. 		return domainErrToHTTP(c, err)
+35. 	}
+36. 	return c.JSON(http.StatusCreated, map[string]any{"user": user})
+37. }
+38.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\domain\auction.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\auction.go
+
+<details>
+<summary>97 lines</summary>
+
+```
+1. package domain
+2. 
+3. import (
+4. 	"encoding/json"
+5. 	"time"
+6. )
+7. 
+8. type BookingRequestStatus string
+9. 
+10. const (
+11. 	BookingRequestOpen      BookingRequestStatus = "open"
+12. 	BookingRequestBidding   BookingRequestStatus = "bidding"
+13. 	BookingRequestConfirmed BookingRequestStatus = "confirmed"
+14. 	BookingRequestCancelled BookingRequestStatus = "cancelled"
+15. 	BookingRequestExpired   BookingRequestStatus = "expired"
+16. )
+17. 
+18. type BidStatus string
+19. 
+20. const (
+21. 	BidPending           BidStatus = "pending"
+22. 	BidAccepted          BidStatus = "accepted"
+23. 	BidRejected          BidStatus = "rejected"
+24. 	BidCancelledBySalon  BidStatus = "cancelled_by_salon"
+25. 	BidExpired           BidStatus = "expired"
+26. )
+27. 
+28. type BookingStatus string
+29. 
+30. const (
+31. 	BookingConfirmed         BookingStatus = "confirmed"
+32. 	BookingCompleted         BookingStatus = "completed"
+33. 	BookingCancelledByUser   BookingStatus = "cancelled_by_user"
+34. 	BookingCancelledBySalon  BookingStatus = "cancelled_by_salon"
+35. 	BookingNoShow            BookingStatus = "no_show"
+36. )
+37. 
+38. type NailDataSnapshot struct {
+39. 	LengthMM              *float64 `json:"length_mm,omitempty"`
+40. 	HasExistingGel        *bool    `json:"has_existing_gel,omitempty"`
+41. 	Shape                 *string  `json:"shape,omitempty"`
+42. 	EstimatedTreatmentMin *int     `json:"estimated_treatment_min,omitempty"`
+43. 	EstimatedGelAmountML  *float64 `json:"estimated_gel_amount_ml,omitempty"`
+44. }
+45. 
+46. type BookingRequest struct {
+47. 	ID               string               `json:"id"`
+48. 	UserID           string               `json:"user_id"`
+49. 	DesignIPID       string               `json:"design_ip_id"`
+50. 	ARSessionID      *string              `json:"ar_session_id,omitempty"`
+51. 	NailDataSnapshot json.RawMessage      `json:"nail_data_snapshot"`
+52. 	BudgetMaxYen     int                  `json:"budget_max_yen"`
+53. 	DesiredDateFrom  time.Time            `json:"desired_date_from"`
+54. 	DesiredDateTo    time.Time            `json:"desired_date_to"`
+55. 	AreaPrefecture   string               `json:"area_prefecture"`
+56. 	AreaCity         *string              `json:"area_city,omitempty"`
+57. 	Status           BookingRequestStatus `json:"status"`
+58. 	ExpiresAt        time.Time            `json:"expires_at"`
+59. 	CreatedAt        time.Time            `json:"created_at"`
+60. }
+61. 
+62. type Bid struct {
+63. 	ID                   string    `json:"id"`
+64. 	BookingRequestID     string    `json:"booking_request_id"`
+65. 	SalonID              string    `json:"salon_id"`
+66. 	PriceYen             int       `json:"price_yen"`
+67. 	IncludesRemoval      bool      `json:"includes_removal"`
+68. 	RemovalFeeYen        int       `json:"removal_fee_yen"`
+69. 	AvailableSlotAt      time.Time `json:"available_slot_at"`
+70. 	DynamicDiscountReason *string  `json:"dynamic_discount_reason,omitempty"`
+71. 	Message              *string   `json:"message,omitempty"`
+72. 	RebidCount           int       `json:"rebid_count"`
+73. 	Status               BidStatus `json:"status"`
+74. 	ExpiresAt            time.Time `json:"expires_at"`
+75. 	CreatedAt            time.Time `json:"created_at"`
+76. 	UpdatedAt            time.Time `json:"updated_at"`
+77. }
+78. 
+79. type Booking struct {
+80. 	ID               string        `json:"id"`
+81. 	BookingRequestID string        `json:"booking_request_id"`
+82. 	BidID            string        `json:"bid_id"`
+83. 	UserID           string        `json:"user_id"`
+84. 	SalonID          string        `json:"salon_id"`
+85. 	ScheduledAt      time.Time     `json:"scheduled_at"`
+86. 	Status           BookingStatus `json:"status"`
+87. 	ConfirmedAt      time.Time     `json:"confirmed_at"`
+88. 	CompletedAt      *time.Time    `json:"completed_at,omitempty"`
+89. 	CancellationReason *string     `json:"cancellation_reason,omitempty"`
+90. }
+91. 
+92. // SSE イベント型
+93. type BidEvent struct {
+94. 	Type string `json:"type"` // "new_bid"
+95. 	Bid  *Bid   `json:"bid"`
+96. }
+97.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\domain\errors.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\errors.go
+
+<details>
+<summary>17 lines</summary>
+
+```
+1. package domain
+2. 
+3. import "errors"
+4. 
+5. var (
+6. 	ErrNotFound         = errors.New("not_found")
+7. 	ErrUnauthorized     = errors.New("unauthorized")
+8. 	ErrForbidden        = errors.New("forbidden")
+9. 	ErrAlreadyExists    = errors.New("already_exists")
+10. 	ErrAlreadyBid       = errors.New("already_bid")
+11. 	ErrIPRejected       = errors.New("ip_rejected")
+12. 	ErrRequestExpired   = errors.New("request_expired")
+13. 	ErrBudgetExceeded   = errors.New("budget_exceeded")
+14. 	ErrRebidLimitReached = errors.New("rebid_limit_reached")
+15. 	ErrInvalidRequest   = errors.New("invalid_request")
+16. )
+17.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\response.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\response.go
+
+<details>
+<summary>50 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"net/http"
+5. 
+6. 	"github.com/labstack/echo/v4"
+7. 	"github.com/nailx/backend/internal/domain"
+8. )
+9. 
+10. // errResp は api_spec.md の共通エラー形式でレスポンスを返す
+11. func errResp(c echo.Context, status int, code, message string) error {
+12. 	return c.JSON(status, map[string]any{
+13. 		"error": map[string]string{
+14. 			"code":    code,
+15. 			"message": message,
+16. 		},
+17. 	})
+18. }
+19. 
+20. // domainErrToHTTP はドメインエラーを HTTP ステータスに変換する
+21. func domainErrToHTTP(c echo.Context, err error) error {
+22. 	switch err {
+23. 	case domain.ErrNotFound:
+24. 		return errResp(c, http.StatusNotFound, "NOT_FOUND", "resource not found")
+25. 	case domain.ErrUnauthorized:
+26. 		return errResp(c, http.StatusUnauthorized, "UNAUTHORIZED", "unauthorized")
+27. 	case domain.ErrForbidden:
+28. 		return errResp(c, http.StatusForbidden, "FORBIDDEN", "forbidden")
+29. 	case domain.ErrAlreadyBid:
+30. 		return errResp(c, http.StatusConflict, "ALREADY_BID", "already bid on this request")
+31. 	case domain.ErrIPRejected:
+32. 		return errResp(c, http.StatusConflict, "IP_REJECTED", "design rejected as plagiarism")
+33. 	case domain.ErrRequestExpired:
+34. 		return errResp(c, http.StatusConflict, "REQUEST_EXPIRED", "booking request has expired")
+35. 	case domain.ErrBudgetExceeded:
+36. 		return errResp(c, http.StatusUnprocessableEntity, "BUDGET_EXCEEDED", "bid price exceeds budget")
+37. 	case domain.ErrRebidLimitReached:
+38. 		return errResp(c, http.StatusConflict, "REBID_LIMIT_REACHED", "rebid limit of 1 reached")
+39. 	case domain.ErrInvalidRequest:
+40. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", "invalid request parameters")
+41. 	default:
+42. 		return errResp(c, http.StatusInternalServerError, "INTERNAL_ERROR", "internal server error")
+43. 	}
+44. }
+45. 
+46. // cursor はカーソルベースページネーションの next_cursor を返す（レコードなしなら空文字）
+47. func nextCursor(items any, cursor string) string {
+48. 	return cursor
+49. }
+50.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\design_service.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\design_service.go
+
+<details>
+<summary>143 lines</summary>
+
+```
+1. package impl
+2. 
+3. import (
+4. 	"context"
+5. 	"encoding/json"
+6. 	"time"
+7. 
+8. 	"github.com/aws/aws-sdk-go-v2/aws"
+9. 	"github.com/aws/aws-sdk-go-v2/service/sqs"
+10. 	"github.com/google/uuid"
+11. 	"github.com/nailx/backend/internal/domain"
+12. 	"github.com/nailx/backend/internal/repository"
+13. 	"github.com/nailx/backend/internal/service"
+14. 	workerPkg "github.com/nailx/backend/internal/worker"
+15. )
+16. 
+17. type designService struct {
+18. 	designRepo repository.DesignRepository
+19. 	sqsClient  *sqs.Client
+20. 	sqsQueue   string
+21. }
+22. 
+23. func NewDesignService(designRepo repository.DesignRepository, sqsClient *sqs.Client, sqsQueue string) service.DesignService {
+24. 	return &designService{designRepo: designRepo, sqsClient: sqsClient, sqsQueue: sqsQueue}
+25. }
+26. 
+27. func (s *designService) RegisterDesign(ctx context.Context, userID string, req service.RegisterDesignRequest) (string, string, error) {
+28. 	forkDepth := 0
+29. 	if req.ParentIPID != nil {
+30. 		parent, err := s.designRepo.FindByID(ctx, *req.ParentIPID)
+31. 		if err != nil {
+32. 			return "", "", err
+33. 		}
+34. 		if parent.Status != domain.DesignStatusActive {
+35. 			return "", "", domain.ErrInvalidRequest
+36. 		}
+37. 		forkDepth = parent.ForkDepth + 1
+38. 		if forkDepth > 3 {
+39. 			return "", "", domain.ErrInvalidRequest // フォーク深さ上限
+40. 		}
+41. 	}
+42. 
+43. 	designID := uuid.NewString()
+44. 	design := &domain.DesignIP{
+45. 		ID:              designID,
+46. 		CreatorID:       userID,
+47. 		ParentIPID:      req.ParentIPID,
+48. 		Title:           req.Title,
+49. 		Description:     req.Description,
+50. 		PreviewImageURL: req.PreviewImageURL,
+51. 		DesignData:      req.DesignData,
+52. 		ForkDepth:       forkDepth,
+53. 		Status:          domain.DesignStatusPending,
+54. 		IsPublic:        req.IsPublic,
+55. 		GenderTag:       req.GenderTag,
+56. 		StyleTags:       req.StyleTags,
+57. 		CreatedAt:       time.Now(),
+58. 		UpdatedAt:       time.Now(),
+59. 	}
+60. 	if err := s.designRepo.Create(ctx, design); err != nil {
+61. 		return "", "", err
+62. 	}
+63. 
+64. 	// SQS に類似度チェックジョブを投入
+65. 	// ベクトルは SageMaker embedding 結果を想定（現フェーズはゼロベクトルで登録し後でワーカーが更新）
+66. 	jobID := uuid.NewString()
+67. 	msg, _ := json.Marshal(workerPkg.SimilarityCheckMessage{
+68. 		DesignIPID: designID,
+69. 		Vector:     []float32{},
+70. 	})
+71. 	if _, err := s.sqsClient.SendMessage(ctx, &sqs.SendMessageInput{
+72. 		QueueUrl:    aws.String(s.sqsQueue),
+73. 		MessageBody: aws.String(string(msg)),
+74. 		MessageGroupId: aws.String(designID), // FIFO キューの場合
+75. 	}); err != nil {
+76. 		// SQS 投入失敗は致命的ではない（ワーカーは別途リトライ）
+77. 		_ = err
+78. 	}
+79. 
+80. 	return designID, jobID, nil
+81. }
+82. 
+83. func (s *designService) GetSimilarityCheckStatus(ctx context.Context, jobID string) (*service.SimilarityCheckResult, error) {
+84. 	// TODO: SQS/DynamoDB でジョブステータスを管理（Phase 2）
+85. 	return &service.SimilarityCheckResult{Status: "pending"}, nil
+86. }
+87. 
+88. func (s *designService) ListFeed(ctx context.Context, filter service.DesignFeedFilter) ([]*domain.DesignIP, string, error) {
+89. 	return s.designRepo.ListFeed(ctx, repository.DesignFeedFilter{
+90. 		GenderTag: filter.GenderTag,
+91. 		StyleTags: filter.StyleTags,
+92. 		Status:    filter.Status,
+93. 		Sort:      filter.Sort,
+94. 		Cursor:    filter.Cursor,
+95. 		Limit:     filter.Limit,
+96. 	})
+97. }
+98. 
+99. func (s *designService) GetDesign(ctx context.Context, id string) (*domain.DesignIP, []*domain.DesignRoyaltyNode, error) {
+100. 	design, err := s.designRepo.FindByID(ctx, id)
+101. 	if err != nil {
+102. 		return nil, nil, err
+103. 	}
+104. 	nodes, err := s.designRepo.ListRoyaltyNodes(ctx, id)
+105. 	if err != nil {
+106. 		return nil, nil, err
+107. 	}
+108. 	return design, nodes, nil
+109. }
+110. 
+111. func (s *designService) ListByCreator(ctx context.Context, creatorID string, cursor string, limit int) ([]*domain.DesignIP, string, error) {
+112. 	return s.designRepo.ListByCreator(ctx, creatorID, cursor, limit)
+113. }
+114. 
+115. func (s *designService) UpdateDesign(ctx context.Context, userID, designID string, req service.UpdateDesignRequest) (*domain.DesignIP, error) {
+116. 	design, err := s.designRepo.FindByID(ctx, designID)
+117. 	if err != nil {
+118. 		return nil, err
+119. 	}
+120. 	if design.CreatorID != userID && userID != "admin" {
+121. 		return nil, domain.ErrForbidden
+122. 	}
+123. 	if req.Title != nil {
+124. 		design.Title = *req.Title
+125. 	}
+126. 	if req.Description != nil {
+127. 		design.Description = req.Description
+128. 	}
+129. 	if req.IsPublic != nil {
+130. 		design.IsPublic = *req.IsPublic
+131. 		if *req.IsPublic {
+132. 			design.Status = domain.DesignStatusActive
+133. 		} else {
+134. 			design.Status = domain.DesignStatusArchived
+135. 		}
+136. 	}
+137. 	design.UpdatedAt = time.Now()
+138. 	if err := s.designRepo.Update(ctx, design); err != nil {
+139. 		return nil, err
+140. 	}
+141. 	return design, nil
+142. }
+143.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\worker\royalty_worker.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\worker\royalty_worker.go
+
+<details>
+<summary>124 lines</summary>
+
+```
+1. package worker
+2. 
+3. import (
+4. 	"context"
+5. 	"encoding/json"
+6. 	"log/slog"
+7. 
+8. 	"github.com/aws/aws-sdk-go-v2/service/sqs"
+9. 	"github.com/aws/aws-sdk-go-v2/service/sqs/types"
+10. 	"github.com/nailx/backend/internal/domain"
+11. 	"github.com/nailx/backend/internal/repository"
+12. )
+13. 
+14. // RoyaltyDistributionMessage は SQS メッセージのペイロード
+15. type RoyaltyDistributionMessage struct {
+16. 	PaymentID    string `json:"payment_id"`
+17. 	BookingID    string `json:"booking_id"`
+18. 	DesignIPID   string `json:"design_ip_id"`
+19. 	TotalRoyalty int    `json:"total_royalty_yen"`
+20. }
+21. 
+22. // RoyaltyWorker は SQS キューからロイヤリティ分配ジョブを処理する
+23. type RoyaltyWorker struct {
+24. 	sqsClient   *sqs.Client
+25. 	queueURL    string
+26. 	paymentRepo repository.PaymentRepository
+27. 	designRepo  repository.DesignRepository
+28. 	logger      *slog.Logger
+29. }
+30. 
+31. func NewRoyaltyWorker(
+32. 	sqsClient *sqs.Client,
+33. 	queueURL string,
+34. 	paymentRepo repository.PaymentRepository,
+35. 	designRepo repository.DesignRepository,
+36. 	logger *slog.Logger,
+37. ) *RoyaltyWorker {
+38. 	return &RoyaltyWorker{
+39. 		sqsClient:   sqsClient,
+40. 		queueURL:    queueURL,
+41. 		paymentRepo: paymentRepo,
+42. 		designRepo:  designRepo,
+43. 		logger:      logger,
+44. 	}
+45. }
+46. 
+47. func (w *RoyaltyWorker) Run(ctx context.Context) {
+48. 	w.logger.Info("royalty worker started")
+49. 	for {
+50. 		select {
+51. 		case <-ctx.Done():
+52. 			w.logger.Info("royalty worker stopped")
+53. 			return
+54. 		default:
+55. 			w.pollOnce(ctx)
+56. 		}
+57. 	}
+58. }
+59. 
+60. func (w *RoyaltyWorker) pollOnce(ctx context.Context) {
+61. 	out, err := w.sqsClient.ReceiveMessage(ctx, &sqs.ReceiveMessageInput{
+62. 		QueueUrl:            &w.queueURL,
+63. 		MaxNumberOfMessages: 10,
+64. 		WaitTimeSeconds:     20,
+65. 	})
+66. 	if err != nil {
+67. 		if ctx.Err() != nil {
+68. 			return
+69. 		}
+70. 		w.logger.Error("sqs receive error", slog.String("err", err.Error()))
+71. 		return
+72. 	}
+73. 
+74. 	for _, msg := range out.Messages {
+75. 		w.handle(ctx, msg)
+76. 	}
+77. }
+78. 
+79. func (w *RoyaltyWorker) handle(ctx context.Context, msg types.Message) {
+80. 	var payload RoyaltyDistributionMessage
+81. 	if err := json.Unmarshal([]byte(*msg.Body), &payload); err != nil {
+82. 		w.logger.Error("failed to unmarshal royalty message", slog.String("err", err.Error()))
+83. 		w.deleteMessage(ctx, msg)
+84. 		return
+85. 	}
+86. 
+87. 	// フォーク系譜を取得してロイヤリティ分配を計算
+88. 	chain, err := w.designRepo.GetRoyaltyChain(ctx, payload.DesignIPID)
+89. 	if err != nil {
+90. 		w.logger.Error("failed to get royalty chain",
+91. 			slog.String("design_id", payload.DesignIPID),
+92. 			slog.String("err", err.Error()),
+93. 		)
+94. 		return
+95. 	}
+96. 
+97. 	distributions := domain.CalculateRoyalty(payload.TotalRoyalty, chain)
+98. 
+99. 	if err := w.paymentRepo.CreateRoyaltyDistributions(ctx, payload.PaymentID, distributions); err != nil {
+100. 		w.logger.Error("failed to create royalty distributions",
+101. 			slog.String("payment_id", payload.PaymentID),
+102. 			slog.String("err", err.Error()),
+103. 		)
+104. 		return
+105. 	}
+106. 
+107. 	w.logger.Info("royalty distribution completed",
+108. 		slog.String("payment_id", payload.PaymentID),
+109. 		slog.String("design_id", payload.DesignIPID),
+110. 		slog.Int("distributions", len(distributions)),
+111. 	)
+112. 
+113. 	w.deleteMessage(ctx, msg)
+114. }
+115. 
+116. func (w *RoyaltyWorker) deleteMessage(ctx context.Context, msg types.Message) {
+117. 	if _, err := w.sqsClient.DeleteMessage(ctx, &sqs.DeleteMessageInput{
+118. 		QueueUrl:      &w.queueURL,
+119. 		ReceiptHandle: msg.ReceiptHandle,
+120. 	}); err != nil {
+121. 		w.logger.Error("failed to delete sqs message", slog.String("err", err.Error()))
+122. 	}
+123. }
+124.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\migrations\000001_init.up.sql.**
+
+D:\PROJECT2026\nailX\nailX\backend\migrations\000001_init.up.sql
+
+<details>
+<summary>341 lines</summary>
+
+```
+1. -- nailX 初期スキーマ
+2. -- ================================================================
+3. 
+4. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+5. CREATE EXTENSION IF NOT EXISTS vector; -- pgvector (512次元ベクトル)
+6. 
+7. -- ----------------------------------------------------------------
+8. -- updated_at 自動更新トリガー関数
+9. -- ----------------------------------------------------------------
+10. CREATE OR REPLACE FUNCTION update_updated_at()
+11. RETURNS TRIGGER AS $$
+12. BEGIN
+13.     NEW.updated_at = NOW();
+14.     RETURN NEW;
+15. END;
+16. $$ LANGUAGE plpgsql;
+17. 
+18. -- ----------------------------------------------------------------
+19. -- users
+20. -- ----------------------------------------------------------------
+21. CREATE TABLE users (
+22.     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+23.     firebase_uid    VARCHAR(128) UNIQUE NOT NULL,
+24.     email           VARCHAR(255) UNIQUE NOT NULL,
+25.     display_name    VARCHAR(100) NOT NULL,
+26.     gender          VARCHAR(30),
+27.     role            VARCHAR(20) NOT NULL DEFAULT 'consumer',
+28.     avatar_url      TEXT,
+29.     bio             TEXT,
+30.     lifestyle_tags  TEXT[] DEFAULT '{}',
+31.     point_balance   INTEGER NOT NULL DEFAULT 0,
+32.     is_active       BOOLEAN NOT NULL DEFAULT true,
+33.     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+34.     updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+35. );
+36. 
+37. CREATE INDEX idx_users_firebase_uid ON users(firebase_uid);
+38. CREATE INDEX idx_users_role ON users(role);
+39. 
+40. CREATE TRIGGER trg_users_updated_at
+41.     BEFORE UPDATE ON users
+42.     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+43. 
+44. -- ----------------------------------------------------------------
+45. -- nail_profiles
+46. -- ----------------------------------------------------------------
+47. CREATE TABLE nail_profiles (
+48.     id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+49.     user_id             UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+50.     avg_nail_length_mm  NUMERIC(4,1),
+51.     nail_shape          VARCHAR(30),
+52.     gel_lift_tendency   VARCHAR(20),
+53.     allergy_notes       TEXT,
+54.     updated_at          TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+55.     UNIQUE(user_id)
+56. );
+57. 
+58. CREATE TRIGGER trg_nail_profiles_updated_at
+59.     BEFORE UPDATE ON nail_profiles
+60.     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+61. 
+62. -- ----------------------------------------------------------------
+63. -- ar_sessions
+64. -- ----------------------------------------------------------------
+65. CREATE TABLE ar_sessions (
+66.     id                          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+67.     user_id                     UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+68.     design_ip_id                UUID,
+69.     detected_nail_length_mm     NUMERIC(4,1),
+70.     has_existing_gel            BOOLEAN,
+71.     detected_nail_shape         VARCHAR(30),
+72.     estimated_treatment_min     INTEGER,
+73.     estimated_gel_amount_ml     NUMERIC(5,3),
+74.     hand_snapshot_url           TEXT,
+75.     created_at                  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+76. );
+77. 
+78. CREATE INDEX idx_ar_sessions_user_id ON ar_sessions(user_id);
+79. CREATE INDEX idx_ar_sessions_created_at ON ar_sessions(created_at DESC);
+80. 
+81. -- ----------------------------------------------------------------
+82. -- materials
+83. -- ----------------------------------------------------------------
+84. CREATE TABLE materials (
+85.     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+86.     name            VARCHAR(100) NOT NULL,
+87.     category        VARCHAR(50) NOT NULL,
+88.     texture_type    VARCHAR(50),
+89.     thumbnail_url   TEXT NOT NULL,
+90.     model_3d_url    TEXT,
+91.     texture_params  JSONB NOT NULL DEFAULT '{}',
+92.     is_active       BOOLEAN NOT NULL DEFAULT true,
+93.     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+94. );
+95. 
+96. CREATE INDEX idx_materials_category ON materials(category);
+97. CREATE INDEX idx_materials_is_active ON materials(is_active);
+98. 
+99. -- ----------------------------------------------------------------
+100. -- design_ips
+101. -- ----------------------------------------------------------------
+102. CREATE TABLE design_ips (
+103.     id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+104.     creator_id          UUID NOT NULL REFERENCES users(id),
+105.     parent_ip_id        UUID REFERENCES design_ips(id) ON DELETE SET NULL,
+106.     title               VARCHAR(200) NOT NULL,
+107.     description         TEXT,
+108.     preview_image_url   TEXT NOT NULL,
+109.     design_data         JSONB NOT NULL,
+110.     similarity_vector   vector(512),
+111.     similarity_hash     VARCHAR(64),
+112.     fork_depth          INTEGER NOT NULL DEFAULT 0,
+113.     status              VARCHAR(20) NOT NULL DEFAULT 'pending',
+114.     is_public           BOOLEAN NOT NULL DEFAULT true,
+115.     gender_tag          VARCHAR(20) NOT NULL DEFAULT 'neutral',
+116.     style_tags          TEXT[] DEFAULT '{}',
+117.     usage_count         INTEGER NOT NULL DEFAULT 0,
+118.     total_royalty_yen   INTEGER NOT NULL DEFAULT 0,
+119.     created_at          TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+120.     updated_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
+121. );
+122. 
+123. CREATE INDEX idx_design_ips_similarity_vector ON design_ips USING hnsw (similarity_vector vector_cosine_ops);
+124. CREATE INDEX idx_design_ips_creator_id ON design_ips(creator_id);
+125. CREATE INDEX idx_design_ips_status ON design_ips(status);
+126. CREATE INDEX idx_design_ips_gender_tag ON design_ips(gender_tag);
+127. CREATE INDEX idx_design_ips_parent_ip_id ON design_ips(parent_ip_id);
+128. CREATE INDEX idx_design_ips_usage_count ON design_ips(usage_count DESC);
+129. 
+130. CREATE TRIGGER trg_design_ips_updated_at
+131.     BEFORE UPDATE ON design_ips
+132.     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+133. 
+134. -- ----------------------------------------------------------------
+135. -- design_royalty_nodes
+136. -- ----------------------------------------------------------------
+137. CREATE TABLE design_royalty_nodes (
+138.     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+139.     design_ip_id    UUID NOT NULL REFERENCES design_ips(id),
+140.     user_id         UUID NOT NULL REFERENCES users(id),
+141.     share_percent   NUMERIC(5,2) NOT NULL,
+142.     depth_level     INTEGER NOT NULL,
+143.     UNIQUE(design_ip_id, user_id)
+144. );
+145. 
+146. CREATE INDEX idx_royalty_nodes_design_ip_id ON design_royalty_nodes(design_ip_id);
+147. 
+148. -- ----------------------------------------------------------------
+149. -- salons
+150. -- ----------------------------------------------------------------
+151. CREATE TABLE salons (
+152.     id                      UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+153.     owner_id                UUID NOT NULL REFERENCES users(id),
+154.     name                    VARCHAR(200) NOT NULL,
+155.     description             TEXT,
+156.     address                 TEXT NOT NULL,
+157.     prefecture              VARCHAR(20) NOT NULL,
+158.     city                    VARCHAR(50),
+159.     lat                     NUMERIC(10,7),
+160.     lng                     NUMERIC(10,7),
+161.     phone                   VARCHAR(20),
+162.     business_hours          JSONB,
+163.     avg_reproduction_score  NUMERIC(3,2) NOT NULL DEFAULT 0.00,
+164.     skill_badge_tags        TEXT[] DEFAULT '{}',
+165.     portfolio_image_urls    TEXT[] DEFAULT '{}',
+166.     verification_status     VARCHAR(20) NOT NULL DEFAULT 'pending',
+167.     is_active               BOOLEAN NOT NULL DEFAULT false,
+168.     created_at              TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+169.     updated_at              TIMESTAMPTZ NOT NULL DEFAULT NOW()
+170. );
+171. 
+172. CREATE INDEX idx_salons_prefecture ON salons(prefecture);
+173. CREATE INDEX idx_salons_verification_status ON salons(verification_status);
+174. CREATE INDEX idx_salons_avg_reproduction_score ON salons(avg_reproduction_score DESC);
+175. CREATE INDEX idx_salons_lat_lng ON salons(lat, lng);
+176. 
+177. CREATE TRIGGER trg_salons_updated_at
+178.     BEFORE UPDATE ON salons
+179.     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+180. 
+181. -- ----------------------------------------------------------------
+182. -- booking_requests
+183. -- ----------------------------------------------------------------
+184. CREATE TABLE booking_requests (
+185.     id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+186.     user_id             UUID NOT NULL REFERENCES users(id),
+187.     design_ip_id        UUID NOT NULL REFERENCES design_ips(id),
+188.     ar_session_id       UUID REFERENCES ar_sessions(id),
+189.     nail_data_snapshot  JSONB NOT NULL,
+190.     budget_max_yen      INTEGER NOT NULL,
+191.     desired_date_from   TIMESTAMPTZ NOT NULL,
+192.     desired_date_to     TIMESTAMPTZ NOT NULL,
+193.     area_prefecture     VARCHAR(20) NOT NULL,
+194.     area_city           VARCHAR(50),
+195.     status              VARCHAR(20) NOT NULL DEFAULT 'open',
+196.     expires_at          TIMESTAMPTZ NOT NULL,
+197.     created_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
+198. );
+199. 
+200. CREATE INDEX idx_booking_requests_user_id ON booking_requests(user_id);
+201. CREATE INDEX idx_booking_requests_status ON booking_requests(status);
+202. CREATE INDEX idx_booking_requests_area_prefecture ON booking_requests(area_prefecture);
+203. CREATE INDEX idx_booking_requests_expires_at ON booking_requests(expires_at);
+204. 
+205. -- ----------------------------------------------------------------
+206. -- bids
+207. -- ----------------------------------------------------------------
+208. CREATE TABLE bids (
+209.     id                      UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+210.     booking_request_id      UUID NOT NULL REFERENCES booking_requests(id),
+211.     salon_id                UUID NOT NULL REFERENCES salons(id),
+212.     price_yen               INTEGER NOT NULL,
+213.     includes_removal        BOOLEAN NOT NULL DEFAULT false,
+214.     removal_fee_yen         INTEGER NOT NULL DEFAULT 0,
+215.     available_slot_at       TIMESTAMPTZ NOT NULL,
+216.     dynamic_discount_reason VARCHAR(100),
+217.     message                 TEXT,
+218.     rebid_count             INTEGER NOT NULL DEFAULT 0,
+219.     status                  VARCHAR(20) NOT NULL DEFAULT 'pending',
+220.     expires_at              TIMESTAMPTZ NOT NULL,
+221.     created_at              TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+222.     updated_at              TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+223.     UNIQUE(booking_request_id, salon_id),
+224.     CHECK (rebid_count <= 1)
+225. );
+226. 
+227. CREATE INDEX idx_bids_booking_request_id ON bids(booking_request_id);
+228. CREATE INDEX idx_bids_salon_id ON bids(salon_id);
+229. CREATE INDEX idx_bids_status ON bids(status);
+230. 
+231. CREATE TRIGGER trg_bids_updated_at
+232.     BEFORE UPDATE ON bids
+233.     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+234. 
+235. -- ----------------------------------------------------------------
+236. -- bookings
+237. -- ----------------------------------------------------------------
+238. CREATE TABLE bookings (
+239.     id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+240.     booking_request_id  UUID NOT NULL UNIQUE REFERENCES booking_requests(id),
+241.     bid_id              UUID NOT NULL UNIQUE REFERENCES bids(id),
+242.     user_id             UUID NOT NULL REFERENCES users(id),
+243.     salon_id            UUID NOT NULL REFERENCES salons(id),
+244.     scheduled_at        TIMESTAMPTZ NOT NULL,
+245.     status              VARCHAR(20) NOT NULL DEFAULT 'confirmed',
+246.     confirmed_at        TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+247.     completed_at        TIMESTAMPTZ,
+248.     cancellation_reason TEXT
+249. );
+250. 
+251. CREATE INDEX idx_bookings_user_id ON bookings(user_id);
+252. CREATE INDEX idx_bookings_salon_id ON bookings(salon_id);
+253. CREATE INDEX idx_bookings_status ON bookings(status);
+254. CREATE INDEX idx_bookings_scheduled_at ON bookings(scheduled_at);
+255. 
+256. -- ----------------------------------------------------------------
+257. -- payments
+258. -- ----------------------------------------------------------------
+259. CREATE TABLE payments (
+260.     id                          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+261.     booking_id                  UUID NOT NULL UNIQUE REFERENCES bookings(id),
+262.     total_amount_yen            INTEGER NOT NULL,
+263.     platform_fee_yen            INTEGER NOT NULL,
+264.     salon_payout_yen            INTEGER NOT NULL,
+265.     design_royalty_total_yen    INTEGER NOT NULL,
+266.     stripe_payment_intent_id    VARCHAR(255) UNIQUE,
+267.     stripe_charge_id            VARCHAR(255),
+268.     payment_method              VARCHAR(50),
+269.     status                      VARCHAR(20) NOT NULL DEFAULT 'authorized',
+270.     authorized_at               TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+271.     captured_at                 TIMESTAMPTZ,
+272.     created_at                  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+273.     CONSTRAINT chk_payments_amount_sum
+274.         CHECK (total_amount_yen = salon_payout_yen + platform_fee_yen + design_royalty_total_yen)
+275. );
+276. 
+277. CREATE INDEX idx_payments_booking_id ON payments(booking_id);
+278. CREATE INDEX idx_payments_status ON payments(status);
+279. 
+280. -- ----------------------------------------------------------------
+281. -- royalty_distributions
+282. -- ----------------------------------------------------------------
+283. CREATE TABLE royalty_distributions (
+284.     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+285.     payment_id      UUID NOT NULL REFERENCES payments(id),
+286.     design_ip_id    UUID NOT NULL REFERENCES design_ips(id),
+287.     user_id         UUID NOT NULL REFERENCES users(id),
+288.     amount_yen      INTEGER NOT NULL,
+289.     share_percent   NUMERIC(5,2) NOT NULL,
+290.     depth_level     INTEGER NOT NULL,
+291.     status          VARCHAR(20) NOT NULL DEFAULT 'pending',
+292.     credited_at     TIMESTAMPTZ,
+293.     paid_at         TIMESTAMPTZ,
+294.     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+295. );
+296. 
+297. CREATE INDEX idx_royalty_distributions_payment_id ON royalty_distributions(payment_id);
+298. CREATE INDEX idx_royalty_distributions_user_id ON royalty_distributions(user_id);
+299. CREATE INDEX idx_royalty_distributions_status ON royalty_distributions(status);
+300. 
+301. -- ----------------------------------------------------------------
+302. -- reviews
+303. -- ----------------------------------------------------------------
+304. CREATE TABLE reviews (
+305.     id                      UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+306.     booking_id              UUID NOT NULL UNIQUE REFERENCES bookings(id),
+307.     user_id                 UUID NOT NULL REFERENCES users(id),
+308.     salon_id                UUID NOT NULL REFERENCES salons(id),
+309.     design_ip_id            UUID NOT NULL REFERENCES design_ips(id),
+310.     reproduction_score      INTEGER NOT NULL CHECK (reproduction_score BETWEEN 1 AND 5),
+311.     overall_score           INTEGER NOT NULL CHECK (overall_score BETWEEN 1 AND 5),
+312.     comment                 TEXT,
+313.     before_photo_url        TEXT,
+314.     after_photo_url         TEXT,
+315.     ai_reproduction_score   NUMERIC(3,2),
+316.     ai_analysis_status      VARCHAR(20) DEFAULT 'pending',
+317.     created_at              TIMESTAMPTZ NOT NULL DEFAULT NOW()
+318. );
+319. 
+320. CREATE INDEX idx_reviews_salon_id ON reviews(salon_id);
+321. CREATE INDEX idx_reviews_design_ip_id ON reviews(design_ip_id);
+322. CREATE INDEX idx_reviews_user_id ON reviews(user_id);
+323. 
+324. -- ----------------------------------------------------------------
+325. -- notifications
+326. -- ----------------------------------------------------------------
+327. CREATE TABLE notifications (
+328.     id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+329.     user_id     UUID NOT NULL REFERENCES users(id),
+330.     type        VARCHAR(50) NOT NULL,
+331.     title       VARCHAR(200) NOT NULL,
+332.     body        TEXT,
+333.     payload     JSONB NOT NULL DEFAULT '{}',
+334.     is_read     BOOLEAN NOT NULL DEFAULT false,
+335.     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+336.     -- 保持ポリシー: 既読かつ90日超のレコードをバッチ削除
+337. );
+338. 
+339. CREATE INDEX idx_notifications_user_id_is_read ON notifications(user_id, is_read);
+340. CREATE INDEX idx_notifications_created_at ON notifications(created_at DESC);
+341.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\domain\payment.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\payment.go
+
+<details>
+<summary>112 lines</summary>
+
+```
+1. package domain
+2. 
+3. import "time"
+4. 
+5. type PaymentStatus string
+6. 
+7. const (
+8. 	PaymentAuthorized PaymentStatus = "authorized"
+9. 	PaymentCaptured   PaymentStatus = "captured"
+10. 	PaymentRefunded   PaymentStatus = "refunded"
+11. 	PaymentFailed     PaymentStatus = "failed"
+12. )
+13. 
+14. type RoyaltyStatus string
+15. 
+16. const (
+17. 	RoyaltyPending  RoyaltyStatus = "pending"
+18. 	RoyaltyCredited RoyaltyStatus = "credited"
+19. 	RoyaltyPaid     RoyaltyStatus = "paid"
+20. 	RoyaltyCancelled RoyaltyStatus = "cancelled"
+21. )
+22. 
+23. const (
+24. 	PlatformFeeRate  = 0.15 // 15%
+25. 	IPUsageFeeRate   = 0.05 // 5%
+26. )
+27. 
+28. type Payment struct {
+29. 	ID                       string        `json:"id"`
+30. 	BookingID                string        `json:"booking_id"`
+31. 	TotalAmountYen           int           `json:"total_amount_yen"`
+32. 	PlatformFeeYen           int           `json:"platform_fee_yen"`
+33. 	SalonPayoutYen           int           `json:"salon_payout_yen"`
+34. 	DesignRoyaltyTotalYen    int           `json:"design_royalty_total_yen"`
+35. 	StripePaymentIntentID    *string       `json:"stripe_payment_intent_id,omitempty"`
+36. 	StripeChargeID           *string       `json:"stripe_charge_id,omitempty"`
+37. 	PaymentMethod            *string       `json:"payment_method,omitempty"`
+38. 	Status                   PaymentStatus `json:"status"`
+39. 	AuthorizedAt             time.Time     `json:"authorized_at"`
+40. 	CapturedAt               *time.Time    `json:"captured_at,omitempty"`
+41. 	CreatedAt                time.Time     `json:"created_at"`
+42. }
+43. 
+44. type RoyaltyDistribution struct {
+45. 	ID           string        `json:"id"`
+46. 	PaymentID    string        `json:"payment_id"`
+47. 	DesignIPID   string        `json:"design_ip_id"`
+48. 	UserID       string        `json:"user_id"`
+49. 	AmountYen    int           `json:"amount_yen"`
+50. 	SharePercent float64       `json:"share_percent"`
+51. 	DepthLevel   int           `json:"depth_level"`
+52. 	Status       RoyaltyStatus `json:"status"`
+53. 	CreditedAt   *time.Time    `json:"credited_at,omitempty"`
+54. 	PaidAt       *time.Time    `json:"paid_at,omitempty"`
+55. 	CreatedAt    time.Time     `json:"created_at"`
+56. }
+57. 
+58. // CalcPaymentBreakdown は施術代から各費用を計算する（切り捨て）
+59. func CalcPaymentBreakdown(totalYen int) (platformFee, ipFee, salonPayout int) {
+60. 	platformFee = int(float64(totalYen) * PlatformFeeRate)
+61. 	ipFee = int(float64(totalYen) * IPUsageFeeRate)
+62. 	salonPayout = totalYen - platformFee - ipFee
+63. 	return
+64. }
+65. 
+66. type Salon struct {
+67. 	ID                   string    `json:"id"`
+68. 	OwnerID              string    `json:"owner_id"`
+69. 	Name                 string    `json:"name"`
+70. 	Description          *string   `json:"description,omitempty"`
+71. 	Address              string    `json:"address"`
+72. 	Prefecture           string    `json:"prefecture"`
+73. 	City                 *string   `json:"city,omitempty"`
+74. 	Lat                  *float64  `json:"lat,omitempty"`
+75. 	Lng                  *float64  `json:"lng,omitempty"`
+76. 	Phone                *string   `json:"phone,omitempty"`
+77. 	AvgReproductionScore float64   `json:"avg_reproduction_score"`
+78. 	SkillBadgeTags       []string  `json:"skill_badge_tags"`
+79. 	PortfolioImageURLs   []string  `json:"portfolio_image_urls"`
+80. 	VerificationStatus   string    `json:"verification_status"`
+81. 	IsActive             bool      `json:"is_active"`
+82. 	CreatedAt            time.Time `json:"created_at"`
+83. 	UpdatedAt            time.Time `json:"updated_at"`
+84. }
+85. 
+86. type Review struct {
+87. 	ID                  string     `json:"id"`
+88. 	BookingID           string     `json:"booking_id"`
+89. 	UserID              string     `json:"user_id"`
+90. 	SalonID             string     `json:"salon_id"`
+91. 	DesignIPID          string     `json:"design_ip_id"`
+92. 	ReproductionScore   int        `json:"reproduction_score"`
+93. 	OverallScore        int        `json:"overall_score"`
+94. 	Comment             *string    `json:"comment,omitempty"`
+95. 	BeforePhotoURL      *string    `json:"before_photo_url,omitempty"`
+96. 	AfterPhotoURL       *string    `json:"after_photo_url,omitempty"`
+97. 	AIReproductionScore *float64   `json:"ai_reproduction_score,omitempty"`
+98. 	AIAnalysisStatus    string     `json:"ai_analysis_status"`
+99. 	CreatedAt           time.Time  `json:"created_at"`
+100. }
+101. 
+102. type Notification struct {
+103. 	ID        string    `json:"id"`
+104. 	UserID    string    `json:"user_id"`
+105. 	Type      string    `json:"type"`
+106. 	Title     string    `json:"title"`
+107. 	Body      *string   `json:"body,omitempty"`
+108. 	Payload   any       `json:"payload"`
+109. 	IsRead    bool      `json:"is_read"`
+110. 	CreatedAt time.Time `json:"created_at"`
+111. }
+112.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\worker\similarity_worker.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\worker\similarity_worker.go
+
+<details>
+<summary>136 lines</summary>
+
+```
+1. package worker
+2. 
+3. import (
+4. 	"context"
+5. 	"encoding/json"
+6. 	"log/slog"
+7. 
+8. 	"github.com/aws/aws-sdk-go-v2/service/sqs"
+9. 	"github.com/aws/aws-sdk-go-v2/service/sqs/types"
+10. 	"github.com/nailx/backend/internal/repository"
+11. 	"github.com/nailx/backend/internal/service"
+12. )
+13. 
+14. // SimilarityCheckMessage は SQS メッセージのペイロード
+15. type SimilarityCheckMessage struct {
+16. 	DesignIPID string    `json:"design_ip_id"`
+17. 	Vector     []float32 `json:"vector"`
+18. }
+19. 
+20. // SimilarityWorker は SQS キューから設計類似度チェックジョブを処理する
+21. type SimilarityWorker struct {
+22. 	sqsClient  *sqs.Client
+23. 	queueURL   string
+24. 	designRepo repository.DesignRepository
+25. 	designSvc  service.DesignService
+26. 	logger     *slog.Logger
+27. }
+28. 
+29. func NewSimilarityWorker(
+30. 	sqsClient *sqs.Client,
+31. 	queueURL string,
+32. 	designRepo repository.DesignRepository,
+33. 	designSvc service.DesignService,
+34. 	logger *slog.Logger,
+35. ) *SimilarityWorker {
+36. 	return &SimilarityWorker{
+37. 		sqsClient:  sqsClient,
+38. 		queueURL:   queueURL,
+39. 		designRepo: designRepo,
+40. 		designSvc:  designSvc,
+41. 		logger:     logger,
+42. 	}
+43. }
+44. 
+45. // Run はワーカーループを開始する（ctx のキャンセルで停止）
+46. func (w *SimilarityWorker) Run(ctx context.Context) {
+47. 	w.logger.Info("similarity worker started")
+48. 	for {
+49. 		select {
+50. 		case <-ctx.Done():
+51. 			w.logger.Info("similarity worker stopped")
+52. 			return
+53. 		default:
+54. 			w.pollOnce(ctx)
+55. 		}
+56. 	}
+57. }
+58. 
+59. func (w *SimilarityWorker) pollOnce(ctx context.Context) {
+60. 	out, err := w.sqsClient.ReceiveMessage(ctx, &sqs.ReceiveMessageInput{
+61. 		QueueUrl:            &w.queueURL,
+62. 		MaxNumberOfMessages: 10,
+63. 		WaitTimeSeconds:     20, // long polling
+64. 	})
+65. 	if err != nil {
+66. 		if ctx.Err() != nil {
+67. 			return
+68. 		}
+69. 		w.logger.Error("sqs receive error", slog.String("err", err.Error()))
+70. 		return
+71. 	}
+72. 
+73. 	for _, msg := range out.Messages {
+74. 		w.handle(ctx, msg)
+75. 	}
+76. }
+77. 
+78. func (w *SimilarityWorker) handle(ctx context.Context, msg types.Message) {
+79. 	var payload SimilarityCheckMessage
+80. 	if err := json.Unmarshal([]byte(*msg.Body), &payload); err != nil {
+81. 		w.logger.Error("failed to unmarshal message", slog.String("err", err.Error()))
+82. 		w.deleteMessage(ctx, msg)
+83. 		return
+84. 	}
+85. 
+86. 	const (
+87. 		rejectThreshold = 0.90
+88. 		forkThreshold   = 0.75
+89. 	)
+90. 
+91. 	similar, err := w.designRepo.FindSimilar(ctx, payload.Vector, forkThreshold, rejectThreshold)
+92. 	if err != nil {
+93. 		w.logger.Error("similarity search failed", slog.String("design_id", payload.DesignIPID), slog.String("err", err.Error()))
+94. 		return // 削除しない（リトライさせる）
+95. 	}
+96. 
+97. 	var newStatus string
+98. 	if len(similar) > 0 {
+99. 		// 最もスコアが高い類似デザインとの関係を判定
+100. 		topScore := similar[0].Score
+101. 		if topScore >= rejectThreshold {
+102. 			newStatus = "rejected"
+103. 		} else {
+104. 			newStatus = "fork_pending" // フォーク確認待ち
+105. 		}
+106. 	} else {
+107. 		newStatus = "active" // 独立デザインとして承認
+108. 	}
+109. 
+110. 	if err := w.designRepo.UpdateStatus(ctx, payload.DesignIPID, newStatus); err != nil {
+111. 		w.logger.Error("failed to update design status",
+112. 			slog.String("design_id", payload.DesignIPID),
+113. 			slog.String("status", newStatus),
+114. 			slog.String("err", err.Error()),
+115. 		)
+116. 		return
+117. 	}
+118. 
+119. 	w.logger.Info("similarity check completed",
+120. 		slog.String("design_id", payload.DesignIPID),
+121. 		slog.String("result", newStatus),
+122. 		slog.Int("similar_count", len(similar)),
+123. 	)
+124. 
+125. 	w.deleteMessage(ctx, msg)
+126. }
+127. 
+128. func (w *SimilarityWorker) deleteMessage(ctx context.Context, msg types.Message) {
+129. 	if _, err := w.sqsClient.DeleteMessage(ctx, &sqs.DeleteMessageInput{
+130. 		QueueUrl:      &w.queueURL,
+131. 		ReceiptHandle: msg.ReceiptHandle,
+132. 	}); err != nil {
+133. 		w.logger.Error("failed to delete sqs message", slog.String("err", err.Error()))
+134. 	}
+135. }
+136.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\review_service.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\review_service.go
+
+<details>
+<summary>63 lines</summary>
+
+```
+1. package impl
+2. 
+3. import (
+4. 	"context"
+5. 	"time"
+6. 
+7. 	"github.com/google/uuid"
+8. 	"github.com/nailx/backend/internal/domain"
+9. 	"github.com/nailx/backend/internal/repository"
+10. 	"github.com/nailx/backend/internal/service"
+11. )
+12. 
+13. type reviewService struct {
+14. 	reviewRepo  repository.ReviewRepository
+15. 	bookingRepo repository.BookingRepository
+16. }
+17. 
+18. func NewReviewService(reviewRepo repository.ReviewRepository, bookingRepo repository.BookingRepository) service.ReviewService {
+19. 	return &reviewService{reviewRepo: reviewRepo, bookingRepo: bookingRepo}
+20. }
+21. 
+22. func (s *reviewService) PostReview(ctx context.Context, userID string, req service.PostReviewInput) (*domain.Review, error) {
+23. 	booking, err := s.bookingRepo.FindByID(ctx, req.BookingID)
+24. 	if err != nil {
+25. 		return nil, err
+26. 	}
+27. 	if booking.UserID != userID {
+28. 		return nil, domain.ErrForbidden
+29. 	}
+30. 	if booking.Status != domain.BookingCompleted {
+31. 		return nil, domain.ErrInvalidRequest
+32. 	}
+33. 	// 重複レビューチェック
+34. 	if _, err := s.reviewRepo.FindByBookingID(ctx, req.BookingID); err == nil {
+35. 		return nil, domain.ErrInvalidRequest
+36. 	}
+37. 
+38. 	review := &domain.Review{
+39. 		ID:                req.BookingID + "-review",
+40. 		BookingID:         req.BookingID,
+41. 		UserID:            userID,
+42. 		SalonID:           booking.SalonID,
+43. 		DesignIPID:        "", // TODO: booking から取得
+44. 		ReproductionScore: req.ReproductionScore,
+45. 		OverallScore:      req.OverallScore,
+46. 		Comment:           req.Comment,
+47. 		BeforePhotoURL:    req.BeforePhotoURL,
+48. 		AfterPhotoURL:     req.AfterPhotoURL,
+49. 		AIAnalysisStatus:  "pending",
+50. 		CreatedAt:         time.Now(),
+51. 	}
+52. 	review.ID = uuid.NewString()
+53. 
+54. 	if err := s.reviewRepo.Create(ctx, review); err != nil {
+55. 		return nil, err
+56. 	}
+57. 	return review, nil
+58. }
+59. 
+60. func (s *reviewService) ListSalonReviews(ctx context.Context, salonID string, cursor string, limit int) ([]*domain.Review, string, error) {
+61. 	return s.reviewRepo.ListBySalonID(ctx, salonID, cursor, limit)
+62. }
+63.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\cmd\server\main.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\cmd\server\main.go
+
+<details>
+<summary>249 lines</summary>
+
+```
+1. package main
+2. 
+3. import (
+4. 	"context"
+5. 	"log/slog"
+6. 	"net/http"
+7. 	"os"
+8. 	"os/signal"
+9. 	"syscall"
+10. 	"time"
+11. 
+12. 	firebase "firebase.google.com/go/v4"
+13. 	"github.com/go-playground/validator/v10"
+14. 	"github.com/jackc/pgx/v5/pgxpool"
+15. 	"github.com/labstack/echo/v4"
+16. 	echomw "github.com/labstack/echo/v4/middleware"
+17. 	"github.com/redis/go-redis/v9"
+18. 	"google.golang.org/api/option"
+19. 
+20. 	"github.com/nailx/backend/internal/domain"
+21. 	"github.com/nailx/backend/internal/handler"
+22. 	appmw "github.com/nailx/backend/internal/middleware"
+23. )
+24. 
+25. // customValidator は go-playground/validator を Echo に組み込む
+26. type customValidator struct {
+27. 	v *validator.Validate
+28. }
+29. 
+30. func (cv *customValidator) Validate(i any) error {
+31. 	return cv.v.Struct(i)
+32. }
+33. 
+34. func main() {
+35. 	logger := slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
+36. 	slog.SetDefault(logger)
+37. 
+38. 	// ---- 設定 ----
+39. 	dbURL := mustEnv("DATABASE_URL")
+40. 	redisURL := mustEnv("REDIS_URL")
+41. 	firebaseCredPath := os.Getenv("FIREBASE_CREDENTIALS_PATH") // オプション（GCPデフォルト認証を使う場合は空でもよい）
+42. 	port := envOr("PORT", "8080")
+43. 
+44. 	// ---- DB接続 ----
+45. 	pool, err := pgxpool.New(context.Background(), dbURL)
+46. 	if err != nil {
+47. 		logger.Error("failed to connect to database", slog.String("err", err.Error()))
+48. 		os.Exit(1)
+49. 	}
+50. 	defer pool.Close()
+51. 
+52. 	if err := pool.Ping(context.Background()); err != nil {
+53. 		logger.Error("database ping failed", slog.String("err", err.Error()))
+54. 		os.Exit(1)
+55. 	}
+56. 
+57. 	// ---- Redis接続 ----
+58. 	opt, err := redis.ParseURL(redisURL)
+59. 	if err != nil {
+60. 		logger.Error("invalid redis URL", slog.String("err", err.Error()))
+61. 		os.Exit(1)
+62. 	}
+63. 	rdb := redis.NewClient(opt)
+64. 	defer rdb.Close()
+65. 
+66. 	if err := rdb.Ping(context.Background()).Err(); err != nil {
+67. 		logger.Error("redis ping failed", slog.String("err", err.Error()))
+68. 		os.Exit(1)
+69. 	}
+70. 
+71. 	// ---- Firebase初期化 ----
+72. 	var fbApp *firebase.App
+73. 	if firebaseCredPath != "" {
+74. 		fbApp, err = firebase.NewApp(context.Background(), nil, option.WithCredentialsFile(firebaseCredPath))
+75. 	} else {
+76. 		fbApp, err = firebase.NewApp(context.Background(), nil) // Application Default Credentials
+77. 	}
+78. 	if err != nil {
+79. 		logger.Error("failed to init firebase", slog.String("err", err.Error()))
+80. 		os.Exit(1)
+81. 	}
+82. 
+83. 	// ---- SSE Hub ----
+84. 	sseHub := handler.NewSSEHub(rdb, logger)
+85. 	ctx, cancel := context.WithCancel(context.Background())
+86. 	defer cancel()
+87. 	sseHub.Start(ctx)
+88. 
+89. 	// ---- サービス・ハンドラー初期化 ----
+90. 	// TODO: 各 service/repository の具体実装をここで組み立てる（Phase 1以降）
+91. 	// 現フェーズではインターフェース定義のみのため、プレースホルダーとして nil を渡す
+92. 	authH := handler.NewAuthHandler(nil)
+93. 	userH := handler.NewUserHandler(nil)
+94. 	arH := handler.NewARHandler(nil)
+95. 	designH := handler.NewDesignHandler(nil)
+96. 	salonH := handler.NewSalonHandler(nil)
+97. 	auctionH := handler.NewAuctionHandler(nil, sseHub)
+98. 	bookingH := handler.NewBookingHandler(nil)
+99. 	reviewH := handler.NewReviewHandler(nil)
+100. 	notifH := handler.NewNotificationHandler(nil)
+101. 	adminH := handler.NewAdminHandler(nil, nil)
+102. 	mediaH := handler.NewMediaHandler(nil)
+103. 
+104. 	// Auth middleware（userRepoが実装されたら差し替える）
+105. 	_ = fbApp
+106. 	// authMw, _ := appmw.NewAuthMiddleware(fbApp, userRepo)
+107. 
+108. 	// ---- Echo セットアップ ----
+109. 	e := echo.New()
+110. 	e.HideBanner = true
+111. 	e.Validator = &customValidator{v: validator.New()}
+112. 
+113. 	e.Use(echomw.Recover())
+114. 	e.Use(echomw.RequestID())
+115. 	e.Use(echomw.CORS())
+116. 	e.Use(echomw.RateLimiter(echomw.NewRateLimiterMemoryStore(100)))
+117. 
+118. 	// ---- ルーティング ----
+119. 	e.GET("/health", func(c echo.Context) error {
+120. 		return c.JSON(http.StatusOK, map[string]string{"status": "ok"})
+121. 	})
+122. 
+123. 	v1 := e.Group("/api/v1")
+124. 
+125. 	// Auth（認証不要）
+126. 	v1.POST("/auth/register", authH.Register)
+127. 
+128. 	// Users（要認証）
+129. 	users := v1.Group("/users", requireAuth())
+130. 	users.GET("/me", userH.GetMe)
+131. 	users.PATCH("/me", userH.UpdateMe)
+132. 	users.PUT("/me/nail-profile", userH.UpsertNailProfile)
+133. 	users.GET("/:id", userH.GetPublicProfile)
+134. 	users.GET("/:id/designs", designH.ListByCreator)
+135. 
+136. 	// AR
+137. 	ar := v1.Group("/ar", requireAuth())
+138. 	ar.POST("/sessions", arH.CreateSession)
+139. 	ar.GET("/sessions/:id", arH.GetSession)
+140. 
+141. 	// Materials（Public LIST, Admin 書き込み）
+142. 	// v1.GET("/materials", materialH.List) // TODO Phase 1
+143. 
+144. 	// Designs
+145. 	v1.GET("/designs", designH.ListFeed)
+146. 	v1.GET("/designs/:id", designH.GetDesign)
+147. 	designs := v1.Group("/designs", requireAuth())
+148. 	designs.POST("", designH.Register)
+149. 	designs.GET("/similarity-check", designH.SimilarityCheck)
+150. 	designs.PATCH("/:id", designH.Update)
+151. 
+152. 	// Salons
+153. 	v1.GET("/salons", salonH.List)
+154. 	v1.GET("/salons/:id", salonH.Get)
+155. 	v1.GET("/salons/:id/reviews", reviewH.ListBySalon)
+156. 	salons := v1.Group("/salons", requireAuth())
+157. 	salons.POST("", salonH.Register)
+158. 	salons.PATCH("/:id", salonH.Update)
+159. 	salons.POST("/:id/portfolio", salonH.AddPortfolio)
+160. 
+161. 	// Auctions
+162. 	auctions := v1.Group("/auctions", requireAuth())
+163. 	auctions.POST("/requests", auctionH.CreateRequest)
+164. 	auctions.GET("/requests/:id", auctionH.GetRequest)
+165. 	auctions.DELETE("/requests/:id", auctionH.CancelRequest)
+166. 	auctions.GET("/requests", auctionH.ListMatchingRequests) // [Salon]
+167. 	auctions.POST("/requests/:request_id/bids", auctionH.PlaceBid)
+168. 	auctions.PATCH("/requests/:request_id/bids/:bid_id", auctionH.UpdateBid)
+169. 	auctions.GET("/requests/:request_id/bids", auctionH.ListBids)
+170. 	auctions.GET("/requests/:request_id/bids/stream", sseHub.StreamBids) // SSE
+171. 
+172. 	// Bookings
+173. 	bookings := v1.Group("/bookings", requireAuth())
+174. 	bookings.POST("", bookingH.Confirm)
+175. 	bookings.GET("", bookingH.List)
+176. 	bookings.GET("/:id", bookingH.Get)
+177. 	bookings.POST("/:id/complete", bookingH.Complete)
+178. 	bookings.POST("/:id/cancel", bookingH.Cancel)
+179. 
+180. 	// Reviews
+181. 	reviews := v1.Group("/reviews", requireAuth())
+182. 	reviews.POST("", reviewH.Post)
+183. 
+184. 	// Notifications
+185. 	notifs := v1.Group("/notifications", requireAuth())
+186. 	notifs.GET("", notifH.List)
+187. 	notifs.PATCH("/:id/read", notifH.MarkRead)
+188. 	notifs.POST("/fcm-token", notifH.RegisterFCMToken)
+189. 
+190. 	// Media
+191. 	media := v1.Group("/media", requireAuth())
+192. 	media.POST("/presigned-url", mediaH.GeneratePresignedURL)
+193. 
+194. 	// Admin
+195. 	admin := v1.Group("/admin", requireAuth(), appmw.RequireRole(domain.RoleAdmin))
+196. 	admin.GET("/salons", adminH.ListPendingSalons)
+197. 	admin.PATCH("/salons/:id/verify", adminH.VerifySalon)
+198. 	admin.GET("/designs/flagged", adminH.ListFlaggedDesigns)
+199. 	admin.PATCH("/designs/:id/moderate", adminH.ModerateDesign)
+200. 	// TODO: admin/settings/similarity-threshold (Phase 2)
+201. 
+202. 	// ---- Graceful Shutdown ----
+203. 	go func() {
+204. 		if err := e.Start(":" + port); err != nil && err != http.ErrServerClosed {
+205. 			logger.Error("server error", slog.String("err", err.Error()))
+206. 		}
+207. 	}()
+208. 	logger.Info("server started", slog.String("port", port))
+209. 
+210. 	quit := make(chan os.Signal, 1)
+211. 	signal.Notify(quit, os.Interrupt, syscall.SIGTERM)
+212. 	<-quit
+213. 
+214. 	shutdownCtx, shutdownCancel := context.WithTimeout(context.Background(), 10*time.Second)
+215. 	defer shutdownCancel()
+216. 	if err := e.Shutdown(shutdownCtx); err != nil {
+217. 		logger.Error("shutdown error", slog.String("err", err.Error()))
+218. 	}
+219. 	logger.Info("server stopped")
+220. }
+221. 
+222. // requireAuth は認証ミドルウェアのプレースホルダー（Phase 1 で authMw.RequireAuth に差し替え）
+223. func requireAuth() echo.MiddlewareFunc {
+224. 	return func(next echo.HandlerFunc) echo.HandlerFunc {
+225. 		return func(c echo.Context) error {
+226. 			// TODO: Firebase JWT 検証を実装後に差し替え
+227. 			c.Set("user_id", "placeholder")
+228. 			c.Set("user_role", "consumer")
+229. 			return next(c)
+230. 		}
+231. 	}
+232. }
+233. 
+234. func mustEnv(key string) string {
+235. 	v := os.Getenv(key)
+236. 	if v == "" {
+237. 		slog.Error("required environment variable not set", slog.String("key", key))
+238. 		os.Exit(1)
+239. 	}
+240. 	return v
+241. }
+242. 
+243. func envOr(key, fallback string) string {
+244. 	if v := os.Getenv(key); v != "" {
+245. 		return v
+246. 	}
+247. 	return fallback
+248. }
+249.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\domain\design.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\domain\design.go
+
+<details>
+<summary>95 lines</summary>
+
+```
+1. package domain
+2. 
+3. import (
+4. 	"encoding/json"
+5. 	"time"
+6. )
+7. 
+8. type DesignStatus string
+9. 
+10. const (
+11. 	DesignStatusPending  DesignStatus = "pending"
+12. 	DesignStatusActive   DesignStatus = "active"
+13. 	DesignStatusRejected DesignStatus = "rejected"
+14. 	DesignStatusArchived DesignStatus = "archived"
+15. )
+16. 
+17. type SimilarityResult string
+18. 
+19. const (
+20. 	SimilarityResultIndependent SimilarityResult = "independent"
+21. 	SimilarityResultFork        SimilarityResult = "fork"
+22. 	SimilarityResultRejected    SimilarityResult = "rejected"
+23. )
+24. 
+25. // 類似度閾値（Admin設定で上書き可能）
+26. const (
+27. 	DefaultSimilarityForkThreshold   = 0.75
+28. 	DefaultSimilarityRejectThreshold = 0.90
+29. )
+30. 
+31. type DesignIP struct {
+32. 	ID               string           `json:"id"`
+33. 	CreatorID        string           `json:"creator_id"`
+34. 	ParentIPID       *string          `json:"parent_ip_id,omitempty"`
+35. 	Title            string           `json:"title"`
+36. 	Description      *string          `json:"description,omitempty"`
+37. 	PreviewImageURL  string           `json:"preview_image_url"`
+38. 	DesignData       json.RawMessage  `json:"design_data"`
+39. 	SimilarityHash   *string          `json:"-"`
+40. 	ForkDepth        int              `json:"fork_depth"`
+41. 	Status           DesignStatus     `json:"status"`
+42. 	IsPublic         bool             `json:"is_public"`
+43. 	GenderTag        string           `json:"gender_tag"`
+44. 	StyleTags        []string         `json:"style_tags"`
+45. 	UsageCount       int              `json:"usage_count"`
+46. 	TotalRoyaltyYen  int              `json:"total_royalty_yen"`
+47. 	CreatedAt        time.Time        `json:"created_at"`
+48. 	UpdatedAt        time.Time        `json:"updated_at"`
+49. }
+50. 
+51. type DesignRoyaltyNode struct {
+52. 	ID           string  `json:"id"`
+53. 	DesignIPID   string  `json:"design_ip_id"`
+54. 	UserID       string  `json:"user_id"`
+55. 	SharePercent float64 `json:"share_percent"`
+56. 	DepthLevel   int     `json:"depth_level"`
+57. }
+58. 
+59. type Material struct {
+60. 	ID            string          `json:"id"`
+61. 	Name          string          `json:"name"`
+62. 	Category      string          `json:"category"`
+63. 	TextureType   *string         `json:"texture_type,omitempty"`
+64. 	ThumbnailURL  string          `json:"thumbnail_url"`
+65. 	Model3DURL    *string         `json:"model_3d_url,omitempty"`
+66. 	TextureParams json.RawMessage `json:"texture_params"`
+67. 	IsActive      bool            `json:"is_active"`
+68. 	CreatedAt     time.Time       `json:"created_at"`
+69. }
+70. 
+71. // RoyaltyDistributionItem はロイヤリティ分配の1件分
+72. type RoyaltyDistributionItem struct {
+73. 	UserID     string
+74. 	AmountYen  int
+75. 	Percent    float64
+76. 	DepthLevel int
+77. }
+78. 
+79. // CalculateRoyalty はロイヤリティ分配を計算する（1円未満切り捨て）
+80. // 深さ3段打ち切り: 直接70% / 親21% / 祖父9%
+81. func CalculateRoyalty(totalIPFeeYen int, nodes []DesignRoyaltyNode) []RoyaltyDistributionItem {
+82. 	result := make([]RoyaltyDistributionItem, 0, len(nodes))
+83. 	for _, node := range nodes {
+84. 		// floor: 1円未満切り捨て
+85. 		amount := int(float64(totalIPFeeYen) * node.SharePercent / 100.0)
+86. 		result = append(result, RoyaltyDistributionItem{
+87. 			UserID:     node.UserID,
+88. 			AmountYen:  amount,
+89. 			Percent:    node.SharePercent,
+90. 			DepthLevel: node.DepthLevel,
+91. 		})
+92. 	}
+93. 	return result
+94. }
+95.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\review.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\review.go
+
+<details>
+<summary>62 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"net/http"
+5. 	"strconv"
+6. 
+7. 	"github.com/labstack/echo/v4"
+8. 	"github.com/nailx/backend/internal/middleware"
+9. 	"github.com/nailx/backend/internal/service"
+10. )
+11. 
+12. type ReviewHandler struct {
+13. 	svc service.ReviewService
+14. }
+15. 
+16. func NewReviewHandler(svc service.ReviewService) *ReviewHandler {
+17. 	return &ReviewHandler{svc: svc}
+18. }
+19. 
+20. // POST /api/v1/reviews
+21. func (h *ReviewHandler) Post(c echo.Context) error {
+22. 	var req struct {
+23. 		BookingID         string  `json:"booking_id" validate:"required"`
+24. 		ReproductionScore int     `json:"reproduction_score" validate:"required,min=1,max=5"`
+25. 		OverallScore      int     `json:"overall_score" validate:"required,min=1,max=5"`
+26. 		Comment           *string `json:"comment"`
+27. 		BeforePhotoURL    *string `json:"before_photo_url"`
+28. 		AfterPhotoURL     *string `json:"after_photo_url"`
+29. 	}
+30. 	if err := c.Bind(&req); err != nil {
+31. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+32. 	}
+33. 	if err := c.Validate(&req); err != nil {
+34. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+35. 	}
+36. 	review, err := h.svc.PostReview(c.Request().Context(), middleware.GetUserID(c), service.PostReviewInput{
+37. 		BookingID:         req.BookingID,
+38. 		ReproductionScore: req.ReproductionScore,
+39. 		OverallScore:      req.OverallScore,
+40. 		Comment:           req.Comment,
+41. 		BeforePhotoURL:    req.BeforePhotoURL,
+42. 		AfterPhotoURL:     req.AfterPhotoURL,
+43. 	})
+44. 	if err != nil {
+45. 		return domainErrToHTTP(c, err)
+46. 	}
+47. 	return c.JSON(http.StatusCreated, map[string]any{"review": review})
+48. }
+49. 
+50. // GET /api/v1/salons/:id/reviews
+51. func (h *ReviewHandler) ListBySalon(c echo.Context) error {
+52. 	limit, _ := strconv.Atoi(c.QueryParam("limit"))
+53. 	if limit == 0 {
+54. 		limit = 20
+55. 	}
+56. 	reviews, nextCur, err := h.svc.ListSalonReviews(c.Request().Context(), c.Param("id"), c.QueryParam("cursor"), limit)
+57. 	if err != nil {
+58. 		return domainErrToHTTP(c, err)
+59. 	}
+60. 	return c.JSON(http.StatusOK, map[string]any{"reviews": reviews, "next_cursor": nextCur})
+61. }
+62.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\user_service.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\service\impl\user_service.go
+
+<details>
+<summary>84 lines</summary>
+
+```
+1. package impl
+2. 
+3. import (
+4. 	"context"
+5. 	"time"
+6. 
+7. 	"github.com/google/uuid"
+8. 	"github.com/nailx/backend/internal/domain"
+9. 	"github.com/nailx/backend/internal/repository"
+10. 	"github.com/nailx/backend/internal/service"
+11. )
+12. 
+13. type userService struct {
+14. 	userRepo repository.UserRepository
+15. }
+16. 
+17. func NewUserService(userRepo repository.UserRepository) service.UserService {
+18. 	return &userService{userRepo: userRepo}
+19. }
+20. 
+21. func (s *userService) GetMe(ctx context.Context, userID string) (*domain.User, *domain.NailProfile, error) {
+22. 	user, err := s.userRepo.FindByID(ctx, userID)
+23. 	if err != nil {
+24. 		return nil, nil, err
+25. 	}
+26. 	profile, err := s.userRepo.GetNailProfile(ctx, userID)
+27. 	if err == domain.ErrNotFound {
+28. 		return user, nil, nil
+29. 	}
+30. 	if err != nil {
+31. 		return nil, nil, err
+32. 	}
+33. 	return user, profile, nil
+34. }
+35. 
+36. func (s *userService) UpdateMe(ctx context.Context, userID string, req service.UpdateUserRequest) (*domain.User, error) {
+37. 	user, err := s.userRepo.FindByID(ctx, userID)
+38. 	if err != nil {
+39. 		return nil, err
+40. 	}
+41. 	if req.DisplayName != nil {
+42. 		user.DisplayName = *req.DisplayName
+43. 	}
+44. 	if req.AvatarURL != nil {
+45. 		user.AvatarURL = req.AvatarURL
+46. 	}
+47. 	if req.Bio != nil {
+48. 		user.Bio = req.Bio
+49. 	}
+50. 	if req.LifestyleTags != nil {
+51. 		user.LifestyleTags = req.LifestyleTags
+52. 	}
+53. 	user.UpdatedAt = time.Now()
+54. 	if err := s.userRepo.Update(ctx, user); err != nil {
+55. 		return nil, err
+56. 	}
+57. 	return user, nil
+58. }
+59. 
+60. func (s *userService) GetPublicProfile(ctx context.Context, targetID string) (*domain.User, error) {
+61. 	return s.userRepo.FindByID(ctx, targetID)
+62. }
+63. 
+64. func (s *userService) UpsertNailProfile(ctx context.Context, userID string, req service.UpsertNailProfileRequest) (*domain.NailProfile, error) {
+65. 	existing, err := s.userRepo.GetNailProfile(ctx, userID)
+66. 	id := uuid.NewString()
+67. 	if err == nil {
+68. 		id = existing.ID
+69. 	}
+70. 	profile := &domain.NailProfile{
+71. 		ID:              id,
+72. 		UserID:          userID,
+73. 		AvgNailLengthMM: req.AvgNailLengthMM,
+74. 		NailShape:       req.NailShape,
+75. 		GelLiftTendency: req.GelLiftTendency,
+76. 		AllergyNotes:    req.AllergyNotes,
+77. 		UpdatedAt:       time.Now(),
+78. 	}
+79. 	if err := s.userRepo.UpsertNailProfile(ctx, profile); err != nil {
+80. 		return nil, err
+81. 	}
+82. 	return profile, nil
+83. }
+84.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\helpers.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\helpers.go
+
+<details>
+<summary>56 lines</summary>
+
+```
+1. package postgres
+2. 
+3. import (
+4. 	"encoding/base64"
+5. 	"fmt"
+6. 	"strconv"
+7. 	"strings"
+8. 	"time"
+9. )
+10. 
+11. // encodeCursor は created_at + id をカーソル文字列にエンコードする
+12. func encodeCursor(t time.Time, id string) string {
+13. 	raw := fmt.Sprintf("%d:%s", t.UnixMilli(), id)
+14. 	return base64.RawURLEncoding.EncodeToString([]byte(raw))
+15. }
+16. 
+17. // decodeCursor はカーソル文字列を created_at (time.Time) と id にデコードする
+18. func decodeCursor(cursor string) (time.Time, string, error) {
+19. 	b, err := base64.RawURLEncoding.DecodeString(cursor)
+20. 	if err != nil {
+21. 		return time.Time{}, "", err
+22. 	}
+23. 	parts := strings.SplitN(string(b), ":", 2)
+24. 	if len(parts) != 2 {
+25. 		return time.Time{}, "", fmt.Errorf("invalid cursor format")
+26. 	}
+27. 	ms, err := strconv.ParseInt(parts[0], 10, 64)
+28. 	if err != nil {
+29. 		return time.Time{}, "", err
+30. 	}
+31. 	return time.UnixMilli(ms), parts[1], nil
+32. }
+33. 
+34. // itoa は int を文字列に変換する（fmt.Sprintf の代替）
+35. func itoa(n int) string {
+36. 	return strconv.Itoa(n)
+37. }
+38. 
+39. // vectorToString は []float32 を pgvector が受け付ける文字列表現に変換する
+40. // 例: "[0.1,0.2,0.3]"
+41. func vectorToString(v []float32) string {
+42. 	if len(v) == 0 {
+43. 		return "[]"
+44. 	}
+45. 	sb := strings.Builder{}
+46. 	sb.WriteByte('[')
+47. 	for i, f := range v {
+48. 		if i > 0 {
+49. 			sb.WriteByte(',')
+50. 		}
+51. 		sb.WriteString(strconv.FormatFloat(float64(f), 'f', -1, 32))
+52. 	}
+53. 	sb.WriteByte(']')
+54. 	return sb.String()
+55. }
+56.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\auction_repository.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\auction_repository.go
+
+<details>
+<summary>191 lines</summary>
+
+```
+1. package postgres
+2. 
+3. import (
+4. 	"context"
+5. 	"errors"
+6. 
+7. 	"github.com/jackc/pgx/v5"
+8. 	"github.com/jackc/pgx/v5/pgxpool"
+9. 	"github.com/nailx/backend/internal/domain"
+10. 	"github.com/nailx/backend/internal/repository"
+11. )
+12. 
+13. type auctionRepository struct {
+14. 	db *pgxpool.Pool
+15. }
+16. 
+17. func NewAuctionRepository(db *pgxpool.Pool) repository.AuctionRepository {
+18. 	return &auctionRepository{db: db}
+19. }
+20. 
+21. func (r *auctionRepository) CreateBookingRequest(ctx context.Context, req *domain.BookingRequest) error {
+22. 	_, err := r.db.Exec(ctx, `
+23. 		INSERT INTO booking_requests
+24. 			(id, user_id, design_ip_id, ar_session_id, nail_data_snapshot,
+25. 			 desired_date_from, desired_date_to, area_prefecture, area_city,
+26. 			 budget_max_yen, status, expires_at)
+27. 		VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`,
+28. 		req.ID, req.UserID, req.DesignIPID, req.ARSessionID, req.NailDataSnapshot,
+29. 		req.DesiredDateFrom, req.DesiredDateTo, req.AreaPrefecture, req.AreaCity,
+30. 		req.BudgetMaxYen, req.Status, req.ExpiresAt,
+31. 	)
+32. 	return err
+33. }
+34. 
+35. func (r *auctionRepository) FindBookingRequestByID(ctx context.Context, id string) (*domain.BookingRequest, error) {
+36. 	row := r.db.QueryRow(ctx, `
+37. 		SELECT id, user_id, design_ip_id, ar_session_id, nail_data_snapshot,
+38. 		       desired_date_from, desired_date_to, area_prefecture, area_city,
+39. 		       budget_max_yen, status, expires_at, created_at
+40. 		FROM booking_requests WHERE id = $1`, id)
+41. 	var req domain.BookingRequest
+42. 	if err := row.Scan(
+43. 		&req.ID, &req.UserID, &req.DesignIPID, &req.ARSessionID, &req.NailDataSnapshot,
+44. 		&req.DesiredDateFrom, &req.DesiredDateTo, &req.AreaPrefecture, &req.AreaCity,
+45. 		&req.BudgetMaxYen, &req.Status, &req.ExpiresAt, &req.CreatedAt,
+46. 	); err != nil {
+47. 		if errors.Is(err, pgx.ErrNoRows) {
+48. 			return nil, domain.ErrNotFound
+49. 		}
+50. 		return nil, err
+51. 	}
+52. 	return &req, nil
+53. }
+54. 
+55. func (r *auctionRepository) UpdateBookingRequestStatus(ctx context.Context, id string, status domain.BookingRequestStatus) error {
+56. 	_, err := r.db.Exec(ctx, `UPDATE booking_requests SET status=$1 WHERE id=$2`, status, id)
+57. 	return err
+58. }
+59. 
+60. func (r *auctionRepository) CountOpenRequestsByUser(ctx context.Context, userID string) (int, error) {
+61. 	var count int
+62. 	err := r.db.QueryRow(ctx, `
+63. 		SELECT COUNT(*) FROM booking_requests
+64. 		WHERE user_id=$1 AND status='open'`, userID).Scan(&count)
+65. 	return count, err
+66. }
+67. 
+68. func (r *auctionRepository) ListOpenRequestsForSalon(ctx context.Context, prefecture string, cursor string, limit int) ([]*domain.BookingRequest, string, error) {
+69. 	if limit == 0 {
+70. 		limit = 20
+71. 	}
+72. 	args := []any{prefecture}
+73. 	where := "WHERE area_prefecture=$1 AND status='open'"
+74. 	if cursor != "" {
+75. 		ts, id, err := decodeCursor(cursor)
+76. 		if err == nil {
+77. 			where += " AND (created_at, id) < ($2, $3)"
+78. 			args = append(args, ts, id)
+79. 		}
+80. 	}
+81. 	args = append(args, limit+1)
+82. 
+83. 	rows, err := r.db.Query(ctx, `
+84. 		SELECT id, user_id, design_ip_id, ar_session_id, nail_data_snapshot,
+85. 		       desired_date_from, desired_date_to, area_prefecture, area_city,
+86. 		       budget_max_yen, status, expires_at, created_at
+87. 		FROM booking_requests `+where+`
+88. 		ORDER BY created_at DESC, id DESC LIMIT $`+itoa(len(args)),
+89. 		args...,
+90. 	)
+91. 	if err != nil {
+92. 		return nil, "", err
+93. 	}
+94. 	defer rows.Close()
+95. 
+96. 	var reqs []*domain.BookingRequest
+97. 	for rows.Next() {
+98. 		var req domain.BookingRequest
+99. 		if err := rows.Scan(
+100. 			&req.ID, &req.UserID, &req.DesignIPID, &req.ARSessionID, &req.NailDataSnapshot,
+101. 			&req.DesiredDateFrom, &req.DesiredDateTo, &req.AreaPrefecture, &req.AreaCity,
+102. 			&req.BudgetMaxYen, &req.Status, &req.ExpiresAt, &req.CreatedAt,
+103. 		); err != nil {
+104. 			return nil, "", err
+105. 		}
+106. 		reqs = append(reqs, &req)
+107. 	}
+108. 	if err := rows.Err(); err != nil {
+109. 		return nil, "", err
+110. 	}
+111. 
+112. 	var nextCursor string
+113. 	if len(reqs) > limit {
+114. 		reqs = reqs[:limit]
+115. 		nextCursor = encodeCursor(reqs[limit-1].CreatedAt, reqs[limit-1].ID)
+116. 	}
+117. 	return reqs, nextCursor, nil
+118. }
+119. 
+120. func (r *auctionRepository) CreateBid(ctx context.Context, bid *domain.Bid) error {
+121. 	_, err := r.db.Exec(ctx, `
+122. 		INSERT INTO bids
+123. 			(id, booking_request_id, salon_id, price_yen, includes_removal, removal_fee_yen,
+124. 			 available_slot_at, dynamic_discount_reason, message, status, expires_at)
+125. 		VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`,
+126. 		bid.ID, bid.BookingRequestID, bid.SalonID, bid.PriceYen,
+127. 		bid.IncludesRemoval, bid.RemovalFeeYen, bid.AvailableSlotAt,
+128. 		bid.DynamicDiscountReason, bid.Message, bid.Status, bid.ExpiresAt,
+129. 	)
+130. 	return err
+131. }
+132. 
+133. const bidColumns = `id, booking_request_id, salon_id, price_yen, includes_removal, removal_fee_yen,
+134. 	available_slot_at, dynamic_discount_reason, message, status, rebid_count, expires_at, created_at, updated_at`
+135. 
+136. func (r *auctionRepository) FindBidByID(ctx context.Context, id string) (*domain.Bid, error) {
+137. 	row := r.db.QueryRow(ctx, `SELECT `+bidColumns+` FROM bids WHERE id=$1`, id)
+138. 	return scanBid(row)
+139. }
+140. 
+141. func (r *auctionRepository) FindBidBySalonAndRequest(ctx context.Context, salonID, requestID string) (*domain.Bid, error) {
+142. 	row := r.db.QueryRow(ctx, `SELECT `+bidColumns+` FROM bids WHERE salon_id=$1 AND booking_request_id=$2`, salonID, requestID)
+143. 	return scanBid(row)
+144. }
+145. 
+146. func (r *auctionRepository) UpdateBid(ctx context.Context, bid *domain.Bid) error {
+147. 	_, err := r.db.Exec(ctx, `
+148. 		UPDATE bids SET
+149. 			price_yen=$1, includes_removal=$2, removal_fee_yen=$3,
+150. 			available_slot_at=$4, dynamic_discount_reason=$5, message=$6,
+151. 			status=$7, rebid_count=rebid_count+1
+152. 		WHERE id=$8`,
+153. 		bid.PriceYen, bid.IncludesRemoval, bid.RemovalFeeYen,
+154. 		bid.AvailableSlotAt, bid.DynamicDiscountReason, bid.Message,
+155. 		bid.Status, bid.ID,
+156. 	)
+157. 	return err
+158. }
+159. 
+160. func (r *auctionRepository) ListBidsByRequestID(ctx context.Context, requestID string) ([]*domain.Bid, error) {
+161. 	rows, err := r.db.Query(ctx, `SELECT `+bidColumns+` FROM bids WHERE booking_request_id=$1 ORDER BY price_yen ASC`, requestID)
+162. 	if err != nil {
+163. 		return nil, err
+164. 	}
+165. 	defer rows.Close()
+166. 	var bids []*domain.Bid
+167. 	for rows.Next() {
+168. 		b, err := scanBid(rows)
+169. 		if err != nil {
+170. 			return nil, err
+171. 		}
+172. 		bids = append(bids, b)
+173. 	}
+174. 	return bids, rows.Err()
+175. }
+176. 
+177. func scanBid(row pgx.Row) (*domain.Bid, error) {
+178. 	var b domain.Bid
+179. 	if err := row.Scan(
+180. 		&b.ID, &b.BookingRequestID, &b.SalonID, &b.PriceYen, &b.IncludesRemoval, &b.RemovalFeeYen,
+181. 		&b.AvailableSlotAt, &b.DynamicDiscountReason, &b.Message,
+182. 		&b.Status, &b.RebidCount, &b.ExpiresAt, &b.CreatedAt, &b.UpdatedAt,
+183. 	); err != nil {
+184. 		if errors.Is(err, pgx.ErrNoRows) {
+185. 			return nil, domain.ErrNotFound
+186. 		}
+187. 		return nil, err
+188. 	}
+189. 	return &b, nil
+190. }
+191.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\admin.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\admin.go
+
+<details>
+<summary>90 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"net/http"
+5. 
+6. 	"github.com/labstack/echo/v4"
+7. 	"github.com/nailx/backend/internal/service"
+8. )
+9. 
+10. type AdminHandler struct {
+11. 	salonSvc  service.SalonService
+12. 	designSvc service.DesignService
+13. }
+14. 
+15. func NewAdminHandler(salonSvc service.SalonService, designSvc service.DesignService) *AdminHandler {
+16. 	return &AdminHandler{salonSvc: salonSvc, designSvc: designSvc}
+17. }
+18. 
+19. // GET /api/v1/admin/salons
+20. func (h *AdminHandler) ListPendingSalons(c echo.Context) error {
+21. 	pending := "pending"
+22. 	salons, nextCur, err := h.salonSvc.ListSalons(c.Request().Context(), service.SalonFilter{
+23. 		Prefecture: nil,
+24. 		Sort:       "created_at",
+25. 		Cursor:     c.QueryParam("cursor"),
+26. 		Limit:      20,
+27. 	})
+28. 	_ = pending
+29. 	if err != nil {
+30. 		return domainErrToHTTP(c, err)
+31. 	}
+32. 	return c.JSON(http.StatusOK, map[string]any{"salons": salons, "next_cursor": nextCur})
+33. }
+34. 
+35. // PATCH /api/v1/admin/salons/:id/verify
+36. func (h *AdminHandler) VerifySalon(c echo.Context) error {
+37. 	var req struct {
+38. 		Action string  `json:"action" validate:"required,oneof=approve reject"`
+39. 		Reason *string `json:"reason"`
+40. 	}
+41. 	if err := c.Bind(&req); err != nil {
+42. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+43. 	}
+44. 	if err := c.Validate(&req); err != nil {
+45. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+46. 	}
+47. 	if err := h.salonSvc.VerifySalon(c.Request().Context(), "admin", c.Param("id"), req.Action, req.Reason); err != nil {
+48. 		return domainErrToHTTP(c, err)
+49. 	}
+50. 	return c.JSON(http.StatusOK, map[string]any{"message": "salon verification updated"})
+51. }
+52. 
+53. // GET /api/v1/admin/designs/flagged
+54. func (h *AdminHandler) ListFlaggedDesigns(c echo.Context) error {
+55. 	rejected := "rejected"
+56. 	designs, nextCur, err := h.designSvc.ListFeed(c.Request().Context(), service.DesignFeedFilter{
+57. 		Status: &rejected,
+58. 		Sort:   "created_at",
+59. 		Cursor: c.QueryParam("cursor"),
+60. 		Limit:  20,
+61. 	})
+62. 	if err != nil {
+63. 		return domainErrToHTTP(c, err)
+64. 	}
+65. 	return c.JSON(http.StatusOK, map[string]any{"designs": designs, "next_cursor": nextCur})
+66. }
+67. 
+68. // PATCH /api/v1/admin/designs/:id/moderate
+69. func (h *AdminHandler) ModerateDesign(c echo.Context) error {
+70. 	var req struct {
+71. 		Action string  `json:"action" validate:"required,oneof=approve reject"`
+72. 		Reason *string `json:"reason"`
+73. 	}
+74. 	if err := c.Bind(&req); err != nil {
+75. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+76. 	}
+77. 	if err := c.Validate(&req); err != nil {
+78. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+79. 	}
+80. 	// action を domain ステータスへ変換
+81. 	isPublic := req.Action == "approve"
+82. 	design, err := h.designSvc.UpdateDesign(c.Request().Context(), "admin", c.Param("id"), service.UpdateDesignRequest{
+83. 		IsPublic: &isPublic,
+84. 	})
+85. 	if err != nil {
+86. 		return domainErrToHTTP(c, err)
+87. 	}
+88. 	return c.JSON(http.StatusOK, map[string]any{"design": design})
+89. }
+90.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\middleware\auth.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\middleware\auth.go (lines 72-84)
+
+<details>
+<summary>13 lines</summary>
+
+```
+72. func RequireRole(role domain.UserRole) echo.MiddlewareFunc {
+73. 	return func(next echo.HandlerFunc) echo.HandlerFunc {
+74. 		return func(c echo.Context) error {
+75. 			userRole := domain.UserRole(c.Get(string(contextKeyUserRole)).(string))
+76. 			if !hasRole(userRole, role) {
+77. 				return echo.NewHTTPError(http.StatusForbidden, map[string]any{
+78. 					"error": map[string]string{"code": "FORBIDDEN", "message": "insufficient permissions"},
+79. 				})
+80. 			}
+81. 			return next(c)
+82. 		}
+83. 	}
+84. }
+```
+
+</details>
+
+
+### 💬 Copilot
+
+Now let me check the remaining files I haven't reviewed yet.Now I have a complete picture of the codebase. Here are the genuine issues.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/handler/auction.go` (line 115–118)
+Issue: Type mismatcho` (line 115–118)
+Issue: Type mismatch — anonymous struct passed where `*domain.BidEvent` is required. `SSEHub.Publish` signature is `func(..., event *domain.BidEvent) error`, but the caller constructs and passes `&struct{Type string; Bid any}{...}`. This is a **compile error**; the binary cannot be built.
+Fix: Replace the anonymous struct with a proper `*domain.BidEvent{Type: "new_bid", Bid: bid}`.
+
+---
+
+**[SEVERITY: Critical]** `backend/cmd/server/main.go` (line 223–231)
+Issue: `requireAuth()` is a no-op placeholder that sets `user_id = "placeholder"` and `user_role = "consumer"` on every request. Every protected route — including booking creation, bid placement, and payment confirmation — operates under the fake identity `"placeholder"`. This is wired into the live server, not gated behind a build tag or feature flag.
+Fix: Before any deployment, replace `requireAuth()` with `authMw.RequireAuth` (the real Firebase JWT middleware that is already implemented at `middleware/auth.go`). Until then, the placeholder must not be merged to a deployed branch.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/handler/auction.go` (line 103) + `backend/internal/service/impl/auction_service.go` (line 110, 136)
+Issue: `middleware.GetUserID(c)` returns the **authenticated user's UUID**, which is passed as the `salonID` parameter in `PlaceBid`. The service stores it directly in `bid.SalonID`, and the repository INSERTs it into nto `bids.salon_id` which has a FK constraint `REFERENCES salons(id)`. A user UUID will never match a salon UUID, so **every bid INSERT fails with a FK violation**. The duplicate-bid check (`FindBidBySalonAndRequest`) is also broken for the same reason.
+Fix: Before calling `PlaceBid`, resolve the authenticated user's salon via `salonRepo.FindByOwnerID(ctx, userID)` and pass `salon.ID` as `salonID`.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/service/impl/media_service.go` (line 45, 51)
+Issue: Two compounded bugs in `GeneratePresignedURL`:
+1. **S3 key uses MIME type as extension**: `fileType` is the MIME type from the request (e.g., `"image/jpeg"`), used literally as a file extension → key becomes `ar/user-id/uuid.image/jpeg`, producing a malformed CDN URL like `https://cdn.nailx.jp/ar/user-id/uuid.image/jpeg`.
+2. **Wrong `ContentType` in presigned URL**: `mimeType(fileType)` is called with `"image/jpeg"` (a MIME type, not an extension), which matches none of the switch cases and falls through to `"application/octet-stream"`. S3 clients enforcing Content-Type will reject uploads.
+
+Fix: Derive the file extension from the MIME type (e.g., `strings.Split(fileType, "/")[1]`) for the S3 key, and use `fileType` directly as `ContentType`.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/service/impl/review_service.go` (line 43)
+Issue: `DesignIPID` is hardcoded to empty string `""`. The `reviews` table has `design_ip_id UUID NOT NULL REFERENCES design_ips(id)`. An empty string is not a valid UUID and violates both the NOT NULL constraint and the FK constraint. **Every review submission fails with a DB error.**
+Fix: Fetch `DesignIPID` from the booking. `Booking` struct has `BookingRequestID`; trace through `bookingRepo` → `BookingRequest.DesignIPID` to populate this field.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/worker/royalty_worker.go` (line 99)
+Issue: No idempotency check before `CreateRoyaltyDistributions`. SQS guarantees at-least-once delivery: if the worker crashes or the message visibility timeout expires after creating distributions but before deleting the message, the message is redelivered and royalty distributions are duplicated. The `royalty_distributions` table has no unique constraint on `(payment_id, user_id)` to prevent this.
+Fix: Add a unique constraint `UNIQUE(payment_id, user_id)` to `royalty_distributions` in the migration, and use an INSERT ON CONFLICT DO NOTHING in `CreateRoyaltyDistributions`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/handler/admin.go` (line 21–32)
+Issue: `ListPendingSalons` declares `pending := "pending"` then immediately discards it with `_ = pending`. The `SalonFilter` passed to `ListSalons` has no `VerificationStatus` field set. The endpoint returns **all salons**, not just pending ones. Reviewers have no way to scope their work.
+Fix: Add a `VerificationStatus *string` field to `SalonFilter`, populate it with `&pending` here, and apply `AND verification_status = $n` in the repository query.
+
+---
+
+**[SEVERITY: High]** `backend/internal/service/impl/design_service.go` (line 120)
+Issue: Admin check reads `userID != "admin"`. UserIDs are UUIDs — no UUID will ever equal the literal string `"admin"`. Admins can never update designs through this code path; they always receive ErrForbidden.
+Fix: Replace the literal check with a role-based check. Pass the caller's role alongside `userID` (e.g., add `callerRole domain.UserRole` parameter), and check `callerRole == domain.RoleAdmin`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/service/impl/auction_service.go` (line 43)
+Issue: When a user exceeds the 3-concurrent-request limit, `ErrRequestExpired` is returned. This maps to HTTP 409 with code `REQUEST_EXPIRED` — a semantically incorrect response that tells clients the request has expired, not that they've hit the limit. Client code polling on this will misinterpret the failure mode.
+Fix: Define a new `ErrRequestLimitReached` domain error; add a corresponding `429` (or `409` with code `REQUEST_LIMIT_EXCEEDED`) mapping in `domainErrToHTTP`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/service/impl/auction_service.go` (line 98)
+Issue: `CancelBookingRequest` only permits cancellation when `status == BookingRequestOpen`, but the spec (api_spec.md, `DELETE /auctions/requests/:id`) explicitly states "status=open/bidding のみ可" (open **or** bidding). Requests with bids in flight cannot be cancelled, silently failing users.
+Fix: Change condition to `req.Status != domain.BookingRequestOpen && req.Status != domain.BookingRequestBidding`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/worker/similarity_worker.go` (line 86–89)
+Issue: Fork and reject thresholds are hardcoded as local constants (`forkThreshold = 0.75`, `rejectThreshold = 0.90`). The spec defines `GET/PATCH /admin/settings/similarity-threshold` for Admin to change these values. Any threshold update via that endpoint has **zero effect** on the worker — the worker always uses the hardcoded values.
+Fix: Load thresholds from a DB-backed settings table (or config cache) at worker startup and refresh periodically, so admin changes are reflected.
+
+---
+
+**[SEVERITY: High]** `backend/internal/repository/postgres/design_repository.go` (line 100)
+Issue: `ListFeed` unconditionally appends `WHERE d.is_public = true`. `ListFlaggedDesigns` in `admin.go` calls this method with `status = "rejected"`. Rejected designs that have `is_public = false` are invisible to admins, defeating the moderation workflow.
+Fix: Remove or conditionalize the `is_public` filter — apply it only for non-admin / public contexts, not when `filter.Status` targets an admin-only status like `"rejected"`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/handler/ar.go` (line 26), `backend/internal/handler/review.go` (line 28–32)
+Issue: `hand_snapshot_url`, `before_photo_url`, and `after_photo_url` are accepted from clients with no validation against the expected CDN domain or S3 prefix. The spec (api_spec.md, Security Note for `POST /ar/sessions` and `POST /reviews`) explicitly requires server-side validation: "サーバーは `file_url` 受信時にバケット名・プレフィックスが期待パターンと一致するかを検証". An attacker can submit arbitrary URLs, including internal network addresses or `s3://` URIs for buckets they don't own.
+Fix: Add a `ValidateCDNURL(url, expectedPrefix string) bool` helper that verifies the URL starts with the configured `cdnBase` + the appropriate prefix (e.g., `"https://cdn.nailx.jp/ar-snapshots/"`), and reject requests that fail validation.
+
+---
+
+**[SEVERITY: Medium]** `backend/internal/repository/postgres/` (all repository files)
+Issue: CLAUDE.md explicitly states: "sqlcを使用するため、生のクエリ文字列をGoコードに直書きしない". Every repository file (`auction_repository.go`, `booking_repository.go`, `design_repository.go`, etc.) violates this rule with inline raw SQL strings.
+Fix: Run `sqlc generate` from the schema and queries, and replace all handwritten `db.Exec/Query` calls with the generated type-safe query 
+
+### 💬 Copilot
+
+Now let me check the remaining files I haven't reviewed yet.
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\handler\ar.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\handler\ar.go
+
+<details>
+<summary>52 lines</summary>
+
+```
+1. package handler
+2. 
+3. import (
+4. 	"net/http"
+5. 
+6. 	"github.com/labstack/echo/v4"
+7. 	"github.com/nailx/backend/internal/middleware"
+8. 	"github.com/nailx/backend/internal/service"
+9. )
+10. 
+11. type ARHandler struct {
+12. 	svc service.ARService
+13. }
+14. 
+15. func NewARHandler(svc service.ARService) *ARHandler {
+16. 	return &ARHandler{svc: svc}
+17. }
+18. 
+19. // POST /api/v1/ar/sessions
+20. func (h *ARHandler) CreateSession(c echo.Context) error {
+21. 	var req struct {
+22. 		DesignIPID           *string  `json:"design_ip_id"`
+23. 		DetectedNailLengthMM *float64 `json:"detected_nail_length_mm"`
+24. 		HasExistingGel       *bool    `json:"has_existing_gel"`
+25. 		DetectedNailShape    *string  `json:"detected_nail_shape"`
+26. 		HandSnapshotURL      *string  `json:"hand_snapshot_url"`
+27. 	}
+28. 	if err := c.Bind(&req); err != nil {
+29. 		return errResp(c, http.StatusBadRequest, "INVALID_REQUEST", err.Error())
+30. 	}
+31. 	session, err := h.svc.CreateSession(c.Request().Context(), middleware.GetUserID(c), service.CreateARSessionRequest{
+32. 		DesignIPID:           req.DesignIPID,
+33. 		DetectedNailLengthMM: req.DetectedNailLengthMM,
+34. 		HasExistingGel:       req.HasExistingGel,
+35. 		DetectedNailShape:    req.DetectedNailShape,
+36. 		HandSnapshotURL:      req.HandSnapshotURL,
+37. 	})
+38. 	if err != nil {
+39. 		return domainErrToHTTP(c, err)
+40. 	}
+41. 	return c.JSON(http.StatusCreated, map[string]any{"ar_session": session})
+42. }
+43. 
+44. // GET /api/v1/ar/sessions/:id
+45. func (h *ARHandler) GetSession(c echo.Context) error {
+46. 	session, err := h.svc.GetSession(c.Request().Context(), middleware.GetUserID(c), c.Param("id"))
+47. 	if err != nil {
+48. 		return domainErrToHTTP(c, err)
+49. 	}
+50. 	return c.JSON(http.StatusOK, map[string]any{"ar_session": session})
+51. }
+52.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\design_repository.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\design_repository.go
+
+<details>
+<summary>277 lines</summary>
+
+```
+1. package postgres
+2. 
+3. import (
+4. 	"context"
+5. 	"errors"
+6. 
+7. 	"github.com/jackc/pgx/v5"
+8. 	"github.com/jackc/pgx/v5/pgxpool"
+9. 	"github.com/nailx/backend/internal/domain"
+10. 	"github.com/nailx/backend/internal/repository"
+11. )
+12. 
+13. type designRepository struct {
+14. 	db *pgxpool.Pool
+15. }
+16. 
+17. func NewDesignRepository(db *pgxpool.Pool) repository.DesignRepository {
+18. 	return &designRepository{db: db}
+19. }
+20. 
+21. func (r *designRepository) Create(ctx context.Context, d *domain.DesignIP) error {
+22. 	_, err := r.db.Exec(ctx, `
+23. 		INSERT INTO design_ips
+24. 			(id, creator_id, parent_ip_id, title, description, preview_image_url, design_data,
+25. 			 fork_depth, status, is_public, gender_tag, style_tags)
+26. 		VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`,
+27. 		d.ID, d.CreatorID, d.ParentIPID, d.Title, d.Description, d.PreviewImageURL, d.DesignData,
+28. 		d.ForkDepth, d.Status, d.IsPublic, d.GenderTag, d.StyleTags,
+29. 	)
+30. 	return err
+31. }
+32. 
+33. func (r *designRepository) FindByID(ctx context.Context, id string) (*domain.DesignIP, error) {
+34. 	row := r.db.QueryRow(ctx, `
+35. 		SELECT id, creator_id, parent_ip_id, title, description, preview_image_url, design_data,
+36. 		       fork_depth, status, is_public, gender_tag, style_tags,
+37. 		       usage_count, total_royalty_yen, created_at, updated_at
+38. 		FROM design_ips WHERE id = $1`, id)
+39. 	return scanDesign(row)
+40. }
+41. 
+42. func (r *designRepository) Update(ctx context.Context, d *domain.DesignIP) error {
+43. 	_, err := r.db.Exec(ctx, `
+44. 		UPDATE design_ips SET
+45. 			title=$1, description=$2, preview_image_url=$3,
+46. 			status=$4, is_public=$5, gender_tag=$6, style_tags=$7
+47. 		WHERE id=$8`,
+48. 		d.Title, d.Description, d.PreviewImageURL,
+49. 		d.Status, d.IsPublic, d.GenderTag, d.StyleTags, d.ID,
+50. 	)
+51. 	return err
+52. }
+53. 
+54. func (r *designRepository) UpdateStatus(ctx context.Context, id string, status string) error {
+55. 	_, err := r.db.Exec(ctx, `UPDATE design_ips SET status=$1 WHERE id=$2`, status, id)
+56. 	return err
+57. }
+58. 
+59. // FindSimilar はコサイン類似度（<=> 演算子）でベクトル近傍を検索し、
+60. // forkThreshold 以上のものを返す（rejectThreshold 以上は先頭に来る）
+61. func (r *designRepository) FindSimilar(ctx context.Context, vector []float32, forkThreshold, rejectThreshold float64) ([]repository.SimilarDesignResult, error) {
+62. 	// pgvector の <=> はコサイン距離（0=同一, 2=逆）なので類似度 = 1 - 距離
+63. 	rows, err := r.db.Query(ctx, `
+64. 		SELECT id, creator_id, parent_ip_id, title, description, preview_image_url, design_data,
+65. 		       fork_depth, status, is_public, gender_tag, style_tags,
+66. 		       usage_count, total_royalty_yen, created_at, updated_at,
+67. 		       (1 - (similarity_vector <=> $1::vector)) AS cosine_score
+68. 		FROM design_ips
+69. 		WHERE (1 - (similarity_vector <=> $1::vector)) >= $2
+70. 		  AND status = 'active'
+71. 		ORDER BY cosine_score DESC
+72. 		LIMIT 10`,
+73. 		vectorToString(vector), forkThreshold,
+74. 	)
+75. 	if err != nil {
+76. 		return nil, err
+77. 	}
+78. 	defer rows.Close()
+79. 
+80. 	var results []repository.SimilarDesignResult
+81. 	for rows.Next() {
+82. 		var d domain.DesignIP
+83. 		var score float64
+84. 		if err := rows.Scan(
+85. 			&d.ID, &d.CreatorID, &d.ParentIPID, &d.Title, &d.Description, &d.PreviewImageURL, &d.DesignData,
+86. 			&d.ForkDepth, &d.Status, &d.IsPublic, &d.GenderTag, &d.StyleTags,
+87. 			&d.UsageCount, &d.TotalRoyaltyYen, &d.CreatedAt, &d.UpdatedAt,
+88. 			&score,
+89. 		); err != nil {
+90. 			return nil, err
+91. 		}
+92. 		results = append(results, repository.SimilarDesignResult{Design: &d, Score: score})
+93. 	}
+94. 	return results, rows.Err()
+95. }
+96. 
+97. func (r *designRepository) ListFeed(ctx context.Context, filter repository.DesignFeedFilter) ([]*domain.DesignIP, string, error) {
+98. 	// カーソルページネーション: base64url(created_at_unix_ms + ":" + id)
+99. 	args := []any{}
+100. 	where := "WHERE d.is_public = true"
+101. 	argIdx := 1
+102. 
+103. 	if filter.Status != nil {
+104. 		where += " AND d.status = $" + itoa(argIdx)
+105. 		args = append(args, *filter.Status)
+106. 		argIdx++
+107. 	}
+108. 	if filter.GenderTag != nil {
+109. 		where += " AND d.gender_tag = $" + itoa(argIdx)
+110. 		args = append(args, *filter.GenderTag)
+111. 		argIdx++
+112. 	}
+113. 
+114. 	if filter.Cursor != "" {
+115. 		ts, id, err := decodeCursor(filter.Cursor)
+116. 		if err == nil {
+117. 			where += " AND (d.created_at, d.id) < ($" + itoa(argIdx) + ", $" + itoa(argIdx+1) + ")"
+118. 			args = append(args, ts, id)
+119. 			argIdx += 2
+120. 		}
+121. 	}
+122. 
+123. 	limit := filter.Limit
+124. 	if limit == 0 {
+125. 		limit = 20
+126. 	}
+127. 	args = append(args, limit+1)
+128. 
+129. 	rows, err := r.db.Query(ctx, `
+130. 		SELECT id, creator_id, parent_ip_id, title, description, preview_image_url, design_data,
+131. 		       fork_depth, status, is_public, gender_tag, style_tags,
+132. 		       usage_count, total_royalty_yen, created_at, updated_at
+133. 		FROM design_ips d `+where+`
+134. 		ORDER BY d.created_at DESC, d.id DESC
+135. 		LIMIT $`+itoa(argIdx),
+136. 		args...,
+137. 	)
+138. 	if err != nil {
+139. 		return nil, "", err
+140. 	}
+141. 	defer rows.Close()
+142. 
+143. 	designs, err := scanDesigns(rows)
+144. 	if err != nil {
+145. 		return nil, "", err
+146. 	}
+147. 
+148. 	var nextCursor string
+149. 	if len(designs) > limit {
+150. 		designs = designs[:limit]
+151. 		last := designs[limit-1]
+152. 		nextCursor = encodeCursor(last.CreatedAt, last.ID)
+153. 	}
+154. 	return designs, nextCursor, nil
+155. }
+156. 
+157. func (r *designRepository) ListByCreator(ctx context.Context, creatorID string, cursor string, limit int) ([]*domain.DesignIP, string, error) {
+158. 	if limit == 0 {
+159. 		limit = 20
+160. 	}
+161. 	args := []any{creatorID}
+162. 	where := "WHERE creator_id = $1"
+163. 	if cursor != "" {
+164. 		ts, id, err := decodeCursor(cursor)
+165. 		if err == nil {
+166. 			where += " AND (created_at, id) < ($2, $3)"
+167. 			args = append(args, ts, id)
+168. 		}
+169. 	}
+170. 	args = append(args, limit+1)
+171. 
+172. 	rows, err := r.db.Query(ctx, `
+173. 		SELECT id, creator_id, parent_ip_id, title, description, preview_image_url, design_data,
+174. 		       fork_depth, status, is_public, gender_tag, style_tags,
+175. 		       usage_count, total_royalty_yen, created_at, updated_at
+176. 		FROM design_ips `+where+`
+177. 		ORDER BY created_at DESC, id DESC LIMIT $`+itoa(len(args)),
+178. 		args...,
+179. 	)
+180. 	if err != nil {
+181. 		return nil, "", err
+182. 	}
+183. 	defer rows.Close()
+184. 
+185. 	designs, err := scanDesigns(rows)
+186. 	if err != nil {
+187. 		return nil, "", err
+188. 	}
+189. 
+190. 	var nextCursor string
+191. 	if len(designs) > limit {
+192. 		designs = designs[:limit]
+193. 		nextCursor = encodeCursor(designs[limit-1].CreatedAt, designs[limit-1].ID)
+194. 	}
+195. 	return designs, nextCursor, nil
+196. }
+197. 
+198. func (r *designRepository) CreateRoyaltyNode(ctx context.Context, node *domain.DesignRoyaltyNode) error {
+199. 	_, err := r.db.Exec(ctx, `
+200. 		INSERT INTO design_royalty_nodes (id, design_ip_id, user_id, share_percent, depth_level)
+201. 		VALUES ($1, $2, $3, $4, $5)`,
+202. 		node.ID, node.DesignIPID, node.UserID, node.SharePercent, node.DepthLevel,
+203. 	)
+204. 	return err
+205. }
+206. 
+207. func (r *designRepository) ListRoyaltyNodes(ctx context.Context, designIPID string) ([]*domain.DesignRoyaltyNode, error) {
+208. 	rows, err := r.db.Query(ctx, `
+209. 		SELECT id, design_ip_id, user_id, share_percent, depth_level
+210. 		FROM design_royalty_nodes WHERE design_ip_id = $1 ORDER BY depth_level`, designIPID)
+211. 	if err != nil {
+212. 		return nil, err
+213. 	}
+214. 	defer rows.Close()
+215. 	var nodes []*domain.DesignRoyaltyNode
+216. 	for rows.Next() {
+217. 		var n domain.DesignRoyaltyNode
+218. 		if err := rows.Scan(&n.ID, &n.DesignIPID, &n.UserID, &n.SharePercent, &n.DepthLevel); err != nil {
+219. 			return nil, err
+220. 		}
+221. 		nodes = append(nodes, &n)
+222. 	}
+223. 	return nodes, rows.Err()
+224. }
+225. 
+226. func (r *designRepository) GetRoyaltyChain(ctx context.Context, designIPID string) ([]domain.DesignRoyaltyNode, error) {
+227. 	nodes, err := r.ListRoyaltyNodes(ctx, designIPID)
+228. 	if err != nil {
+229. 		return nil, err
+230. 	}
+231. 	result := make([]domain.DesignRoyaltyNode, len(nodes))
+232. 	for i, n := range nodes {
+233. 		result[i] = *n
+234. 	}
+235. 	return result, nil
+236. }
+237. 
+238. func (r *designRepository) IncrementUsageCount(ctx context.Context, designIPID string, royaltyYen int) error {
+239. 	_, err := r.db.Exec(ctx, `
+240. 		UPDATE design_ips SET
+241. 			usage_count = usage_count + 1,
+242. 			total_royalty_yen = total_royalty_yen + $1
+243. 		WHERE id = $2`, royaltyYen, designIPID)
+244. 	return err
+245. }
+246. 
+247. func scanDesign(row pgx.Row) (*domain.DesignIP, error) {
+248. 	var d domain.DesignIP
+249. 	if err := row.Scan(
+250. 		&d.ID, &d.CreatorID, &d.ParentIPID, &d.Title, &d.Description, &d.PreviewImageURL, &d.DesignData,
+251. 		&d.ForkDepth, &d.Status, &d.IsPublic, &d.GenderTag, &d.StyleTags,
+252. 		&d.UsageCount, &d.TotalRoyaltyYen, &d.CreatedAt, &d.UpdatedAt,
+253. 	); err != nil {
+254. 		if errors.Is(err, pgx.ErrNoRows) {
+255. 			return nil, domain.ErrNotFound
+256. 		}
+257. 		return nil, err
+258. 	}
+259. 	return &d, nil
+260. }
+261. 
+262. func scanDesigns(rows pgx.Rows) ([]*domain.DesignIP, error) {
+263. 	var designs []*domain.DesignIP
+264. 	for rows.Next() {
+265. 		var d domain.DesignIP
+266. 		if err := rows.Scan(
+267. 			&d.ID, &d.CreatorID, &d.ParentIPID, &d.Title, &d.Description, &d.PreviewImageURL, &d.DesignData,
+268. 			&d.ForkDepth, &d.Status, &d.IsPublic, &d.GenderTag, &d.StyleTags,
+269. 			&d.UsageCount, &d.TotalRoyaltyYen, &d.CreatedAt, &d.UpdatedAt,
+270. 		); err != nil {
+271. 			return nil, err
+272. 		}
+273. 		designs = append(designs, &d)
+274. 	}
+275. 	return designs, rows.Err()
+276. }
+277.
+```
+
+</details>
+
+
+### ✅ `view`
+
+**view the file at D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\booking_repository.go.**
+
+D:\PROJECT2026\nailX\nailX\backend\internal\repository\postgres\booking_repository.go
+
+<details>
+<summary>97 lines</summary>
+
+```
+1. package postgres
+2. 
+3. import (
+4. 	"context"
+5. 	"errors"
+6. 
+7. 	"github.com/jackc/pgx/v5"
+8. 	"github.com/jackc/pgx/v5/pgxpool"
+9. 	"github.com/nailx/backend/internal/domain"
+10. 	"github.com/nailx/backend/internal/repository"
+11. )
+12. 
+13. type bookingRepository struct {
+14. 	db *pgxpool.Pool
+15. }
+16. 
+17. func NewBookingRepository(db *pgxpool.Pool) repository.BookingRepository {
+18. 	return &bookingRepository{db: db}
+19. }
+20. 
+21. const bookingColumns = `id, booking_request_id, bid_id, user_id, salon_id, scheduled_at, status, confirmed_at, completed_at, cancellation_reason`
+22. 
+23. func (r *bookingRepository) Create(ctx context.Context, b *domain.Booking) error {
+24. 	_, err := r.db.Exec(ctx, `
+25. 		INSERT INTO bookings (id, booking_request_id, bid_id, user_id, salon_id, scheduled_at, status, confirmed_at)
+26. 		VALUES ($1,$2,$3,$4,$5,$6,$7,$8)`,
+27. 		b.ID, b.BookingRequestID, b.BidID, b.UserID, b.SalonID, b.ScheduledAt, b.Status, b.ConfirmedAt,
+28. 	)
+29. 	return err
+30. }
+31. 
+32. func (r *bookingRepository) FindByID(ctx context.Context, id string) (*domain.Booking, error) {
+33. 	row := r.db.QueryRow(ctx, `SELECT `+bookingColumns+` FROM bookings WHERE id=$1`, id)
+34. 	return scanBooking(row)
+35. }
+36. 
+37. func (r *bookingRepository) ListByUserID(ctx context.Context, userID string, status *string) ([]*domain.Booking, error) {
+38. 	args := []any{userID}
+39. 	where := "WHERE user_id=$1"
+40. 	if status != nil {
+41. 		where += " AND status=$2"
+42. 		args = append(args, *status)
+43. 	}
+44. 	rows, err := r.db.Query(ctx, `SELECT `+bookingColumns+` FROM bookings `+where+` ORDER BY scheduled_at DESC`, args...)
+45. 	if err != nil {
+46. 		return nil, err
+47. 	}
+48. 	defer rows.Close()
+49. 	return scanBookings(rows)
+50. }
+51. 
+52. func (r *bookingRepository) ListBySalonID(ctx context.Context, salonID string, status *string) ([]*domain.Booking, error) {
+53. 	args := []any{salonID}
+54. 	where := "WHERE salon_id=$1"
+55. 	if status != nil {
+56. 		where += " AND status=$2"
+57. 		args = append(args, *status)
+58. 	}
+59. 	rows, err := r.db.Query(ctx, `SELECT `+bookingColumns+` FROM bookings `+where+` ORDER BY scheduled_at DESC`, args...)
+60. 	if err != nil {
+61. 		return nil, err
+62. 	}
+63. 	defer rows.Close()
+64. 	return scanBookings(rows)
+65. }
+66. 
+67. func (r *bookingRepository) UpdateStatus(ctx context.Context, id string, status domain.BookingStatus) error {
+68. 	_, err := r.db.Exec(ctx, `UPDATE bookings SET status=$1 WHERE id=$2`, status, id)
+69. 	return err
+70. }
+71. 
+72. func scanBooking(row pgx.Row) (*domain.Booking, error) {
+73. 	var b domain.Booking
+74. 	if err := row.Scan(
+75. 		&b.ID, &b.BookingRequestID, &b.BidID, &b.UserID, &b.SalonID,
+76. 		&b.ScheduledAt, &b.Status, &b.ConfirmedAt, &b.CompletedAt, &b.CancellationReason,
+77. 	); err != nil {
+78. 		if errors.Is(err, pgx.ErrNoRows) {
+79. 			return nil, domain.ErrNotFound
+80. 		}
+81. 		return nil, err
+82. 	}
+83. 	return &b, nil
+84. }
+85. 
+86. func scanBookings(rows pgx.Rows) ([]*domain.Booking, error) {
+87. 	var bookings []*domain.Booking
+88. 	for rows.Next() {
+89. 		b, err := scanBooking(rows)
+90. 		if err != nil {
+91. 			return nil, err
+92. 		}
+93. 		bookings = append(bookings, b)
+94. 	}
+95. 	return bookings, rows.Err()
+96. }
+97.
+```
+
+</details>
+
+
+### 💬 Copilot
+
+Now I have a complete picture of the codebase. Here are the genuine issues.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/handler/auction.go` (line 115–118)
+Issue: Type mismatch — anonymous struct passed where `*domain.BidEvent` is required. `SSEHub.Publish` signature is `func(..., event *domain.BidEvent) error`, but the caller constructs and passes `&struct{Type string; Bid any}{...}`. This is a **compile error**; the binary cannot be built.
+Fix: Replace the anonymous struct with a proper `*domain.BidEvent{Type: "new_bid", Bid: bid}`.
+
+---
+
+**[SEVERITY: Critical]** `backend/cmd/server/main.go` (line 223–231)
+Issue: `requireAuth()` is a no-op placeholder that sets `user_id = "placeholder"` and `user_role = "consumer"` on every request. Every protected route — including booking creation, bid placement, and payment confirmation — operates under the fake identity `"placeholder"`. This is wired into the live server, not gated behind a build tag or feature flag.
+Fix: Before any deployment, replace `requireAuth()` with `authMw.RequireAuth` (the real Firebase JWT middleware that is already implemented at `middleware/auth.go`). Until then, the placeholder must not be merged to a deployed branch.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/handler/auction.go` (line 103) + `backend/internal/service/impl/auction_service.go` (line 110, 136)
+Issue: `middleware.GetUserID(c)` returns the **authenticated user's UUID**, which is passed as the `salonID` parameter in `PlaceBid`. The service stores it directly in `bid.SalonID`, and the repository INSERTs it into `bids.salon_id` which has a FK constraint `REFERENCES salons(id)`. A user UUID will never match a salon UUID, so **every bid INSERT fails with a FK violation**. The duplicate-bid check (`FindBidBySalonAndRequest`) is also broken for the same reason.
+Fix: Before calling `PlaceBid`, resolve the authenticated user's salon via `salonRepo.FindByOwnerID(ctx, userID)` and pass `salon.ID` as `salonID`.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/service/impl/media_service.go` (line 45, 51)
+Issue: Two compounded bugs in `GeneratePresignedURL`:
+1. **S3 key uses MIME type as extension**: `fileType` is the MIME type from the request (e.g., `"image/jpeg"`), used literally as a file extension → key becomes `ar/user-id/uuid.image/jpeg`, producing a malformed CDN URL like `https://cdn.nailx.jp/ar/user-id/uuid.image/jpeg`.
+2. **Wrong `ContentType` in presigned URL**: `mimeType(fileType)` is called with `"image/jpeg"` (a MIME type, not an extension), which matches none of the switch cases and falls through to `"application/octet-stream"`. S3 clients enforcing Content-Type will reject uploads.
+
+Fix: Derive the file extension from the MIME type (e.g., `strings.Split(fileType, "/")[1]`) for the S3 key, and use `fileType` directly as `ContentType`.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/service/impl/review_service.go` (line 43)
+Issue: `DesignIPID` is hardcoded to empty string `""`. The `reviews` table has `design_ip_id UUID NOT NULL REFERENCES design_ips(id)`. An empty string is not a valid UUID and violates both the NOT NULL constraint and the FK constraint. **Every review submission fails with a DB error.**
+Fix: Fetch `DesignIPID` from the booking. `Booking` struct has `BookingRequestID`; trace through `bookingRepo` → `BookingRequest.DesignIPID` to populate this field.
+
+---
+
+**[SEVERITY: Critical]** `backend/internal/worker/royalty_worker.go` (line 99)
+Issue: No idempotency check before `CreateRoyaltyDistributions`. SQS guarantees at-least-once delivery: if the worker crashes or the message visibility timeout expires after creating distributions but before deleting the message, the message is redelivered and royalty distributions are duplicated. The `royalty_distributions` table has no unique constraint on `(payment_id, user_id)` to prevent this.
+Fix: Add a unique constraint `UNIQUE(payment_id, user_id)` to `royalty_distributions` in the migration, and use an INSERT ON CONFLICT DO NOTHING in `CreateRoyaltyDistributions`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/handler/admin.go` (line 21–32)
+Issue: `ListPendingSalons` declares `pending := "pending"` then immediately discards it with `_ = pending`. The `SalonFilter` passed to `ListSalons` has no `VerificationStatus` field set. The endpoint returns **all salons**, not just pending ones. Reviewers have no way to scope their work.
+Fix: Add a `VerificationStatus *string` field to `SalonFilter`, populate it with `&pending` here, and apply `AND verification_status = $n` in the repository query.
+
+---
+
+**[SEVERITY: High]** `backend/internal/service/impl/design_service.go` (line 120)
+Issue: Admin check reads `userID != "admin"`. UserIDs are UUIDs — no UUID will ever equal the literal string `"admin"`. Admins can never update designs through this code path; they always receive ErrForbidden.
+Fix: Replace the literal check with a role-based check. Pass the caller's role alongside `userID` (e.g., add `callerRole domain.UserRole` parameter), and check `callerRole == domain.RoleAdmin`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/service/impl/auction_service.go` (line 43)
+Issue: When a user exceeds the 3-concurrent-request limit, `ErrRequestExpired` is returned. This maps to HTTP 409 with code `REQUEST_EXPIRED` — a semantically incorrect response that tells clients the request has expired, not that they've hit the limit. Client code polling on this will misinterpret the failure mode.
+Fix: Define a new `ErrRequestLimitReached` domain error; add a corresponding `429` (or `409` with code `REQUEST_LIMIT_EXCEEDED`) mapping in `domainErrToHTTP`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/service/impl/auction_service.go` (line 98)
+Issue: `CancelBookingRequest` only permits cancellation when `status == BookingRequestOpen`, but the spec (api_spec.md, `DELETE /auctions/requests/:id`) explicitly states "status=open/bidding のみ可" (open **or** bidding). Requests with bids in flight cannot be cancelled, silently failing users.
+Fix: Change condition to `req.Status != domain.BookingRequestOpen && req.Status != domain.BookingRequestBidding`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/worker/similarity_worker.go` (line 86–89)
+Issue: Fork and reject thresholds are hardcoded as local constants (`forkThreshold = 0.75`, `rejectThreshold = 0.90`). The spec defines `GET/PATCH /admin/settings/similarity-threshold` for Admin to change these values. Any threshold update via that endpoint has **zero effect** on the worker — the worker always uses the hardcoded values.
+Fix: Load thresholds from a DB-backed settings table (or config cache) at worker startup and refresh periodically, so admin changes are reflected.
+
+---
+
+**[SEVERITY: High]** `backend/internal/repository/postgres/design_repository.go` (line 100)
+Issue: `ListFeed` unconditionally appends `WHERE d.is_public = true`. `ListFlaggedDesigns` in `admin.go` calls this method with `status = "rejected"`. Rejected designs that have `is_public = false` are invisible to admins, defeating the moderation workflow.
+Fix: Remove or conditionalize the `is_public` filter — apply it only for non-admin / public contexts, not when `filter.Status` targets an admin-only status like `"rejected"`.
+
+---
+
+**[SEVERITY: High]** `backend/internal/handler/ar.go` (line 26), `backend/internal/handler/review.go` (line 28–32)
+Issue: `hand_snapshot_url`, `before_photo_url`, and `after_photo_url` are accepted from clients with no validation against the expected CDN domain or S3 prefix. The spec (api_spec.md, Security Note for `POST /ar/sessions` and `POST /reviews`) explicitly requires server-side validation: "サーバーは `file_url` 受信時にバケット名・プレフィックスが期待パターンと一致するかを検証". An attacker can submit arbitrary URLs, including internal network addresses or `s3://` URIs for buckets they don't own.
+Fix: Add a `ValidateCDNURL(url, expectedPrefix string) bool` helper that verifies the URL starts with the configured `cdnBase` + the appropriate prefix (e.g., `"https://cdn.nailx.jp/ar-snapshots/"`), and reject requests that fail validation.
+
+---
+
+**[SEVERITY: Medium]** `backend/internal/repository/postgres/` (all repository files)
+Issue: CLAUDE.md explicitly states: "sqlcを使用するため、生のクエリ文字列をGoコードに直書きしない". Every repository file (`auction_repository.go`, `booking_repository.go`, `design_repository.go`, etc.) violates this rule with inline raw SQL strings.
+Fix: Run `sqlc generate` from the schema and queries, and replace all handwritten `db.Exec/Query` calls with the generated type-safe query functions.
+
+
+---
+
+<sub>⏱️ 9m 53s</sub>
+
+### 💭 Reasoning
+
+*The code review has returned detailed findings. Let me present these to the user in a clear, organized way.*
+
+---
+
+<sub>⏱️ 9m 54s</sub>
+
+### 💬 Copilot
+
+## Code Review Results
+
+The review found **13 issues** across the backend. Here's a summary:
+
+### 🔴 Critical (6)
+| File | Issue |
+|------|-------|
+| `handler/auction.go:115` | Type mismatch — anonymous struct passed where `*domain.BidEvent` required → **compile error** |
+| `cmd/server/main.go:223` | `requireAuth()` is a no-op placeholder hardcoded to `user_id="placeholder"` — every protected route bypasses auth |
+| `handler/auction.go:103` + `service/impl/auction_service.go` | User UUID passed as `salonID` → FK violation on every bid INSERT |
+| `service/impl/media_service.go:45` | MIME type used as file extension → malformed S3 keys (`uuid.image/jpeg`) |
+| `service/impl/review_service.go:43` | `DesignIPID` hardcoded to `""` → NOT NULL + FK violation on every review |
+| `worker/royalty_worker.go:99` | No idempotency on SQS redelivery → duplicate royalty distributions |
+
+### 🟠 High (7)
+- `handler/admin.go:21` — `ListPendingSalons` returns **all** salons (pending filter is discarded)
+- `service/impl/design_service.go:120` — Admin check compares UUID to literal `"admin"` → admins always get ErrForbidden
+- `service/impl/auction_service.go:43` — Wrong error code for 3-request limit (returns `REQUEST_EXPIRED`)
+- `service/impl/auction_service.go:98` — `CancelBookingRequest` blocks cancellation when status=`bidding` (spec allows it)
+- `worker/similarity_worker.go:86` — Fork/reject thresholds hardcoded; Admin settings endpoint has no effect
+- `repository/postgres/design_repository.go:100` — `is_public=true` filter hides rejected designs from admins
+- `handler/ar.go:26` + `handler/review.go:28` — No CDN URL validation (SSRF risk; spec requires it)
+
+### 🟡 Medium (1)
+- All repository files — Raw SQL strings inline; CLAUDE.md mandates using `sqlc generate`
+
+---
+
+Would you like me to fix any of these issues? I can address them in order of severity.
+
+---
+
+<sub>Generated by [GitHub Copilot CLI](https://github.com/features/copilot/cli)</sub>

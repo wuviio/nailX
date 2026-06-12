@@ -1,0 +1,34 @@
+# -------- 秘匿情報 --------
+backend/firebase-credentials.json
+backend/.env
+
+# -------- Go --------
+backend/.go/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/backend/server
+
+# -------- Flutter / Dart --------
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.pub-cache/
+frontend/.pub/
+frontend/build/
+frontend/**/*.g.dart
+frontend/**/*.freezed.dart
+.pub-cache/
+
+# -------- OS --------
+.DS_Store
+Thumbs.db
+
+# -------- IDE --------
+.idea/
+*.swp
+*.swo

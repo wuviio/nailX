@@ -1,0 +1,40 @@
+version: "3.9"
+
+# このファイルは ../docker-compose.yml を拡張する。
+# VS Code Dev Containers が docker-compose.yml と結合して起動する。
+# devcontainer サービスが Go + Flutter + ツールが入った開発環境本体。
+
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      # プロジェクトルートをワークスペースとしてマウント
+      - ..:/workspace:cached
+      # Go モジュールキャッシュを永続化（毎回 go mod download を省略）
+      - go-module-cache:/go/pkg/mod
+      # Flutter pub キャッシュを永続化
+      - flutter-pub-cache:/home/vscode/.pub-cache
+      # SSH キー（git push など）
+      - type: bind
+        source: ${USERPROFILE}/.ssh
+        target: /home/vscode/.ssh
+        read_only: true
+    # Dev Container はずっと起動し続ける（VS Code が接続）
+    command: sleep infinity
+    environment:
+      # .env と同値を明示設定しておくことでコンテナ間 DNS 名を確実に使用
+      DATABASE_URL: postgres://nailx:nailx_dev@postgres:5432/nailx?sslmode=disable
+      REDIS_URL: redis://redis:6379/0
+      AWS_DEFAULT_REGION: ap-northeast-1
+      CDN_BASE_URL: http://localhost:8080
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  go-module-cache:
+  flutter-pub-cache:

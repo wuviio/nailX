@@ -1,0 +1,95 @@
+{
+  "name": "nailX",
+
+  // docker-compose.yml（postgres/redis/migrate）と
+  // docker-compose.devcontainer.yml（開発ツール本体）を合成して起動
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "docker-compose.devcontainer.yml"
+  ],
+
+  // 接続するサービス名（devcontainer.yml に定義したもの）
+  "service": "devcontainer",
+
+  // VS Code がコンテナ内で開くフォルダ
+  "workspaceFolder": "/workspace",
+
+  // コンテナ停止時に docker-compose down も実行する
+  "shutdownAction": "stopCompose",
+
+  // 非 root ユーザーで操作（Dockerfile の USER vscode に対応）
+  "remoteUser": "vscode",
+
+  // -------- コンテナ環境変数（全プロセスに適用） --------
+  "containerEnv": {
+    "GOMODCACHE": "${containerWorkspaceFolder}/.go/pkg/mod",
+    "GOSUMDB": "off",
+    "PUB_CACHE": "${containerWorkspaceFolder}/nailX/.pub-cache"
+  },
+
+  // docker-compose 側の command (sleep infinity) を尊重し、
+  // Dev Containers のデフォルト command 上書きで即終了しないようにする
+  "overrideCommand": false,
+
+  // -------- コンテナ起動後に 1 回だけ実行 --------
+  "postCreateCommand": "bash /workspace/.devcontainer/post-create.sh",
+
+  // -------- ポートフォワーディング --------
+  "forwardPorts": [8080, 3000, 5432, 6379],
+  "portsAttributes": {
+    "8080": { "label": "Backend API (Echo)",  "onAutoForward": "notify" },
+    "3000": { "label": "Flutter Web",         "onAutoForward": "openBrowser" },
+    "5432": { "label": "PostgreSQL",          "onAutoForward": "silent" },
+    "6379": { "label": "Redis",               "onAutoForward": "silent" }
+  },
+
+  // -------- VS Code カスタマイズ --------
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // Go
+        "go.toolsManagement.autoUpdate": true,
+        "go.useLanguageServer": true,
+        "go.lintTool": "golangci-lint",
+        "go.lintFlags": ["--fast"],
+        "[go]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "golang.go"
+        },
+        // Dart/Flutter
+        "[dart]": {
+          "editor.formatOnSave": true,
+          "editor.selectionHighlight": false
+        },
+        "dart.flutterSdkPath": "/opt/flutter",
+        // ターミナル
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.env.linux": {
+          "DATABASE_URL": "postgres://nailx:nailx_dev@postgres:5432/nailx?sslmode=disable",
+          "REDIS_URL": "redis://redis:6379/0"
+        }
+      },
+      "extensions": [
+        // Go
+        "golang.go",
+        // Flutter / Dart
+        "Dart-Code.dart-code",
+        "Dart-Code.flutter",
+        // DB クライアント（PostgreSQL / Redis を GUI で操作）
+        "cweijan.vscode-database-client2",
+        // HTTP リクエスト（API 手動テスト用 .http ファイル）
+        "humao.rest-client",
+        // Docker
+        "ms-azuretools.vscode-docker",
+        // Git 強化
+        "eamodio.gitlens",
+        // EditorConfig
+        "EditorConfig.EditorConfig",
+        // YAML
+        "redhat.vscode-yaml",
+        // ENV ファイルハイライト
+        "mikestead.dotenv"
+      ]
+    }
+  }
+}

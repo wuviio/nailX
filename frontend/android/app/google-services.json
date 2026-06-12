@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "67384230476",
+    "project_id": "nailx-e45d9",
+    "storage_bucket": "nailx-e45d9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67384230476:android:109e6a02744498b8da6ae9",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGkrtejncSfmy3aYSBr__uVhoW6TVe69Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
